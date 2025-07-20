@@ -37,7 +37,7 @@ async function logTheShits(nodes) {
     for (const node of nodes) { // 'for each node:'
         if (node.nodeType === Node.ELEMENT_NODE) { // if node is an element
             switch (node.tagName) {
-                case "log": // if node is log
+                case "log":
                     terminal.textContent += node.textContent + "\n"; break; // put dat text in da terminal
                 case "wait":
                     await delay(parseFloat(node.textContent) * 1000); break; // wait alotted seconds
