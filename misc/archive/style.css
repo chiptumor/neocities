@@ -1,0 +1,559 @@
+@font-face {
+  font-family: "Firacode";
+  src: url("/fira-code/FiraCode-VF.ttf");
+}
+
+@font-face {
+  font-family: "Fixedsys";
+  src: url("/font.ttf") format("truetype");
+}
+
+body {
+  font-family: "Firacode", "Fixedsys", monospace;
+}
+
+h1 {
+    font-size: large;
+}
+
+p, ul, strong, em {
+  font-size: medium;
+}
+button {
+  font-family: "Firacode", "Fixedsys", monospace;
+}
+code {
+  background-color: #222;
+  border-color: #333;
+  border-width: 2px;
+  border-style: solid;
+  /*border-radius: 2px;*/
+}
+p {
+    margin: 10px 0;
+}
+a {
+    color: white;
+    text-decoration: underline;
+}
+table * {
+    text-align: left;
+    font-weight: normal;
+    white-space: pre;
+}
+th {
+    margin-left: 10px;
+}
+
+.gridLayout {
+    display: grid;
+    grid-template-areas:
+        "welcome welcome identity"
+        "welcome welcome identity"
+        "status status blinkies"
+        "chiptune jenmoji instagram"
+        "music music wallofwife"
+        "socials discord todo";
+    grid-gap: 10px;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+.smoothImg {
+  /* some screen resolutions, especially mobile, HATE when
+   * you try to render pixel art with the 'pixelated' property.
+   * Small-scale pixel arts, even those scaled by
+   * the pixel to avoid mixels, are resized awkwardly and
+   * coated with mixels anyways.
+   * this was originally supposed to override the default option
+   * for 'image-rendering' of 'pixelated' with 'smooth'
+   */
+  --dont-warn-me: thanks;
+}
+
+.wip {
+  max-width: 600px;
+  background-image: linear-gradient(0deg, #111122, #020204);
+  border: 5px solid #112;
+  /*border-radius: 10px;*/
+  overflow-wrap: break-word;
+}
+
+.spoiler {
+  background-color: #330000;
+  color: #330000;
+  transition: background-color, color ease-out 0.25s;
+  outline: solid 3px #330000;
+}
+
+.spoiler:hover {
+  background-color: #FFBBBB33;
+  color: #FFFFFF;
+  outline: solid 3px #FFBBBB33;
+}
+
+.parentSite {
+  position: fixed;
+  display: unset;
+}
+
+.flag {
+  position: relative;
+  vertical-align: top;
+  border-color: #FFF !important;
+  border-style: solid;
+  border-width: 2px !important;
+  padding: 0 5px !important;
+  background-attachment: unset !important;
+  --identity-a: 1;
+  width: 60px;
+  height: 40px;
+}
+
+.flag:hover {
+    padding: 2px 7px !important;
+    border-width: 3px !important;
+    margin: -3px;
+}
+
+.genderFlag {
+  background-image: linear-gradient(180deg,
+    rgba(98,143,147,var(--identity-a)),
+    rgba(45,114,119,var(--identity-a)),
+    rgba(120,175,180,var(--identity-a)),
+    rgba(199,199,199,var(--identity-a)),
+    rgba(180,120,135,var(--identity-a)),
+    rgba(119,45,63,var(--identity-a)),
+    rgba(79,37,44,var(--identity-a))
+  ) !important;
+}
+
+.sexualityFlag {
+  background-image: linear-gradient(180deg,
+    rgba(255,90,167,var(--identity-a)),
+    rgba(254,174,201,var(--identity-a)),
+    rgba(255,207,185,var(--identity-a)),
+    rgba(255,90,167,var(--identity-a)),
+    rgba(255,207,185,var(--identity-a)),
+    rgba(254,174,201,var(--identity-a)),
+    rgba(255,90,167,var(--identity-a))
+  ) !important;
+}
+
+/* STATUS */
+
+  .statusInfo {
+    display: inline-block;
+    margin: 5px;
+    padding: 3px;
+    /*border-radius: 3px;*/
+    background-color: rgb(var(--r), var(--g), var(--b));
+    max-width: calc(100% - 40px);
+  }
+
+  .statusInfo > p {
+    margin: 0 3px;
+    text-align: left;
+    text-shadow: #A00 1px 1px 2px;
+  }
+
+  .statusBox {
+    position: relative;
+    scroll-margin-top: 30px;
+
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(var(--r), var(--g), var(--b));
+    /*border-radius: 13px 30px 13px 30px;*/
+
+    background-image: linear-gradient(135deg, #000, 75%, rgb(var(--r), var(--g), var(--b)));
+    background-attachment: fixed;
+    background-size: 150%;
+    background-position: 0;
+    transition: background-position 0.1s ease-out;
+  }
+  .statusBox:hover {
+      background-position: 50%;
+  }
+
+  .status {
+    margin: 10px 40px;
+  }
+
+/* HAIO */
+
+  .haio {
+    position: relative;
+  }
+  .haio span {
+    position: relative;
+    display: inline-block;
+    font-size: 64px;
+    font-weight: bold;
+    white-space: nowrap;
+
+    animation-name: haioWave;
+    animation-duration: 2s;
+    animation-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes haioWave {
+    0% { transform: translateY(10px) }
+    50% { transform: translateY(20px) }
+    100% { transform: translateY(10px) }
+  }
+
+/* ZOOLOGIST TRAIN */
+
+  .trainTracks {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 58px;
+    width: 100%;
+
+    background-image:
+      url(/image/zoologist.gif),
+      linear-gradient(0deg, #c22, 50%, transparent);
+
+    animation-name: chooChoo;
+    animation-duration: 0.75s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+  }
+
+  @keyframes chooChoo {
+    0% { background-position-x: 0; }
+    100% { background-position-x: -42px; }
+  }
+
+/* TOP LEFT ICON FOR EACH BOX */
+
+  .iconImage {
+    position: absolute;
+    text-align: left;
+    top: 20px;
+    left: 20px;
+    width: 64px;
+    height: auto;
+  }
+
+/* COMMON BOX SETTINGS FOR EACH BOX */
+
+  .box {
+    padding: 10px;
+    padding-bottom: 50px;
+    position: relative;
+    scroll-margin-top: 30px;
+
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(var(--r), var(--g), var(--b));
+    /*border-radius: 30px;*/
+
+    background-image: linear-gradient(135deg, #000, 75%, rgb(var(--r), var(--g), var(--b)));
+    background-attachment: fixed;
+    background-size: 150%;
+    background-position: 0;
+    transition: background-position 0.1s ease-out;
+  }
+
+  .box:hover {
+      background-position: 50%;
+  }
+
+/* HEADER */
+
+  .headerPseudoButton {
+    display: inline-block;
+    padding: 0 15px;
+    border: none;
+    /*border-radius: 10px;*/
+    background:
+      linear-gradient(0deg, #00000022, 50%, #00000088, 97%, transparent),
+      rgb(var(--r), var(--g), var(--b));
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow:
+      rgb(var(--r), var(--g), var(--b)) 0 1px 3px,
+      #FFFFFF44 0 1px 3px;
+  }
+
+  .headerPseudoButton h2 {
+    margin: 10px 0;
+    white-space: nowrap;
+  }
+
+/* LINK BUTTON DESIGN */
+
+  .butPos {
+      display: flex;
+      justify-content: flex-start;
+      position: absolute;
+      left: 5px;
+      bottom: 5px;
+      width: calc(100% - 10px);
+  }
+
+  .button {
+    display: inline-block;
+    padding: 0 15px;
+    box-sizing: border-box;
+
+    border: none;
+    /*border-radius: 10px;*/
+
+    background:
+      linear-gradient(0deg, #00000022, 50%, #00000088, 97%, transparent),
+      rgb(var(--r), var(--g), var(--b));
+    text-align: center;
+    color: #FFFFFF;
+    text-shadow:
+      rgb(var(--r), var(--g), var(--b)) 0 1px 3px,
+      #FFFFFF44 0 1px 3px;
+  }
+
+  .button p {
+    margin: 10px 0;
+    white-space: wrap;
+  }
+
+  .button:hover {
+    width: calc(100% + 6px);
+    margin: -3px;
+
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(var(--r), var(--g), var(--b));
+    /*border-radius: 13px;*/
+
+    background:
+      linear-gradient(#FFFFFF66, #FFFFFFFF),
+      rgb(var(--r), var(--g), var(--b));
+    color: #000000CC;
+    text-shadow:
+      rgb(var(--r), var(--g), var(--b)) 0 -1px 3px,
+      #00000088 0 -1px 3px;
+  }
+
+  .button:active {
+    margin: -3px;
+
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(var(--r), var(--g), var(--b));
+    /*border-radius: 13px;*/
+
+    background:
+      linear-gradient(#000000FF, #00000066),
+      rgb(var(--r), var(--g), var(--b));
+    color: #FFFFFF;
+    text-shadow: none;
+  }
+
+/* JUMPTO */
+
+  #jumpbar {
+    position: fixed;
+    left: 0;
+    top: 50%;
+    padding: 10px 3px 5px 3px;
+    height: auto;
+    width: 69px;
+    transform: translate(0, -50%);
+
+    border-width: 5px 5px 5px 0;
+    border-style: solid;
+    border-color: #FFF;
+    /*border-radius: 0 26px 26px 0;*/
+
+    background-image: linear-gradient(135deg, #000, 75%, #555);
+  }
+
+  .jumpButton {
+    position: relative;
+    padding: 8px;
+
+    border-width: 3px;
+    border-style: solid;
+    border-color: rgb(var(--r), var(--g), var(--b));
+    /*border-radius: 10px;*/
+
+    background-image: linear-gradient(135deg, #000, 75%, rgb(var(--r), var(--g), var(--b)));
+    margin-bottom: 8px;
+    display: inline-block;
+    text-align: center;
+    z-index: 2;
+  }
+
+  .jumpButton:hover {
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(var(--r), var(--g), var(--b));
+    /*border-radius: 13px;*/
+    margin: -2px;
+    margin-bottom: 6px;
+
+
+    background:
+      linear-gradient(#FFFFFF66, #FFFFFFFF),
+      rgb(var(--r), var(--g), var(--b));
+  }
+
+  .jumpButtonIcon {
+    width: 32px;
+    height: 32px;
+    margin: auto;
+  }
+
+/* LINK BUTTON DESIGN (FOR MISC SECTION) */
+
+  .miscbutton {
+    margin: 5px 0;
+    display: inline-block;
+    padding: 0 20px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(var(--r), var(--g), var(--b));
+    /*border-radius: 10px;*/
+    background:
+      linear-gradient(0deg, #00000088, #000000CC),
+      rgb(var(--r), var(--g), var(--b));
+    color: #FFFFFF;
+  }
+
+  .miscbutton:hover {
+    margin: 5px 0;
+    display: inline-block;
+    padding: 0 20px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(var(--r), var(--g), var(--b));
+    /*border-radius: 10px;*/
+    background:
+      radial-gradient(circle at 50px 65px, #00000088 0%, transparent 25%),
+      linear-gradient(0deg, #00000022, #00000066),
+      rgb(var(--r), var(--g), var(--b));
+    color: #111111;
+  }
+
+  .miscbutton:active {
+    margin: 5px 0;
+    display: inline-block;
+    padding: 0 20px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: rgb(var(--r), var(--g), var(--b));
+    /*border-radius: 10px;*/
+    background:
+      linear-gradient(0deg, #000000AA, #000000FF),
+      rgb(var(--r), var(--g), var(--b));
+    color: #FFFFFF;
+  }
+
+/* QUOTE-LIKE BOXES FOR BETTER TEXT ORGANIZATION */
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+
+  .quoteBox {
+    padding: 1px 20px;
+    position: relative;
+    vertical-align: top;
+
+    border-left-width: 7px;
+    border-left-style: solid;
+    border-left-color: rgb(var(--r), var(--g), var(--b));
+    /*border-radius: 3px 7px 7px 3px;*/
+    background-color: rgba(var(--r), var(--g), var(--b), 0.3);
+    color: #FFFFFF;
+  }
+
+  .quoteImg {
+    display: inline-block;
+    vertical-align: top;
+    width: 32px;
+    height: 32px;
+    margin-right: 10px;
+  }
+
+  .quotePfp {
+    display: inline-block;
+    vertical-align: top;
+    width: 64px;
+    height: 64px;
+    margin-right: 10px;
+    /*border-radius: 8px;*/
+    image-rendering: auto;
+  }
+
+  .quoteBook {--dont-warn-me: thanks;}
+
+  .quoteBookExpand {
+      display: inline;
+  }
+
+  .quoteBookContract {
+      display: none;
+  }
+
+/* EACH BOX COLOR INDIVIDUALLY */
+
+  body {
+    --r: 255;
+    --g: 50;
+    --b: 50;
+  }
+  .colorRed {
+    --r: 233;
+    --g: 38;
+    --b: 61;
+  }
+  .colorOrange {
+    --r: 240;
+    --g: 97;
+    --b: 48;
+  }
+  .colorYellow {
+    --r: 240;
+    --g: 177;
+    --b: 48;
+  }
+  .colorGreen {
+    --r: 48;
+    --g: 240;
+    --b: 70;
+  }
+  .colorBlue {
+    --r: 62;
+    --g: 125;
+    --b: 247;
+  }
+  .colorDark {
+    --r: 70;
+    --g: 24;
+    --b: 222;
+  }
+  .colorPurple {
+    --r: 152;
+    --g: 15;
+    --b: 212;
+  }
+  .colorPink {
+    --r: 255;
+    --g: 0;
+    --b: 85;
+  }
+  .colorPale {
+    --r: 157;
+    --g: 190;
+    --b: 245;
+  }
+  .colorWhite {
+    --r: 224;
+    --g: 235;
+    --b: 255;
+  }

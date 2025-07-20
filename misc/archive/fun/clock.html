@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <link href="/style.css" rel="stylesheet" type="text/css" media="all">
+    <style>
+      @font-face {
+        font-family: "Fixedsys";
+        src: url("https://chiptumor.neocities.org/font.ttf") format("truetype");
+      }
+      body {
+        min-height: 95vh;
+        font-family: "Fixedsys", monospace;
+        font-size: 64px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-align: center;
+        background: linear-gradient(#000, 75%, #040);
+        animation: gradientMove 10s infinite alternate;
+        animation-timing-function: cubic-bezier(0.445, 0.050, 0.550, 0.950);
+        background-size: 200% 200%;
+        color: #0F0;
+        text-shadow: #030 0 4px 0;
+      }
+      @keyframes gradientMove {
+        0% {
+          background-position: 50% 25%;
+        }
+        100% {
+          background-position: 50% 75%;
+        }
+      }
+      #progress-bar {
+        width: 80%;
+        height: 20px;
+        background-color: #030;
+        border: 2px solid #0F0;
+        margin-top: 20px;
+        overflow: hidden;
+      }
+      #progress-bar-fill {
+        height: 100%;
+        background-color: #0F0;
+        width: 0%;
+        transition: width 1s linear;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="countdown">
+      <!-- Countdown to specific times will be displayed here -->
+    </div>
+    <div id="clock">
+      <!-- Time and date will be displayed here -->
+    </div>
+    <br>
+    <div id="progress-bar">
+      <div id="progress-bar-fill"></div>
+    </div>
+
+    <script>
+      const targetTimes = [
+        "07:35", // 7:35 AM
+        "08:30", // 8:30 AM
+        "10:25", // 10:25 AM
+        "12:00", // 12:00 PM
+        "12:55", // 12:55 PM
+        "13:50", // 1:50 PM
+        "14:45", // 2:45 PM
+      ];
+
+      function formatTime12Hour(time) {
+        const [hours, minutes] = time.split(":");
+        let period = "AM";
+        let hours12 = parseInt(hours, 10);
+
+        if (hours12 >= 12) {
+          period = "PM";
+          if (hours12 > 12) {
+            hours12 -= 12;
+          }
+        } else if (hours12 === 0) {
+          hours12 = 12;
+        }
+
+        return `${hours12}:${minutes} ${period}`;
+      }
+
+      function updateClock() {
+        const now = new Date();
+        const options = {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric'
+        };
+
+        let hours = now.getHours();
+        const minutes = String(now.getMinutes()).padStart(2, '0');
+        const seconds = String(now.getSeconds()).padStart(2, '0');
+        const ampm = hours >= 12 ? 'P.M.' : 'A.M.';
+        hours = hours % 12 || 12; // Convert to 12-hour format
+
+        const timeString = `${hours}:${minutes}:${seconds} ${ampm}`;
+
+        const dateString = now.toLocaleDateString('en-US', options);
+
+        document.getElementById('clock').innerHTML =
+
+        // TIME AND DATE
+          `${timeString}<br><br>${dateString}`;
+
+        let nearestTime = null;
+        let smallestDiff = Infinity;
+
+        for (const target of targetTimes) {
+          const targetTime = new Date(now);
+          const [targetHours, targetMinutes] = target.split(":");
+          targetTime.setHours(targetHours, targetMinutes, 0, 0); // Set target time
+
+          let diffInSeconds = Math.floor((targetTime - now) / 1000);
+
+          if (diffInSeconds < 0) {
+            targetTime.setDate(targetTime.getDate() + 1);
+            diffInSeconds = Math.floor((targetTime - now) / 1000);
+          }
+
+          if (diffInSeconds < smallestDiff) {
+            smallestDiff = diffInSeconds;
+            nearestTime = target;
+          }
+        }
+
+        if (nearestTime) {
+          const nearestTime12Hour = formatTime12Hour(nearestTime);
+          document.getElementById('countdown').innerHTML =
+
+          // SECONDS UNTIL
+            `${smallestDiff + 1} seconds until ${nearestTime12Hour}`;
+
+          const totalDuration = 50 * 60;
+          const progress = ((totalDuration - smallestDiff) / totalDuration) * 100;
+          document.getElementById('progress-bar-fill').style.width = `${Math.max(0, Math.min(100, progress))}%`;
+        } else {
+          document.getElementById('countdown').innerHTML = "No upcoming times.";
+          document.getElementById('progress-bar-fill').style.width = "0%";
+        }
+      }
+
+      setInterval(updateClock, 1000);
+
+      updateClock();
+    </script>
+  </body>
+</html>

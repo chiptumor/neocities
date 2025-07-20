@@ -1,0 +1,946 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <!-- FAVICON -->
+        <link rel="icon" type="image/png" href="/favicon/favicon-96x96.png" sizes="96x96" />
+        <link rel="icon" type="image/svg+xml" href="/favicon/favicon.svg" />
+        <link rel="shortcut icon" href="/favicon/favicon.ico" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/favicon/apple-touch-icon.png" />
+        <meta name="apple-mobile-web-app-title" content="chiptumor" />
+        <link rel="manifest" href="/favicon/site.webmanifest" />
+
+        <meta http-equiv="Cache-Control" content="no-cache" />
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tabButtons = document.querySelectorAll(".tabButtonSocial");
+                const tabPanes = document.querySelectorAll(".tabBoxSocial");
+
+                tabButtons.forEach((button) => {
+                    button.addEventListener("click", function () {
+                        tabButtons.forEach((btn) => btn.classList.remove("active"));
+                        tabPanes.forEach((pane) => pane.classList.remove("active"));
+
+                        const targetTab = this.getAttribute("data-tab");
+                        this.classList.add("active");
+                        document.getElementById(targetTab).classList.add("active");
+                    });
+                });
+            });
+        </script>
+        <script>
+            document.addEventListener("DOMContentLoaded", function () {
+                const tabButtons = document.querySelectorAll(".tabButtonAbout");
+                const tabPanes = document.querySelectorAll(".tabBoxAbout");
+
+                tabButtons.forEach((button) => {
+                    button.addEventListener("click", function () {
+                        tabButtons.forEach((btn) => btn.classList.remove("active"));
+                        tabPanes.forEach((pane) => pane.classList.remove("active"));
+
+                        const targetTab = this.getAttribute("data-tab");
+                        this.classList.add("active");
+                        document.getElementById(targetTab).classList.add("active");
+                    });
+                });
+            });
+        </script>
+        <script>
+            function toggleQuoteBook() {
+                const el = document.getElementByClass("quoteBook")
+                el.classList.toggle('quoteBookExpand')
+                el.classList.toggle('quoteBookCollapse')
+            }
+        </script>
+        <style name="Default elements">
+            .falseCache {
+                background-image: linear-gradient(180deg, #0008, transparent),
+                    linear-gradient(rgb(var(--r), var(--g), var(--b)), rgb(var(--r), var(--g), var(--b)));
+                border-radius: 10px;
+                max-width: 800px;
+                margin: auto;
+                padding: 5px 40px;
+            }
+            html {
+                scroll-behavior: smooth;
+                background: linear-gradient(135deg, #000, 60%, #a00);
+                background-attachment: fixed;
+                background-size: cover;
+            }
+            body {
+                padding: 5% 10%;
+                text-align: center;
+                color: white;
+            }
+            ul {
+                display: inline-block;
+                text-align: left;
+            }
+
+            img {
+                vertical-align: middle;
+                font-size: 16px;
+            }
+            a {
+                text-decoration: none;
+            }
+        </style>
+        <style>
+            .ranibowSprimkle {
+                background-image: linear-gradient(to left, indigo, blue, green, yellow, orange, red);
+                -webkit-background-clip: text;
+                color: #fff5;
+            }
+        </style>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+        <title>old chiptumor.~ layout</title>
+        <link href="/style.css" rel="stylesheet" type="text/css" media="all" />
+    </head>
+    <body>
+        <div class="box">
+            <p>this page relies on a css file that is updated for a different page. this page only exists as an archive now, and is therefore highly outdated. <a href="/" style="color: white; text-decoration: underline">please check out the new page!</a></p>
+            <p></p>
+        </div>
+        <div class="container">
+            <img class="quotePfp" src="/image/pfp.png" />
+            <div class="quoteBox">
+                <div class="haio">
+                    <span style="animation-delay: -1s">H</span
+                    ><span style="animation-delay: -0.8s">a</span
+                    ><span style="animation-delay: -0.6s">i</span
+                    ><span style="animation-delay: -0.4s">o</span
+                    ><span style="animation-delay: -0.2s">!</span
+                    ><span style="animation-delay: 0s">!</span>
+                </div>
+                <h2>Welcome to my NeoCities!!</h2>
+                <p>
+                    Still not sure what name to go by right now--you can call be <i>Bell,</i> my preferred middle
+                    name--but
+                    <b>you should know me as 'chiptumor' on most sites.</b>
+                </p>
+
+				<p>Check out these drawings of my wife made by cool people!</p>
+                <a href="/wallofwife.html">
+                    <div class="button">
+                        <h2>Wall of Wife</h2>
+                    </div>
+                </a>
+
+                <p>
+                    Formal matter? Email me at
+                    <a href="mailto:tipchumor@gmail.com" style="color: #fff; text-decoration: underline">
+                        tipchumor@gmail.com</a
+                    >!
+                </p>
+
+                <p style="color: #fff8"><i>(Please email me with pictures of your cat. I will 100% reply.)</i></p>
+            </div>
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div class="statusBox">
+            <div style="text-align: left">
+                <div class="statusInfo" style="margin-right: 30px">
+                    <p>(NULL) IS <b>MOVING ON</b>.</p>
+                </div>
+            </div>
+
+            <div class="status">
+                <!-- IF VENT, remove `style="display: none"` -->
+                <div class="headerPseudoButton" style="display: none">
+                    <h2>VENT BELOW</h2>
+                    <p style="margin-bottom: 0">Trigger warnings:</p>
+                    <p style="margin-top: 0">
+                        <i>None</i>
+                    </p>
+                </div>
+                <!-- ↓ WRITE STATUS HERE ↓ -->
+                <p>
+                    last ever status on this page &lt;/3
+                </p>
+                <!-- ↑ WRITE STATUS HERE ↑ -->
+            </div>
+
+            <div style="text-align: right">
+                <div class="statusInfo">
+                    <p>
+                        LATEST STATUS UPDATE:
+                        <b>4/15/2025</b>
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 30px"></div>
+
+        <!-- ABOUT ME -->
+
+        <div class="trainTracks" id="aboutme">
+            <div>
+                <h1>ABOUT ME</h1>
+            </div>
+        </div>
+
+        <div style="height: 80px"></div>
+
+        <div class="tabButtons">
+            <button class="colorBlue tabButtonAbout" data-tab="identity" title="Identity">
+                <img src="/icon/identity.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorPink tabButtonAbout" data-tab="zoologist" title="My wife">
+                <img src="/icon/wife.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorRed tabButtonAbout" data-tab="chiptune" title="Chiptune">
+                <img src="/icon/chiptune.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorYellow tabButtonAbout" data-tab="pixelart" title="Pixel Art">
+                <img src="/icon/pixelart.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorGreen tabButtonAbout" data-tab="games" title="Games">
+                <img src="/icon/games.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorPurple tabButtonAbout" data-tab="funfacts" title="Fun Facts">
+                <img src="/icon/funfacts.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorWhite tabButtonAbout tabButtonClosed active">Close</button>
+        </div>
+
+        <div class="tabBoxes">
+            <div id="identity" class="colorBlue box tabBoxAbout">
+                <img src="/icon/identity.png" class="iconImage" />
+                <div class="headerPseudoButton">
+                    <h2>Identity</h2>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/gender.png" />
+                    <div class="quoteBox genderFlag">
+                        <p>
+                            I'm currently
+                            <a href="https://nonbinary.wiki/wiki/Gender_questioning" style="text-decoration: underline; color: white"><b>questioning,</b></a>
+                            and I have no preference toward how you refer to me!
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/sexuality.png" />
+                    <div class="quoteBox sexualityFlag">
+                        <p>
+                            I'm
+                            <a href="https://lgbtqia.wiki/wiki/Finsexual" style="text-decoration: underline; color: white"><b>finsexual!</b></a>
+                            I'd very much like to
+                            stay out of the dating scene right now, though.
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/tag.png" />
+                    <div class="quoteBox">
+                        <p>I haven't known what name to go by lately! I've been fickle about a few quite recently:</p>
+                        <ul style="margin-top: 0; margin-bottom: 0">
+                            <li>Christy</li>
+                            <li>Jackie</li>
+                            <li>Jennie</li>
+                            <li>Melanie</li>
+                            <li>Marlie</li>
+                        </ul>
+                        <p>
+                            I'm quite dependent on peer input right now. I'm aware that I 'shouldn't let others decide
+                            my name for me,' but I want to know what sounds more accurate to me.
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="zoologist" class="colorPink box tabBoxAbout">
+                <img src="/icon/emoji/wife.png" alt=":JElovewife:" title=":JElovewife:" class="iconImage" />
+                <a href="https://terraria.wiki.gg/wiki/Zoologist">
+                    <div class="button">
+                        <h2>My wife</h2>
+                    </div>
+                </a>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/heart.png" />
+                    <div class="quoteBox">
+                        <p>
+                            I am--as you've been able to tell, I'm sure--OBSESSED with the Zoologist from Terraria. She
+                            is my <em>favorite</em> thing ever.
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/highlight.png" />
+                    <div class="quoteBox">
+                        <p>
+                            If you've made zoologist art in honor of me, <i>please</i> tell me directly so I can put you
+                            on the Wall of Wife and an Instagram Highlight!
+                        </p>
+					</div>
+                </div>
+				<a href="/wallofwife.html">
+					<div class="button">
+						<h2>Instagram Highlight</h2>
+					</div>
+				</a>
+
+            </div>
+
+            <div id="chiptune" class="colorRed box tabBoxAbout">
+                <img src="/icon/chiptune.png" class="iconImage" />
+                <div class="headerPseudoButton">
+                    <h2>Chiptune</h2>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/chip.png" />
+                    <div class="quoteBox">
+                        <p>
+                            I like making chiptune! It's the kind of music you'd hear on old-school consoles or
+                            poor-wet-kitty outdated computers!
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/clock.png" />
+                    <div class="quoteBox">
+                        <p>
+                            I'm a lot better at giving up on things mid-way through making them than I am actually
+                            finishing them.
+                        </p>
+                        <p>
+                            That, combined with my business with other things, like school, family, and social life,
+                            means that uploads are usually scarce; maybe once a month.
+                        </p>
+                        <p>I (will) put WIP's on my blog (when it's up), though!</p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="games" class="colorGreen box tabBoxAbout">
+                <img src="/icon/games.png" class="iconImage" />
+                <div class="headerPseudoButton">
+                    <h2>Games</h2>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/dpad.png" />
+                    <div class="quoteBox">
+                        <p>
+                            I like making chiptune! It's the kind of music you'd hear on old-school consoles or
+                            poor-wet-kitty outdated computers!
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div id="funfacts" class="colorPurple box tabBoxAbout">
+                <img src="/icon/funfacts.png" class="iconImage" />
+                <div class="headerPseudoButton">
+                    <h2>Fun Facts</h2>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/broken-heart.png" />
+                    <div class="quoteBox">
+                        <p>
+                            <b>I am chronically envious!</b>
+                            It disheartens me to hear about things that I'd want to happen to me.
+                            This doesn't necessarily mean I <em>don't</em> want to hear about your accomplishments
+                            or lucky draws, but it could affect me a bit more than you'd think.
+                            Just keeping it in mind is all I'll ask.
+                            <em>This especially (and embarrassingly) applies to relationships!</em>
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/eyedropper.png" />
+                    <div class="quoteBox">
+                        <span>NOTE: MAKE COLLAPSIBLE</span>
+                        <p>
+                            <b>My favorite color is red!</b> It was a few shades of blue for a long while.
+                        </p>
+                        <p>
+                            It started out as cyan; I was assigned to color myself as a police officer in early elementary,
+                            but because I <em>loved</em> Super Mario so much, I thought I'd color it as a Super Mario self-insert.
+                            That's embarrassing, I'm aware, but I never acted on the character I designed.
+                            I only let the color persist as my favorite.
+                        </p>
+                        <p>
+                            That was so, until I realized a few years later that a bright, neon cyan was actually kind of ugly.
+                            I redeveloped it into a more bluer shade of blue over time, still retaining the bright aspect in the back of my mind;
+                            if i had an option between blue and bright blue, I'd pick bright blue.
+                        </p>
+                        <p>
+                            Eventually, I became less picky (or more generic, if you see it that way) about my favorite shade of blue and
+                            simply answered 'blue' when asked what my favorite color was. Light shade, saturated, whatever, s'long as it was blue.
+                        </p>
+                        <p>
+                            Now, since my hyper-obsession with the zoologist, my favorite color skewed my interest toward red, putting blue in second for me.
+                            I've come to terms with the idea that choosing a highly specific flavor of color isn't cringe,
+                            so--and despite the zoologist's hair being more hued toward orange--I decided my favorite color
+                            was a more magenta-based red.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div style="height: 20px"></div>
+
+        <div id="socials" class="trainTracks">
+            <div>
+                <h1>SOCIALS</h1>
+            </div>
+        </div>
+
+        <div style="height: 80px"></div>
+
+        <div class="tabButtons">
+            <button class="colorDark tabButtonSocial" data-tab="discord" title="Discord">
+                <img src="/icon/JEdiscord.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorYellow tabButtonSocial" data-tab="jenmoji" title="Jenmoji">
+                <img src="/icon/jenmoji.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorPink tabButtonSocial" data-tab="instagram" title="Instagram">
+                <img src="/icon/JEinstagram.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorRed tabButtonSocial" data-tab="youtube" title="Youtube">
+                <img src="/icon/JEyoutube.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorOrange tabButtonSocial" data-tab="newgrounds" title="Newgrounds">
+                <img src="/icon/JEnewgrounds.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorRed tabButtonSocial" data-tab="roblox" title="Roblox">
+                <img src="/icon/JEroblox.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorPale tabButtonSocial" data-tab="misc" title="Miscellaneous">
+                <img src="/icon/misc.png" style="width: 32px; height: 32px" />
+            </button>
+            <button class="colorWhite tabButtonSocial tabButtonClosed active">
+                <span style="margin: 0">Close</span>
+            </button>
+        </div>
+
+        <div class="tabBoxes">
+            <!-- DISCORD -->
+
+            <div id="discord" class="colorDark box tabBoxSocial">
+                <img src="/icon/JEdiscord.png" alt=":JEdiscord:" title=":JEdiscord:" class="iconImage" />
+                <a href="https://discord.com/users/1184619891215573042/">
+                    <div class="button">
+                        <h2>Discord</h2>
+                    </div>
+                </a>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/status.png" />
+                    <div class="quoteBox">
+                        <p>I'm most active on Discord and the most likely to respond to you here!</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/dmme.png" />
+                    <div class="quoteBox">
+                        <p>
+                            <strong>Pings preferred, and DM's are open! </strong>
+                            <i>Please</i> tell me what you need, though! <a href="https://nohello.net/en/" style="color: white; text-decoration: underline;">I will NOT respond to 'hey' or 'hello.'</a>
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/nsfw.png" />
+                    <div class="quoteBox">
+                        <p>
+                            Do not hop into my messages with NSFW off the bat. Consider who you're talking to and
+                            whether you'd come off as a pervert before you do anything stupid. I'll let you know what
+                            I'm comfortable with over time.
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/cw.png" />
+                    <div class="quoteBox">
+                        <p>I've moved accounts a few times, so if you've added me from:</p>
+                        <ul style="margin: 0px">
+                            <li>@sleepingisforlosers,</li>
+                            <li>@e__kitch, or</li>
+                            <li>@cod3breaker526,</li>
+                        </ul>
+                        <p>add me here!</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- JENMOJI -->
+
+            <div class="colorYellow box tabBoxSocial" id="jenmoji">
+                <img src="/icon/jemnoji.png" alt=":JEcry:" title=":JEcry:" class="iconImage" />
+                <a href="https://discord.gg/jcK8J2adUD">
+                    <div class="button">
+                        <h2>Jenmoji</h2>
+                    </div>
+                </a>
+
+                <p>NOTE: MOVE TO 'PIXEL ART' IN ABOUT ME</p>
+
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/cat.png" />
+                    <div class="quoteBox">
+                        <p>
+                            I've been working on a bunch of custom emojis 'cause I want to practice a consistent style
+                            and also because I've never really liked the default unicode emoji options (or really anyone
+                            else's emojis).
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/boost.png" />
+                    <div class="quoteBox">
+                        <p>I'm looking for boosts! I'd <em>highly</em> appreciate a level or two!</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/scroll.png" />
+                    <div class="quoteBox">
+                        <p>If you do join, please:</p>
+                        <ul style="margin-top: 0px">
+                            <li>Be respectful,</li>
+                            <li>Use common sense, and</li>
+                            <li>
+                                Make sure your profile isn't NSFW!
+                                <ul>
+                                    <li>
+                                        I'm okay with suggestive profiles, but if there's outright
+                                        <i>(including but not limited to)</i> tits in your PFP or banner, I'll kick you
+                                        and DM you about it.
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- IMAGE EXAMPLES -->
+
+                <h2>Here's a few from my server!</h2>
+                <p style="max-width: 352px; margin: 0 auto; line-height: 72px">
+                    <img
+                        src="/icon/emoji/JEscoff.png"
+                        alt=":JEscoff:"
+                        title=":JEscoff:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEclock.gif"
+                        alt=":JEclock:"
+                        title=":JEclock:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEexcuseme.png"
+                        alt=":JEexcuseme:"
+                        title=":JEexcuseme:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEretweet.png"
+                        alt=":JEretweet:"
+                        title=":JEretweet:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEpetpet.gif"
+                        alt=":JEpetpet:"
+                        title=":JEpetpet:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEwifeparty.gif"
+                        alt=":JEwifeparty:"
+                        title=":JEwifeparty:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEwhoa.png"
+                        alt=":JEwhoa:"
+                        title=":JEwhoa:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEtomato.png"
+                        alt=":JEtomato:"
+                        title=":JEtomato:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEblink.gif"
+                        alt=":JEblink:"
+                        title=":JEblink:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEqmark.png"
+                        alt=":JEqmark:"
+                        title=":JEqmark:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEjowels.png"
+                        alt=":JEjowels:"
+                        title=":JEjowels:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEcreature.png"
+                        alt=":JEcreature:"
+                        title=":JEcreature:"
+                        style="width: 64px; height: 64px" />
+                    <img src="/icon/emoji/JEbeg.png" alt=":JEbeg:" title=":JEbeg:" style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEcloseted.png"
+                        alt=":JEcloseted:"
+                        title=":JEcloseted:"
+                        style="width: 64px; height: 64px" />
+                    <img
+                        src="/icon/emoji/JEplink.gif"
+                        alt=":JEplink:"
+                        title=":JEplink:"
+                        style="width: 64px; height: 64px" />
+                </p>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/suggestion.png" />
+                    <div class="quoteBox">
+                        <p>
+                            <strong>I do take suggestions!</strong> Feel free to drop something in the suggestions
+                            channel and I'll 100% check it out!
+                        </p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/bird.png" />
+                    <div class="quoteBox">
+                        <p>
+                            <strong>I'm also working on my own emoji design to replace Twemoji where possible! </strong>
+                            If youre interested in that<i
+                                >--and I have no doubts you arent, but I'd appreciate the attention--</i
+                            >please come say something about it!
+                        </p>
+                    </div>
+                </div>
+                <a href="/jenmoji.html">
+                    <div class="button">
+                        <p>I also have a website for displaying Jenmoji's progress if you only care about that, lol</p>
+                    </div>
+                </a>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/jennie.png" />
+                    <div class="quoteBox">
+                        <p>
+                            Fun fact: The reason it's called Jenniemotes and Jenmoji is because the little yellow
+                            creature you see is named Jennie.
+                        </p>
+                        <p style="color: #fff8; margin-top: 0px"><i> Jennie also has an evil counterpart... </i></p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- INSTAGRAM -->
+
+            <div id="instagram" class="colorPink box tabBoxSocial">
+                <img src="/icon/JEinstagram.png" alt=":JEinstagram:" title=":JEinstagram:" class="iconImage" />
+                <a href="https://instagram.com/chiptumor/">
+                    <div class="button">
+                        <h2>Instagram</h2>
+                    </div>
+                </a>
+
+                <p>NOTE: MOVE TO 'WIFE' IN ABOUT ME</p>
+
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/wife.png" />
+                    <div class="quoteBox">
+                        <p>I post others' art of my fictional wife here among memes i find funny.</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/alert.png" />
+                    <div class="quoteBox">
+                        <p>
+                            <i>I DO NOT FIND EXPOSURE EQUAL TO PAYMENT!!</i> I post these to show the world my love of
+                            my wife!<br />
+                            <strong>PLEASE</strong> contact me if you don't want your art on my page or if I miscredit
+                            you or someone else.<br />
+                            Same goes for your memes and whatever else I might post here.
+                        </p>
+                    </div>
+                </div>
+
+                <div style="height: 20px"></div>
+
+                <div style="white-space: nowrap">
+                    <img src="image/instagram/meme1.png" width="253px" height="360px" class="smoothImg" /><img
+                        src="image/instagram/zoologist1.png"
+                        width="360px"
+                        height="360px"
+                        title="Velwurt on Twitter"
+                        class="smoothImg" />
+                    <br />
+                    <img
+                        src="image/instagram/zoologist2.png"
+                        width="322px"
+                        height="360px"
+                        title="Boss_Lee_S2 on Twitter"
+                        class="smoothImg" /><img
+                        src="image/instagram/meme2.jpg"
+                        width="291px"
+                        height="360px"
+                        class="smoothImg" />
+                </div>
+            </div>
+
+            <!-- YOUTUBE -->
+
+            <div id="youtube" class="colorRed box tabBoxSocial">
+                <img src="/icon/JEyoutube.png" alt=":JEyoutube:" title=":JEyoutube:" class="iconImage" />
+                <a href="https://youtube.com/@chiptumor/">
+                    <div class="button">
+                        <h2>YouTube</h2>
+                    </div>
+                </a>
+
+                <p>NOTE: MOVE TO 'CHIPTUNE' IN ABOUT ME</p>
+
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/square.png" />
+                    <div class="quoteBox">
+                        <p>
+                            <strong>I make and post chiptune here!</strong>
+                            It's the kind of stuff you'd hear on old consoles or poor, outdated, wet-kitty computers--<i
+                                >please</i
+                            >
+                            check it out!
+                        </p>
+                    </div>
+                </div>
+                <h2>MY LATEST:</h2>
+                <iframe
+                    width="560"
+                    height="315"
+                    src="https://www.youtube.com/embed/dj1mVLkvgU8"
+                    alt="Your browser doesn't support this. This is an iframe to: https://www.youtube.com/embed/dj1mVLkvgU8"
+                    title="YouTube Embed"
+                    allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin"
+                    allowfullscreen
+                    style="border: 5px solid rgb(var(--r), var(--g), var(--b)); border-radius: 30px">
+                </iframe>
+            </div>
+
+            <!-- NEWGROUNDS -->
+
+            <div id="newgrounds" class="colorOrange box tabBoxSocial">
+                <img src="/icon/JEnewgrounds.png" alt=":JEnewgrounds:" title=":JEnewgrounds:" class="iconImage" />
+                <a href="https://chiptumor.newgrounds.com/">
+                    <div class="button">
+                        <h2>Newgrounds</h2>
+                    </div>
+                </a>
+
+                <p>NOTE: MOVE TO 'CHIPTUNE' IN ABOUT ME</p>
+
+                <div class="container">
+                    <img class="quoteImg" src="icon/quote/wink.png" />
+                    <div class="quoteBox">
+                        <p>I also post valid uploads here if you prefer Newgrounds.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ROBLOX -->
+
+            <div class="colorRed box tabBoxSocial" id="roblox">
+                <img src="icon/JEroblox.png" alt=":JEroblox:" title=":JEroblox:" class="iconImage" />
+                <a href="https://www.roblox.com/users/1375134678/profile/">
+                    <div class="button">
+                        <h2>Roblox</h2>
+                    </div>
+                </a>
+
+                <p>NOTE: MOVE TO 'GAMES' IN ABOUT ME</p>
+
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/kb.png" />
+                    <div class="quoteBox">
+                        <p>I play very few games, but if you ask me to, I'll play mostly anything with you!</p>
+                    </div>
+                </div>
+                <div class="container">
+                    <img class="quoteImg" src="/icon/quote/tired.png" />
+                    <div class="quoteBox">
+                        <p>Please don't add me if you're one of those 'studio' accounts. I'll maul you.</p>
+                    </div>
+                </div>
+
+                <h2>GAMES I'VE BEEN PLAYING RECENTLY:</h2>
+
+                <p>to be added &gt;_o</p>
+
+                <!-- sonic.exe the disaster -->
+                <!-- natural disaster survival -->
+                <!-- forsaken -->
+            </div>
+
+            <!-- MISC WEBSITES -->
+
+            <div class="colorPale box tabBoxSocial" id="misc">
+                <h2>Other websites</h2>
+                <div class="container">
+                    <p style="max-width: 400px">
+                        I don't tend to use other websites, but just for me to keep track of (and for the curious or
+                        needy that need them), here are all my other socials that I can think to put here.
+                    </p>
+                </div>
+
+                <!-- TWITTER -->
+                <!-- I don't post here often anymore because it gave me severe artist envy to use, but I write things I find important or funny when I do. -->
+
+                <a href="https://twitter.com/chiptumor/">
+                    <div class="miscbutton">
+                        <h2>
+                            <img
+                                src="/icon/JEtwitter.png"
+                                alt=":JEtwitter:"
+                                title=":JEtwitter:"
+                                style="width: 64px; height: 64px" />
+                            Twitter
+                        </h2>
+                    </div>
+                </a>
+
+                <!-- BLUESKY -->
+                <!-- I made an account here to move from Twitter like everyone else, but Bluesky didn't really suffice, so I gave up on it along with Twitter. -->
+
+                <a href="https://chiptumor.bsky.social/">
+                    <div class="miscbutton">
+                        <h2>
+                            <img
+                                src="/icon/JEbluesky.png"
+                                alt=":JEbluesky:"
+                                title=":JEbluesky:"
+                                style="width: 64px; height: 64px" />
+                            Bluesky
+                        </h2>
+                    </div>
+                </a>
+
+                <!-- STEAM  -->
+                <!-- Most of my playtime is from my brother, namely the Binding of Isaac and Terraria, but I play some Valve games and Gmod occasionally. -->
+
+                <a href="https://steamcommunity.com/id/chiptumor/">
+                    <div class="miscbutton">
+                        <h2>
+                            <img
+                                src="/icon/JEsteam.png"
+                                alt=":JEsteam:"
+                                title=":JEsteam:"
+                                style="width: 64px; height: 64px" />
+                            Steam
+                        </h2>
+                    </div>
+                </a>
+
+                <!-- XBOX  -->
+                <!-- I scarcely play games on Xbox, but I like to play N++ or the Fractured but Whole while I'm eatin' dinner in my living room. -->
+
+                <a href="https://www.xbox.com/en-US/play/user/chiptumor/">
+                    <div class="miscbutton">
+                        <h2>
+                            <img
+                                src="/icon/JExbox.png"
+                                alt=":JExbox:"
+                                title=":JExbox:"
+                                style="width: 64px; height: 64px" />
+                            Xbox
+                        </h2>
+                    </div>
+                </a>
+
+                <!-- MEDAL -->
+                <!-- I use this to clip some funny or peculiar things, but I never intentionally post anything, so most videos here will be completely contextless. -->
+
+                <a href="https://medal.tv/u/chiptumor/" title="">
+                    <div class="miscbutton">
+                        <h2>
+                            <img
+                                src="/icon/JEmedal.png"
+                                alt=":JEmedal:"
+                                title=":JEmedal:"
+                                style="width: 64px; height: 64px" />
+                            Medal
+                        </h2>
+                    </div>
+                </a>
+
+                <!-- REALWORLD -->
+                <!-- I like to use this occasionally, being someone who loves cursor design and old-school forums. -->
+
+                <a href="http://www.rw-designer.com/user/118474/">
+                    <div class="miscbutton">
+                        <h2>
+                            <img
+                                src="/icon/JErealworld.png"
+                                alt=":JErealworld:"
+                                title=":JErealworld:"
+                                style="width: 64px; height: 64px" />
+                            RealWorld
+                        </h2>
+                    </div>
+                </a>
+            </div>
+        </div>
+
+        <div style="height: 20px; width: 100%"></div>
+
+        <div class="container">
+            <img class="quotePfp" src="image/pfp.png" />
+            <div class="quoteBox">
+                <p>
+                    I'm not adapting this website to mobile any more than I have to. Zoom in if you're having trouble
+                    reading things, or zoom out if the layout's screwed up.
+                </p>
+            </div>
+        </div>
+
+        <div style="height: 80px"></div>
+
+        <div style="whitespace: none;">
+            <div style="
+                width: 220px;
+                margin-left: 50%;
+                padding-left: 20px;
+                background-color: #aaaaaa;
+                border-radius: 0 10px 10px 0;
+                transform: translateX(-70px) translateY(100px);
+            ">
+                <a href="https://neocities.org">
+                    <img src="/neocities.png" class="smoothImg" alt="Hosted by Neocities" title="Thank you, Neocities!" />
+                </a>
+            </div>
+
+            <img src="/image/cat-squish.gif" class="smoothImg" style="
+                height: 180px;
+                border-style: ridge;
+                border-color: rgb(var(--r), var(--g), var(--b));
+                border-width: 5px;
+                transform: translateX(-100px) translateY(-30px) rotate(20deg) skewY(-10deg);
+            " />
+        </div>
+
+        <!-- JUMPBAR -->
+
+        <!--<div id="jumpbar">-->
+        <!--    <a href="#" title="Jump to Top">-->
+        <!--        <div class="jumpButton colorWhite">-->
+        <!--            <img src="/icon/quote/top.png" class="jumpButtonIcon" />-->
+        <!--        </div>-->
+        <!--    </a>-->
+
+        <!--    <a href="#aboutme" title="Jump to About Me">-->
+        <!--        <div class="jumpButton colorYellow">-->
+        <!--            <img src="/icon/quote/mouse.png" class="jumpButtonIcon" />-->
+        <!--        </div>-->
+        <!--    </a>-->
+
+        <!--    <a href="#socials" title="Jump to Socials">-->
+        <!--        <div class="jumpButton colorBlue">-->
+        <!--            <img src="/icon/quote/socials.png" class="jumpButtonIcon" />-->
+        <!--        </div>-->
+        <!--    </a>-->
+        <!--</div>-->
+    </body>
+</html>

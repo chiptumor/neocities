@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <style>
+      html {
+        height: 100vh;
+        background-color: #000;
+        margin: 0px;
+      }
+
+      @font-face {
+        font-family: "Fixedsys";
+        src: url("https://chiptumor.neocities.org/font.ttf") format("truetype");
+      }
+
+      .inputStyle {
+        transform: translate(5vw, 5vh);
+        width: calc(90vw - 5px);
+        height: calc(90vh - 5px);
+        padding: 5px;
+        resize: none;
+
+        border: none;
+        border-radius: 5px;
+        background-color: #222;
+        color: #FFF;
+        font-family: "Fixedsys", monospace;
+        font-size: 16px;
+        outline: 2px solid #FFFFFF33;
+      }
+    </style>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <title>MinPad</title>
+  </head>
+  <body style="margin: 0">
+    <textarea
+      id="chatinput"
+      type="text"
+      minlength="1"
+      autofocus="True"
+      class="inputStyle"></textarea>
+  </body>
+</html>

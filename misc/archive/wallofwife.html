@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html>
+  <head><script nonce="9TDB9LVoi3Pzae3yHKQJGw" src="https://localhost:50215/resources/setup.js"></script><script nonce="ZZZuzHPb/qXPIPAe7maV6w" src="https://localhost:50215/resources/frontend.min.js" server="https://localhost:50215" id="__dld-frontend__" async defer></script>
+    <style>
+      @font-face {
+        font-family: "Fixedsys";
+        src: url("/font.ttf") format("truetype");
+      }
+      img{white-space:pre}
+      body {
+        padding: 5% 10%;
+        background: linear-gradient(135deg, #000, 60%, #ff0055);
+        background-attachment: fixed;
+        background-size: 200% 200%;
+        animation: gradientMove 20s cubic-bezier(0.445, 0.050, 0.550, 0.950) infinite;
+        color: white;
+        text-align: center;
+      }
+      html {
+        font-family: "Fixedsys", monospace;
+      }
+
+      h1, h2, h3, h4, h5 {
+        font-weight: normal;
+      }
+      h1 {
+        font-size: 64px;
+      }
+      h2 {
+        font-size: 32px;
+      }
+      @keyframes gradientMove {
+        0% {
+          background-position: 10% 10%;
+        }
+        50% {
+          background-position: 90% 90%;
+        }
+        100% {
+          background-position: 10% 10%;
+        }
+      }
+      a {
+        color: #FFF;
+      }
+
+    /* LINK BUTTON DESIGN */
+
+      .linkButton {
+        position: fixed;
+        left: 10px;
+        top: 10px;
+        padding: 0px 15px;
+        border: none;
+        border-radius: 10px;
+        background: linear-gradient(0deg, #00000022, 50%, #00000088, 97%, transparent), #ff0055;
+        text-align: center;
+        color: #FFFFFF;
+        text-shadow: #ff0055 0 1px 3px, #FFFFFF44 0 1px 3px;
+      }
+
+      .linkButton h2 {
+        margin: 10px 0px;
+        white-space: nowrap;
+      }
+
+      .linkButton:hover {
+        border: 3px solid #ff0055;
+        border-radius: 13px;
+        background: linear-gradient(#FFFFFF66, #FFFFFFFF), #ff0055;
+        color: #000000CC;
+        text-shadow: #ff0055 0 -1px 3px, #00000088 0 -1px 3px;
+        margin: -3px;
+      }
+
+      .linkButton:active {
+        border: 3px solid #ff0055;
+        border-radius: 13px;
+        background: linear-gradient(#000000FF, #00000066), #ff0055;
+        color: #FFFFFF;
+        text-shadow: none;
+        margin: -3px;
+      }
+
+    /* QUOTE-LIKE BOXES FOR BETTER TEXT ORGANIZATION */
+
+      .container {
+        display: flex;
+        align-items: flex-start;
+        justify-content: center;
+        margin: 20px;
+      }
+
+      .quoteBox {
+        padding: 1px 20px;
+        width: 400px;
+        position: relative;
+        vertical-align: top;
+
+        border-left: 7px solid #ff0055;
+        background-color: #ff005555;
+        border-top-right-radius: 7px;
+        border-bottom-right-radius: 7px;
+        border-top-left-radius: 3px;
+        border-bottom-left-radius: 3px;
+        color: #FFFFFF;
+      }
+
+      .quoteImg {
+        display: inline-block;
+        vertical-align: top;
+        width: 64px; height: 64px;
+        margin-right: 10px;
+        border-radius: 5px;
+      }
+
+    /* THE MUSEUM */
+
+      .room {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+      }
+      .wall {
+        margin: 20px;
+      }
+      .art {
+        border-color: #ff0055;
+        border-style: ridge;
+        border-width: 10px;
+        box-shadow: 0 10px 50px 5px #ff005555;
+      }
+    </style>
+    <title>Wall of Wife</title>
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <a href="../">
+      <div class="linkButton">
+        <h2>
+          ../
+        </h2>
+      </div>
+    </a>
+    <div class="container">
+      <img class="quoteImg" src="image/pfp.png">
+      <div class="quoteBox" style="width: 600px">
+        <h2>Welcome to the Wall of Wife!</h2>
+        <p>This is a collection of illustrations made of my wife made upon my request, commission, or generally in honor of me!</p>
+      </div>
+    </div>
+
+    <div class="room">
+
+      <figure class="wall">
+        <img class="art" src="/wallofwife/monej_shimmer_3-20-25.png" style="height: 300px" />
+        <figcaption><a href="https://instagram.com/kissyboos/">Shimmer Zoologist by Monej</a></figcaption>
+        <figcaption>March 20th, 2025</figcaption>
+      </figure>
+
+      <figure class="wall">
+        <img class="art" src="/wallofwife/monej_normal_3-6-25.png" style="height: 300px" />
+        <figcaption><a href="https://instagram.com/kissyboos/">Zoologist by Monej</a></figcaption>
+        <figcaption>March 6th, 2025</figcaption>
+      </figure>
+
+      <figure class="wall">
+        <img class="art" src="/wallofwife/monej_cured_2-2-25.jpeg" style="height: 300px" />
+        <figcaption><a href="https://instagram.com/kissyboos/">Cured Zoologist by Monej</a></figcaption>
+        <figcaption>February 2nd, 2025</figcaption>
+      </figure>
+
+      <figure class="wall">
+        <img class="art" src="/wallofwife/nick_normal_unknown-date.png" style="height: 300px" />
+        <figcaption><a href="https://fussyfelidae.bsky.social/">Zoologist by Nick</a></figcaption>
+        <figcaption><em>Unknown date</em></figcaption>
+      </figure>
+
+    </div>
+  </body>
+</html>
