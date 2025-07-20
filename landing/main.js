@@ -1,24 +1,33 @@
 // document.body.style.backgroundImage = wallpapers[Math.floor(Math.random() * comments.array.length)];
 
 const button = document.getElementById("shortcut"); // shortcut button
+const terminal = document.getElementById("terminal"); // terminal window
+const overlay = document.getElementById("black"); // black overlay
 let comment = "";
 
 const delay = ms => new Promise(res => setTimeout(res, ms)); // delay function
 const shortcut = async function() {
     button.removeEventListener("click", shortcut); // clicking on it more than once does nothing now
+    button.classList = "selected"; // highlight shortcut for a moment
     document.body.style.cursor = "progress"; // fake loading cursor
     await delay(1000); // wait 1 sec
     document.body.className = "open"; // make window and taskbar icon visible
+    button.classList = ""; // unhilight shortcut
     document.body.style.cursor = "default"; // set cursor back
     await delay(250); document.body.style.cursor = "wait"; // wait, hold on, lets do some stuff
     const xml = await gatherTheShits(); // parse xml
     document.body.style.cursor = "default"; // okay, cursor default again
     await logTheShits(xml); // show stuff on terminal
+    // phony common fullscreen visual bug
+    overlay.classList = "visible"; await delay(1000); overlay.classList = ""; await delay(100);
+    overlay.classList = "visible"; await delay(250); overlay.classList = ""; await delay(50);
+    terminal.innerText += "Redirecting...";
+    overlay.classList = "visible"; await delay(100); overlay.classList = ""; await delay(250);
+    overlay.classList = "visible"; await delay(1500);
     window.location.href = "https://chiptumor.github.io/neocities"; // redirect
 };
 
 async function gatherTheShits() {
-    const terminal = document.getElementById("terminal"); // terminal window
 
     const comments = {};
     comments.file = await fetch("comments.json"); // get comments.json
@@ -46,4 +55,4 @@ async function logTheShits(nodes) {
     }
 }
 
-button.addEventListener("click", shortcut); // listen 4 a click...
+button.addEventListener("dblclick", shortcut); // listen 4 2 click...

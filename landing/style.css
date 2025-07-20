@@ -3,15 +3,29 @@
     src: url("Segoe UI.ttf");
 } */
 
+
 body {
     padding: 0;
     margin: 0;
     overflow: hidden;
 
     color: white;
+    background-color: black;
+
     background-image: linear-gradient(135deg, #000, 60%, #a00);
     background-attachment: fixed;
     background-size: cover;
+}
+
+#wrapper {
+    width: fit-content;
+    height: fit-content;
+    min-width: 100vw;
+    min-height: 100vh;
+
+    margin: 0;
+    padding: 0;
+    top: 0;
 }
 
 #shortcut {
@@ -61,6 +75,7 @@ body {
 
     &:hover {
         padding: 0;
+
         background-color: #a6caf031;
         border: 1px solid #a6caf075;
         outline: 1px solid #a6caf031;
@@ -72,17 +87,20 @@ body {
         background-color: #a6caf060;
         border: 1px solid #a6caf09B;
         outline: 1px solid #a6caf060;
-        /* originally had some plans to make the shortcut button more accurate, but eh
-        &:hover {
-            background-color: #a6caf054;
-            border: 1px solid #a6caf090;
-            outline: 1px solid #a6caf054;
-        } */
+    }
+
+    &.selected {
+        padding: 0;
+
+        background-color: #a6caf054;
+        border: 1px solid #a6caf090;
+        outline: 1px solid #a6caf054;
     }
 }
 
 #taskbar {
     display: flex;
+    column-gap: 1px;
     width: 100%;
     height: 40px;
     position: absolute;
@@ -237,5 +255,21 @@ body.open {
     & > #window {
         transform: none;
         opacity: 1;
+    }
+}
+
+#black {
+    width: 100vw;
+    height: 100vh;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    pointer-events: none;
+
+    &.visible {
+        background-color: black;
     }
 }
