@@ -1,4 +1,4 @@
-document.body.style.backgroundImage = [Math.floor(Math.random() * comments.array.length)];
+// document.body.style.backgroundImage = wallpapers[Math.floor(Math.random() * comments.array.length)];
 
 const button = document.getElementById("shortcut"); // shortcut button
 let comment = "";
@@ -13,43 +13,37 @@ const shortcut = async function() {
     await delay(250); document.body.style.cursor = "wait"; // wait, hold on, lets do some stuff
     const xml = await gatherTheShits(); // parse xml
     document.body.style.cursor = "default"; // okay, cursor default again
-    await logTheShits(xml);
-    window.location.href = "https://chiptumor.github.io/neocities";
+    await logTheShits(xml); // show stuff on terminal
+    window.location.href = "https://chiptumor.github.io/neocities"; // redirect
 };
 
 async function gatherTheShits() {
-    const terminal = document.getElementById("terminal");
+    const terminal = document.getElementById("terminal"); // terminal window
 
     const comments = {};
-    comments.file = await fetch("comments.json");
-    comments.array = await comments.file.json();
-    comment = comments.array[Math.floor(Math.random() * comments.array.length)];
+    comments.file = await fetch("comments.json"); // get comments.json
+    comments.array = await comments.file.json(); // use comments.json as a json
+    comment = comments.array[Math.floor(Math.random() * comments.array.length)]; // get random comment
 
-    const terminalXml = await fetch("terminal.xml");
-    const response = await terminalXml.text();
-    const withComment = response.replace("[comment]", comment);
-    const parser = new DOMParser();
-    const xml = parser.parseFromString(`<root>${withComment}</root>`, "text/xml");
-    return xml.documentElement.childNodes;
+    const terminalXml = await fetch("terminal.xml"); // get terminal.xml
+    const response = await terminalXml.text(); // get result as text
+    const withComment = response.replace("[comment]", comment); // replace [comment] with random comment
+    const parser = new DOMParser(); // parser for xml
+    const xml = parser.parseFromString(`<root>${withComment}</root>`, "text/xml"); // parse xml with surrounding root node
+    return xml.documentElement.childNodes; // return xml object
 }
 
 async function logTheShits(nodes) {
-    for (const node of nodes) {
-        if (node.nodeType === Node.ELEMENT_NODE) {
+    for (const node of nodes) { // 'for each node:'
+        if (node.nodeType === Node.ELEMENT_NODE) { // if node is an element
             switch (node.tagName) {
-                case "log":
-                    let text = node.textContent;
-                    /*if (text.includes("[comment]")) {
-                        text = text.replace("[comment]", comment);
-                    }*/
-                    terminal.textContent += text + "\n";
-                break; case "wait":
-                    const time = parseFloat(node.textContent) * 1000;
-                    await delay(time);
-                break;
+                case "log": // if node is log
+                    terminal.textContent += node.textContent + "\n"; break; // put dat text in da terminal
+                case "wait":
+                    await delay(parseFloat(node.textContent) * 1000); break; // wait alotted seconds
             }
         }
     }
 }
 
-button.addEventListener("click", shortcut);
+button.addEventListener("click", shortcut); // listen 4 a click...
