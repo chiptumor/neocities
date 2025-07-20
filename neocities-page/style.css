@@ -10,6 +10,8 @@ body {
 
     color: white;
     background-image: linear-gradient(135deg, #000, 60%, #a00);
+    background-attachment: fixed;
+    background-size: cover;
 }
 
 #shortcut {
