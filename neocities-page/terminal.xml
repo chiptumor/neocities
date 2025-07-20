@@ -1,0 +1,20 @@
+<log>chiptumor.neocities.org</log><wait>0.25</wait>
+<log>Looking up localhost...</log><wait>0.1</wait>
+<log>Connecting to localhost...</log><wait>0.5</wait>
+<log>Waiting for chiptumor.neocities.org...</log><wait>1.0</wait>
+<log>Transferring data from chiptumor.neocities.org...</log><wait>0.5</wait>
+<log>Looking up localhost...</log><wait>0.1</wait>
+<log>Connecting to localhost...</log><wait>0.5</wait>
+<log>Looking up localhost...</log><wait>0.1</wait>
+<log>Connecting to localhost...</log><wait>1</wait>
+<log>
+chiptumor.github.io</log><wait>0.25</wait>
+<log>Parameters: {
+  "reference": "chiptumor.neocities.org",
+  "token": 3,
+  "comment": "[comment]"
+}</log><wait>0.0</wait>
+<log>Transferring data from chiptumor.github.io...</log><wait>0.5</wait>
+<log>Waiting for chiptumor.github.io...</log><wait>0.1</wait>
+<log>Transferring data from chiptumor.github.io...</log><wait>0.5</wait>
+<log>Ready</log><wait>0.25</wait>
