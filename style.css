@@ -1,0 +1,133 @@
+body {
+	padding: 100px 50px;
+	margin: 0;
+
+	background-image: linear-gradient(to bottom right, #42070e, 70%, #e9263d);
+	background-size: cover;
+	background-attachment: fixed;
+
+	color: white;
+
+	font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+	&::selection {
+		background-color: white;
+		color: #42070e;
+	}
+}
+
+#welcome {
+	& > ul.haio {
+		font-size: 64px;
+		font-weight: bold;
+		margin: 0;
+		padding-left: 0;
+		& > li {
+			display: inline-block;
+		}
+	}
+}
+
+#grid {
+	display: grid;
+	grid-template-areas:
+		"banner banner banner"
+		"welcome welcome status"
+		"identity socials socials"
+		"todo todo todo";
+	grid-template-columns: 4fr 1fr 4fr;
+	grid-gap: 10px;
+
+	& > #banner { grid-area: banner }
+	& > #welcome { grid-area: welcome }
+	& > #status { grid-area: status }
+	& > #identity { grid-area: identity }
+	& > #socials { grid-area: socials }
+	& > #todo { grid-area: todo }
+
+	& div.box {
+		padding: 0 16px;
+		background-image: linear-gradient(to bottom right, #250206, 70%, #970315);
+		background-size: cover;
+		background-attachment: fixed;
+
+		border: solid 3px #e9263d;
+	}
+
+	& > #status {
+		&::before {
+			--size: 6px;
+			content: "";
+			position: relative;
+			top: calc(var(--size) - 0px);
+			left: calc(6px - var(--size));
+			width: 0;
+			height: 0;
+			margin: calc(0px - var(--size)) 0 0 calc(0px - var(--size));
+			border-style: solid;
+			border-width: var(--size) 0 0 var(--size);
+			border-color: #e9263d transparent transparent transparent;
+		}
+
+		& > div {
+			padding: 3px;
+			& > div.feeling {
+				height: fit-content;
+				& > span {
+					max-width: fit-content;
+					background-color: #e9263d;
+					padding: 0 5px;
+				}
+			}
+			& > div.last-updated {
+				height: fit-content;
+				cursor: default;
+				& > span {
+					max-width: fit-content;
+					background-color: #e9263d;
+					padding: 0 5px;
+					float: right;
+
+					&.date {
+						display: block;
+					}
+					&.fuzzy {
+						display: none;
+					}
+				}
+
+				&:hover {
+					& > span.date {
+						display: none;
+					}
+					& > span.fuzzy {
+						display: block;
+					}
+				}
+			}
+
+			& > div.content {
+				padding: 8px 16px;
+			}
+		}
+
+		display: grid;
+		max-height: fit-content;
+		grid-auto-rows: min-content max-content min-content;
+	}
+}
+
+@media (max-width: 600px) {
+	#grid {
+		grid-template-areas:
+			"banner" "welcome" "status" "identity" "socials";
+		grid-template-columns: 1fr;
+
+		& > #status {
+			&::before {
+				--size: 6px;
+				border: none;
+			}
+		}
+	}
+}

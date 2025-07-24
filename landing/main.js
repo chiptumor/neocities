@@ -7,7 +7,7 @@ let comment = "";
 
 const delay = ms => new Promise(res => setTimeout(res, ms)); // delay function
 const shortcut = async function() {
-    button.removeEventListener("click", shortcut); // clicking on it more than once does nothing now
+    button.removeEventListener("click", shortcut); // clicking on it does nothing anymore
     button.classList = "selected"; // highlight shortcut for a moment
     document.body.style.cursor = "progress"; // fake loading cursor
     await delay(1000); // wait 1 sec
@@ -18,17 +18,15 @@ const shortcut = async function() {
     const xml = await gatherTheShits(); // parse xml
     document.body.style.cursor = "default"; // okay, cursor default again
     await logTheShits(xml); // show stuff on terminal
-    // phony common fullscreen visual bug
+    // phony visual bug
     overlay.classList = "visible"; await delay(1000); overlay.classList = ""; await delay(100);
     overlay.classList = "visible"; await delay(250); overlay.classList = ""; await delay(50);
-    terminal.innerText += "Redirecting...";
-    overlay.classList = "visible"; await delay(100); overlay.classList = ""; await delay(250);
-    overlay.classList = "visible"; await delay(1500);
+    terminal.innerText += "Redirecting..."; await delay(250);
+    overlay.classList = "visible";
     window.location.href = "https://chiptumor.github.io/neocities"; // redirect
 };
 
 async function gatherTheShits() {
-
     const comments = {};
     comments.file = await fetch("comments.json"); // get comments.json
     comments.array = await comments.file.json(); // use comments.json as a json
