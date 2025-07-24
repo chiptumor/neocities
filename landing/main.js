@@ -7,7 +7,6 @@ let comment = "";
 
 const delay = ms => new Promise(res => setTimeout(res, ms)); // delay function
 const shortcut = async function() {
-    button.removeEventListener("click", shortcut); // clicking on it does nothing anymore
     button.classList = "selected"; // highlight shortcut for a moment
     document.body.style.cursor = "progress"; // fake loading cursor
     await delay(1000); // wait 1 sec
@@ -15,18 +14,25 @@ const shortcut = async function() {
     button.classList = ""; // unhilight shortcut
     document.body.style.cursor = "default"; // set cursor back
     await delay(250); document.body.style.cursor = "wait"; // wait, hold on, lets do some stuff
-    const xml = await gatherTheShits(); // parse xml
-    document.body.style.cursor = "default"; // okay, cursor default again
-    await logTheShits(xml); // show stuff on terminal
-    // phony visual bug
-    overlay.classList = "visible"; await delay(1000); overlay.classList = ""; await delay(100);
-    overlay.classList = "visible"; await delay(250); overlay.classList = ""; await delay(50);
-    terminal.innerText += "Redirecting..."; await delay(250);
-    overlay.classList = "visible";
-    window.location.href = "https://chiptumor.github.io/neocities"; // redirect
+	var xml;
+	try {
+		xml = await gatherXmlInfo(); // parse xml
+		document.body.style.cursor = "default"; // okay, cursor default again
+		await logXml(xml); // show stuff on terminal
+		redirect();
+	} catch (e) {
+		terminal.innerText += "Uh oh! Error encountered:\n" +
+			"\n\tmessage: " + e.message +
+			"\n\tfileName: " + e.fileName +
+			"\n\tlineNumber: " + e.lineNumber +
+			"\n\tcolumnNumber: " + e.columnNumber +
+			"\n\nRefresh the page and, if it happens again, take a screenie and show me!\nOtherwise, *click to continue.*\n";
+		document.body.style.cursor = "default"; // okay, cursor default again
+		terminal.addEventListener("click", redirect);
+	}
 };
 
-async function gatherTheShits() {
+async function gatherXmlInfo() {
     const comments = {};
     comments.file = await fetch("comments.json"); // get comments.json
     comments.array = await comments.file.json(); // use comments.json as a json
@@ -40,7 +46,7 @@ async function gatherTheShits() {
     return xml.documentElement.childNodes; // return xml object
 }
 
-async function logTheShits(nodes) {
+async function logXml(nodes) {
     for (const node of nodes) { // 'for each node:'
         if (node.nodeType === Node.ELEMENT_NODE) { // if node is an element
             switch (node.tagName) {
@@ -53,4 +59,12 @@ async function logTheShits(nodes) {
     }
 }
 
-button.addEventListener("dblclick", shortcut); // listen 4 2 click...
+async function redirect() {
+    overlay.classList = "visible"; await delay(1000); overlay.classList = ""; await delay(100);
+    overlay.classList = "visible"; await delay(250); overlay.classList = ""; await delay(50);
+    terminal.innerText += "Redirecting..."; await delay(250);
+	overlay.classList = "visible";
+    window.location.href = "https://chiptumor.github.io/neocities"; // redirect
+}
+
+button.addEventListener("dblclick", shortcut, {once:true}); // listen 4 2 click...

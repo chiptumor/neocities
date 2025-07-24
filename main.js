@@ -3,12 +3,12 @@
 	const attr = el.querySelector("time").getAttribute("datetime");
 	const lastUpdated = new Date(attr);
 	const date = `${lastUpdated.getMonth()}/${lastUpdated.getDay()}/${lastUpdated.getFullYear()}`;
-	el.querySelector("span.date").textContent += date;
+	el.querySelector("span.date").innerText += date;
 
 	const day = 86400,
 		month = day * 30,
 		year = day * 365;
-	const distance = Math.round((Date.now() - lastUpdated) / 1000);
+	const distance = Math.round((+new Date() - lastUpdated) / 1000);
 
 	var fuzzy = "";
 	const { days, months, years } = {};
@@ -49,5 +49,5 @@
 		fuzzy = years.string + months.string + days.string + " AGO";
 	}
 
-	el.querySelector("span.fuzzy").textContent += fuzzy;
+	el.querySelector("span.fuzzy").innerText += fuzzy;
 }

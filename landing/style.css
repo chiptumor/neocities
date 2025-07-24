@@ -266,6 +266,7 @@ body.open {
 	left: 0;
 
 	pointer-events: none;
+	z-index: 10;
 
 	&.visible {
 		background-color: black;
