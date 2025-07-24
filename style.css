@@ -29,6 +29,8 @@ body {
 }
 
 #grid {
+	max-width: 1000px;
+	margin: auto;
 	display: grid;
 	grid-template-areas:
 		"banner banner banner"
@@ -117,10 +119,10 @@ body {
 	}
 }
 
-@media (max-width: 600px) {
+@media (max-width: 700px) {
 	#grid {
 		grid-template-areas:
-			"banner" "welcome" "status" "identity" "socials";
+			"banner" "welcome" "status" "identity" "socials" "todo";
 		grid-template-columns: 1fr;
 
 		& > #status {
