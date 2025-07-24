@@ -8,7 +8,7 @@
 	const day = 86400,
 		month = day * 30,
 		year = day * 365;
-	const distance = Math.round((+new Date() - lastUpdated) / 1000);
+	const distance = Math.round((Date.now() - lastUpdated) / 1000);
 
 	var fuzzy = "";
 	const { days, months, years } = {};

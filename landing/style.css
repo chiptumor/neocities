@@ -1,9 +1,3 @@
-/* @font-face {
-	font-family: "Segoe UI";
-	src: url("Segoe UI.ttf");
-} */
-
-
 body {
 	padding: 0;
 	margin: 0;
@@ -21,15 +15,13 @@ span {
 	position: absolute;
 	top: 0; left: 0;
 	width: 100vw; height: calc(100vh - 40px);
-	background-image: url("image/wallpaper/1.jpg"); /* to change on load via JS */
-	background-size: cover;
-	background-position: top right;
-	background-attachment: fixed;
-	background-repeat: no-repeat;
 
-	/* testing */
-	box-sizing: border-box;
-	border: 5px dashed grey;
+	& > img {
+		position: absolute;
+		top: 0;
+		right: 0;
+		height: 100%;
+	}
 }
 
 #shortcut {
@@ -40,6 +32,8 @@ span {
 	box-sizing: border-box;
 
 	user-select: none;
+	position: relative;
+	z-index: 1;
 
 	text-align: center;
 
@@ -106,8 +100,9 @@ span {
 	column-gap: 1px;
 	width: 100%;
 	height: 40px;
-	position: absolute;
 	bottom: 0;
+	position: absolute;
+	z-index: 3;
 
 	background-color: #101010;
 
@@ -171,6 +166,8 @@ span {
 	position: absolute;
 	top: 130px;
 	left: 137px;
+
+	z-index: 2;
 
 	box-sizing: border-box;
 	border: 1px solid #3a3b3c;
