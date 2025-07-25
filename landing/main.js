@@ -1,4 +1,4 @@
-// document.body.style.backgroundImage = wallpapers[Math.floor(Math.random() * comments.array.length)];
+// document.body.style.backgroundImage = wallpapers[Math.floor(Math.random() * wallpapers.array.length)];
 
 const button = document.getElementById("shortcut"); // shortcut button
 const terminal = document.getElementById("terminal"); // terminal window
