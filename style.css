@@ -16,14 +16,29 @@ body {
 	}
 }
 
-#welcome {
-	& > ul.haio {
-		font-size: 64px;
-		font-weight: bold;
+a {
+	background-color: #e9263d;
+	background-image: none;
+	border-radius: 3px;
+	padding: 0 3px;
+	text-decoration: none;
+	color: white;
+	&:hover {
+		background-image: linear-gradient(to bottom, #e9263d, #ff5959);
+		border: solid 1px #ff5959;
+		margin: -1px;
+	}
+	&:active {
+		border: none;
 		margin: 0;
-		padding-left: 0;
-		& > li {
-			display: inline-block;
+	}
+	&:visited {
+		background-color: #ffa192;
+		border: solid 1px #ff5959;
+		color: #250206;
+		&:hover {
+			background-color: #e9263d;
+			color: white;
 		}
 	}
 }
@@ -48,12 +63,36 @@ body {
 	& > #todo { grid-area: todo }
 
 	& div.box {
-		padding: 0 16px;
+		padding: 8px 16px;
 		background-image: linear-gradient(to bottom right, #250206, 70%, #970315);
 		background-size: cover;
 		background-attachment: fixed;
 
 		border: solid 3px #e9263d;
+	}
+
+	& > #welcome {
+		position: relative;
+		& > div.pfp {
+			width: 64px; height: 64px;
+			background-size: cover;
+
+			position: absolute;
+			top: 0; right: 0;
+
+			border-left: 3px solid #e9263d;
+			border-bottom: 3px solid #e9263d;
+		}
+		& > ul.haio {
+			font-size: 64px;
+			font-weight: bold;
+			margin: 0 0 -10px 0;
+			padding-left: 0;
+			& > li {
+				display: inline-block;
+				animation: haio 2s cubic-bezier(0.445, 0.050, 0.550, 0.950) infinite;
+			}
+		}
 	}
 
 	& > #status {
@@ -81,31 +120,11 @@ body {
 					padding: 0 5px;
 				}
 			}
-			& > div.last-updated {
-				height: fit-content;
-				cursor: default;
-				& > span {
-					max-width: fit-content;
-					background-color: #e9263d;
-					padding: 0 5px;
-					float: right;
-
-					&.date {
-						display: block;
-					}
-					&.fuzzy {
-						display: none;
-					}
-				}
-
-				&:hover {
-					& > span.date {
-						display: none;
-					}
-					& > span.fuzzy {
-						display: block;
-					}
-				}
+			& > div.last-updated > span {
+				max-width: fit-content;
+				background-color: #e9263d;
+				padding: 0 5px;
+				float: right;
 			}
 
 			& > div.content {
@@ -117,6 +136,46 @@ body {
 		max-height: fit-content;
 		grid-auto-rows: min-content max-content min-content;
 	}
+
+	& > #socials {
+		& > div.buttons {
+			display: flex;
+			flex-flow: row;
+			grid-gap: 5px;
+			width: 100%;
+			align-content: center;
+			flex-wrap: wrap;
+			& > a {
+				flex: 1;
+				display: block;
+				padding: 5px;
+				border: 3px solid #e9263d;
+				border-radius: 0;
+				background-image: linear-gradient(to bottom, #ff5959, #e9263d);
+				text-align: center;
+				& > span {
+					text-shadow:
+						#e9263d 0 1px 3px,
+						#FFFFFF44 0 1px 3px;
+				}
+				&:hover {
+					margin: 0;
+					background-image: linear-gradient(to bottom, #ffa1a1, #ffdbdf);
+					color: #42070e;
+					border: 3px solid #ff6b7d;
+					text-shadow:
+						#e9263d 0 -1px 3px,
+						#00000088 0 -1px 3px;
+				}
+			}
+		}
+	}
+}
+
+@keyframes haio {
+	0% { transform: translateY(0) }
+	50% { transform: translateY(10px) }
+	100% { transform: translateY(0) }
 }
 
 @media (max-width: 700px) {
