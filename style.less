@@ -10,7 +10,7 @@
 @accent-dark-3: darken(@accent-main, 60%, relative);
 @accent-dark-4: darken(@accent-main, 70%, relative);
 @accent-dark-5: darken(@accent-main, 80%, relative);
-@accent-dark-6: darken(@accent-main, 90%, relative); //*/
+@accent-dark-6: darken(@accent-main, 90%, relative); //**/
 
 body {
 	padding: 100px 50px;
@@ -76,26 +76,37 @@ body {
 		border: solid 3px @accent-main;
 	}
 
+	/*** BANNER ***/
 	#banner {
 		position: relative;
-		display: flex;
-
+		display: grid;
+		grid-auto-rows: max-content min-content;
+		padding: 3px;
 		div.line {
-			width: 50%;
-			height: 3px;
-			background-color: @accent-light-3;
-			border-radius: calc($height / 2);
+			&.noPreview {
+				width: 50%;
+				height: 3px;
+				background-color: @accent-light-3;
+				border-radius: calc($height / 2);
+			}
+		div.content {
+			padding: 8px 16px;
 		}
-		span.x {
-			position: absolute;
-			bottom: 10px;
-			right: 10px;
-			color: @accent-light-2;
-			user-select: none;
+		div.close {
+			display: block;
+			width: 100%;
+			max-width: fit-content;
+			background-color: @accent-main;
+			padding: 0 5px;
+			> span {
+				user-select: none;
+				text-transform: uppercase;
+				float: right;
+			}
 		}
 
 		&.open {
-			div.content {
+			div.content, div.close {
 				display: block;
 			}
 			div.line {
@@ -104,7 +115,7 @@ body {
 		}
 		&.closed {
 			cursor: pointer;
-			div.content {
+			div.content, div.close {
 				display: none;
 			}
 			div.line {
@@ -113,6 +124,7 @@ body {
 		}
 	}
 
+	/*** WELCOME ***/
 	#welcome {
 		position: relative;
 		& > div.pfp {
@@ -136,8 +148,33 @@ body {
 		}
 	}
 
+	/*** STATUS ***/
 	#status {
-		&::before {
+		display: block;
+		
+		& > div {
+			display: grid;
+			grid-auto-rows: min-content max-content min-content;
+			padding: 3px;
+			& > div.feeling > span {
+					text-transform: uppercase;
+					max-width: fit-content;
+					background-color: @accent-main;
+					padding: 0 5px;
+			}
+			& > div.last-updated > span {
+				text-transform: uppercase;
+				max-width: fit-content;
+				background-color: @accent-main;
+				padding: 0 5px;
+				float: right;
+			}
+
+			& > div.content {
+				padding: 8px 16px;
+			}
+		}
+		&::before { // BUBBLE TAIL
 			@size: 6px;
 			content: "";
 			position: relative;
@@ -152,36 +189,9 @@ body {
 			border-width: 0 0 @size @size;
 			border-color: transparent transparent @accent-main transparent;
 		}
-
-		& > div {
-			padding: 3px;
-			& > div.feeling {
-				height: fit-content;
-				& > span {
-					text-transform: uppercase;
-					max-width: fit-content;
-					background-color: @accent-main;
-					padding: 0 5px;
-				}
-			}
-			& > div.last-updated > span {
-				text-transform: uppercase;
-				max-width: fit-content;
-				background-color: @accent-main;
-				padding: 0 5px;
-				float: right;
-			}
-
-			& > div.content {
-				padding: 8px 16px;
-			}
-		}
-
-		display: grid;
-		max-height: fit-content;
-		grid-auto-rows: min-content max-content min-content;
 	}
 
+	/*** SOCIALS ***/
 	#socials {
 		& > div.buttons {
 			display: flex;
