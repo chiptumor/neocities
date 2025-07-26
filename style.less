@@ -75,12 +75,40 @@ body {
 	#todo { grid-area: todo }
 
 	& div.box {
+		z-index: 2;
 		padding: 8px 16px;
+		position: relative;
 		background-image: linear-gradient(to bottom right, @accent-dark-6, 70%, @accent-dark-2);
 		background-size: cover;
 		background-attachment: fixed;
 
 		border: solid 3px @accent-main;
+
+		&::before {
+			content: attr(id);
+			text-transform: uppercase;
+
+			z-index: 1;
+			position: absolute;
+			top: -17px; left: 9px;
+
+			padding: 0 3px;
+			font-size: small;
+
+			background-color: @accent-main;
+			box-shadow: 0 0 3px @accent-dark-6;
+			color: @accent-light-3;
+			text-shadow:
+				0 2px 0 @accent-light-1,
+				0 -1px 0 @accent-dark-1;
+			font-weight: bolder;
+
+			transform: translateY(calc(0px - $top / 2)) scaleY(0);
+			transition: transform 100ms ease-out;
+		}
+		&:hover::before {
+			transform: none;
+		}
 	}
 
 	/*** BANNER ***/
