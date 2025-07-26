@@ -3,32 +3,40 @@
 	<head>
 		<meta charset="UTF-8"/>
 		<title>chiptumor/neocities</title>
-		<link href="style.css" rel="stylesheet" type="text/css" media="all"/>
 		<link rel="icon" type="image/x-icon" href="favicon.ico"/>
+
+		<!-- Less-To-Css -->
+		<link rel="stylesheet/less" type="text/css" href="style.less"/>
+		<script src="https://cdn.jsdelivr.net/npm/less"></script>
 
 		<!-- IBM Plex Sans (Google Fonts) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com"/>
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
-		<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet"/>
+		<link rel="stylesheet"
+			href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100..700;1,100..700&display=swap"/>
 	</head>
 	<body>
 		<div id="grid">
 
 			<!-- BANNER -->
-			<div id="banner" class="box">
-				<p>i want <u>them</u> to know ive changed. im putting an effort into being better. i will never get over this guilt until im forgiven</p>
+			<div id="banner" class="box open">
+				<div class="line"></div>
+				<span class="close">Close</span>
+				<div class="content">
+					<p>i want <u>them</u> to know ive changed. im putting an effort into being better. i will never get over this guilt until im forgiven</p>
+				</div>
 			</div>
 
 			<!-- WELCOME -->
 			<div id="welcome" class="box">
 				<div class="pfp" style="background-image: url(external/pfp/0.png)"></div>
 				<ul class="haio">
-					<li style="animation-delay: -1.0s">H
-					<li style="animation-delay: -0.8s">a
-					<li style="animation-delay: -0.6s">i
-					<li style="animation-delay: -0.4s">o
-					<li style="animation-delay: -0.2s">!
-					<li style="animation-delay: -0.0s">!
+					<li style="animation-delay: -1.0s"><span>H</span>
+					<li style="animation-delay: -0.8s"><span>a</span>
+					<li style="animation-delay: -0.6s"><span>i</span>
+					<li style="animation-delay: -0.4s"><span>o</span>
+					<li style="animation-delay: -0.2s"><span>!</span>
+					<li style="animation-delay: -0.0s"><span>!</span>
 				</ul>
 				<h2>Welcome to my Neocities!!</h2>
 				<p>You know me as chiptumor on most sites.
@@ -42,7 +50,7 @@
 			<div id="status">
 				<div class="box">
 					<div class="feeling"> <!-- WHAT ARE YOU FEELING? -->
-						<span>I'M FEELING <b>PROUD</b>.</span>
+						<span>I'm feeling <b>proud</b>.</span>
 					</div>
 					<div class="content"> <!-- WHAT'S HAPPENING? -->
 						<p>shit's goin alright! things are lookin #good so far</p>
@@ -50,7 +58,7 @@
 							but im sure itll look neat in the end</p>
 					</div>
 					<div class="last-updated"> <!-- WHAT DAY IS IT? -->
-						<span>LAST UPDATED: 7/25/2025</span>
+						<span>Last updated: 7/25/2025</span>
 					</div>
 				</div>
 			</div>
@@ -61,7 +69,7 @@
 					Marlie, Jackie, and Jennie),
 					but you can call me Chip as in chiptumor.</p>
 				<p>I am a girl and use she/her. I take no offense to misgendering, no pressure!</p>
-				<p>I am <a href="https://lgbtqia.wiki/wiki/Finsexual">finsexual</a> and am taken by (commonly) <a href="https://www.threads.com/@miceincorporated">@miceincorporated</a>.</p>
+				<p>I am <a href="https://lgbtqia.wiki/wiki/Finsexual">finsexual</a> and am taken by <a href="https://www.threads.com/@miceincorporated">@miceincorporated</a>.</p>
 			</div>
 
 			<!-- SOCIALS -->

@@ -1,0 +1,243 @@
+/*** Pallete ***/
+@accent-main: #e9263d;
+/** Generic lighten/darken **/
+@accent-light-1: lighten(@accent-main, 20%, relative);
+@accent-light-2: lighten(@accent-main, 40%, relative);
+@accent-light-3: lighten(@accent-main, 60%, relative);
+@accent-light-4: lighten(@accent-main, 80%, relative);
+@accent-dark-1: darken(@accent-main, 20%, relative);
+@accent-dark-2: darken(@accent-main, 40%, relative);
+@accent-dark-3: darken(@accent-main, 60%, relative);
+@accent-dark-4: darken(@accent-main, 70%, relative);
+@accent-dark-5: darken(@accent-main, 80%, relative);
+@accent-dark-6: darken(@accent-main, 90%, relative); //*/
+
+body {
+	padding: 100px 50px;
+	margin: 0;
+
+	background-image: linear-gradient(to bottom right, @accent-dark-4, 70%, @accent-main);
+	background-size: cover;
+	background-attachment: fixed;
+
+	color: white;
+
+	font-family: "IBM Plex Sans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+
+	a {
+		background-color: @accent-main;
+		background-image: none;
+		border-radius: 3px;
+		padding: 0 3px;
+		text-decoration: none;
+		color: white;
+		&:hover {
+			background-image: linear-gradient(to bottom, @accent-main, @accent-light-1);
+			border: solid 1px @accent-light-1;
+			margin: -1px;
+		}
+		&:active {
+			border: none;
+			margin: 0;
+		}
+	}
+
+	&::selection {
+		background-color: white;
+		color: @accent-dark-4;
+	}
+}
+
+#grid {
+	max-width: 1000px;
+	margin: auto;
+	display: grid;
+	grid-template-areas:
+		"banner banner banner"
+		"welcome welcome status"
+		"identity socials socials"
+		"todo todo todo";
+	grid-template-columns: 4fr 1fr 4fr;
+	grid-gap: 10px;
+
+	#banner { grid-area: banner }
+	#welcome { grid-area: welcome }
+	#status { grid-area: status }
+	#identity { grid-area: identity }
+	#socials { grid-area: socials }
+	#todo { grid-area: todo }
+
+	& div.box {
+		padding: 8px 16px;
+		background-image: linear-gradient(to bottom right, @accent-dark-6, 70%, @accent-dark-2);
+		background-size: cover;
+		background-attachment: fixed;
+
+		border: solid 3px @accent-main;
+	}
+
+	#banner {
+		position: relative;
+		display: flex;
+
+		div.line {
+			width: 50%;
+			height: 3px;
+			background-color: @accent-light-3;
+			border-radius: calc($height / 2);
+		}
+		span.x {
+			position: absolute;
+			bottom: 10px;
+			right: 10px;
+			color: @accent-light-2;
+			user-select: none;
+		}
+
+		&.open {
+			div.content {
+				display: block;
+			}
+			div.line {
+				display: none;
+			}
+		}
+		&.closed {
+			cursor: pointer;
+			div.content {
+				display: none;
+			}
+			div.line {
+				display: block;
+			}
+		}
+	}
+
+	#welcome {
+		position: relative;
+		& > div.pfp {
+			width: 64px; height: 64px;
+			background-size: cover;
+
+			position: absolute;
+			top: 3px; right: 3px;
+
+			border: 3px solid @accent-main;
+		}
+		& > ul.haio {
+			font-size: 64px;
+			font-weight: bold;
+			margin: 0 0 -10px 0;
+			padding-left: 0;
+			& > li {
+				display: inline-block;
+				animation: haio 2s cubic-bezier(0.445, 0.050, 0.550, 0.950) infinite;
+			}
+		}
+	}
+
+	#status {
+		&::before {
+			@size: 6px;
+			content: "";
+			position: relative;
+			display: block;
+			top: @size;
+			left: 0;
+			right: unset;
+			width: 0;
+			height: 0;
+			margin: 0 0 -@size -@size;
+			border-style: solid;
+			border-width: 0 0 @size @size;
+			border-color: transparent transparent @accent-main transparent;
+		}
+
+		& > div {
+			padding: 3px;
+			& > div.feeling {
+				height: fit-content;
+				& > span {
+					text-transform: uppercase;
+					max-width: fit-content;
+					background-color: @accent-main;
+					padding: 0 5px;
+				}
+			}
+			& > div.last-updated > span {
+				text-transform: uppercase;
+				max-width: fit-content;
+				background-color: @accent-main;
+				padding: 0 5px;
+				float: right;
+			}
+
+			& > div.content {
+				padding: 8px 16px;
+			}
+		}
+
+		display: grid;
+		max-height: fit-content;
+		grid-auto-rows: min-content max-content min-content;
+	}
+
+	#socials {
+		& > div.buttons {
+			display: flex;
+			flex-flow: row;
+			grid-gap: 5px;
+			width: 100%;
+			align-content: center;
+			flex-wrap: wrap;
+			& > a {
+				flex: 1;
+				display: block;
+				padding: 5px;
+				border: 3px solid @accent-main;
+				border-radius: 0;
+				background-image: linear-gradient(to bottom, @accent-light-1, @accent-main);
+				text-align: center;
+				& > span {
+					text-shadow:
+						@accent-main 0 1px 3px,
+						#FFFFFF44 0 1px 3px;
+				}
+				&:hover {
+					margin: 0;
+					background-image: linear-gradient(to bottom, @accent-light-3, @accent-light-4);
+					color: @accent-dark-4;
+					border: 3px solid @accent-light-1;
+					text-shadow:
+						@accent-main 0 -1px 3px,
+						#00000088 0 -1px 3px;
+				}
+			}
+		}
+	}
+}
+
+@keyframes haio {
+	0% { transform: translateY(0) }
+	50% { transform: translateY(10px) }
+	100% { transform: translateY(0) }
+}
+
+@media (max-width: 700px) {
+	#grid {
+		grid-template-areas:
+			"banner" "welcome" "status" "identity" "socials" "todo";
+		grid-template-columns: 1fr;
+
+		#status {
+			&::before {
+				@size: 6px;
+				top: -@size;
+				left: calc(@size * 2);
+				margin: 0 0 -@size -@size;
+				border-width: 0 0 @size @size;
+				border-color: transparent transparent @accent-main transparent;
+			}
+		}
+	}
+}
