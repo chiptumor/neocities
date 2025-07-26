@@ -42,6 +42,13 @@ body {
 		}
 	}
 
+	blockquote {
+		margin-left: 1em;
+		border-left: 3px solid @accent-light-1;
+		padding-left: calc(1em - 3px);
+		color: @accent-light-3;
+	}
+
 	&::selection {
 		background-color: white;
 		color: @accent-dark-4;
@@ -95,7 +102,7 @@ body {
 			}
 		}
 		div.content {
-			padding: 8px 32px;
+			padding: 28px 32px 8px;
 		}
 		div.close > span {
 			user-select: none;
