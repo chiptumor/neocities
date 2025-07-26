@@ -80,32 +80,34 @@ body {
 	#banner {
 		position: relative;
 		display: grid;
-		grid-auto-rows: max-content min-content;
+		grid-auto-rows: min-content max-content min-content;
 		padding: 3px;
 		div.line {
+			&.preview {
+				text-transform: uppercase;
+				padding: 3px 6px;
+			}
 			&.noPreview {
 				width: 50%;
 				height: 3px;
 				background-color: @accent-light-3;
 				border-radius: calc($height / 2);
 			}
-		div.content {
-			padding: 8px 16px;
 		}
-		div.close {
-			display: block;
-			width: 100%;
-			max-width: fit-content;
-			background-color: @accent-main;
+		div.content {
+			padding: 8px 32px;
+		}
+		div.close > span {
+			user-select: none;
+			cursor: pointer;
+			text-transform: uppercase;
+			float: right;
 			padding: 0 5px;
-			> span {
-				user-select: none;
-				text-transform: uppercase;
-				float: right;
-			}
+			background-color: @accent-main;
 		}
 
 		&.open {
+			padding: 3px;
 			div.content, div.close {
 				display: block;
 			}
@@ -114,6 +116,7 @@ body {
 			}
 		}
 		&.closed {
+			padding: 6px;
 			cursor: pointer;
 			div.content, div.close {
 				display: none;
