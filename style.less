@@ -1,8 +1,13 @@
 /**
  * This is a Less stylesheet.
  * Please check out /style.less if you need additional context;
- * the converted <style> element doesn't exactly preserve some of it.
+ * the converted <style> element doesn't exactly preserve most of it.
  **/
+
+/*@font-face {
+	font-family: Topaz;
+	src: url(font/TopazPlus_a500_v1.0.ttf) format("truetype");
+}*/
 
 /*** Pallete ***/
 @accent-main: #e9263d;
@@ -205,6 +210,13 @@ body {
 			top: 3px; right: 3px;
 
 			border: 3px solid @accent-main;
+
+			&:hover {
+				border-color: white;
+			}
+			&:active {
+				border-color: @accent-dark-2;
+			}
 		}
 		span.haio {
 			font-size: 64px;
