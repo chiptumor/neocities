@@ -206,13 +206,14 @@ body {
 
 			border: 3px solid @accent-main;
 		}
-		& > ul.haio {
+		& > span.haio {
 			font-size: 64px;
 			font-weight: bold;
 			margin: 0 0 -10px 0;
 			padding-left: 0;
-			& > li {
-				display: inline-block;
+			white-space: collapse;
+			display: flex;
+			& > span {
 				animation: haio 2s cubic-bezier(0.445, 0.050, 0.550, 0.950) infinite;
 			}
 		}

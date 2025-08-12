@@ -4,7 +4,8 @@ body {
 	overflow: hidden;
 
 	color: white;
-	background-color: black;
+	background-image: linear-gradient(to bottom left, #61130b, 70%, #fa9265);
+	background-attachment: fixed;
 }
 
 span {
@@ -19,7 +20,7 @@ span {
 	& > img {
 		position: absolute;
 		top: 0;
-		right: 0;
+		right: 5%;
 		height: 100%;
 	}
 }
