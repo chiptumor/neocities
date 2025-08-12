@@ -25,10 +25,10 @@ span {
 	}
 }
 
-#shortcut {
+#shortcut, #credit {
 	width: 74px;
 	height: fit-content;
-	margin: 6px 1px;
+	margin: 6px 1px 12px;
 	padding: 1px;
 	box-sizing: border-box;
 
@@ -94,6 +94,10 @@ span {
 		border: 1px solid #a6caf090;
 		outline: 1px solid #a6caf054;
 	}
+}
+
+#credit > div.shortcut-icon {
+	background-image: url("image/obese.png");
 }
 
 #taskbar {

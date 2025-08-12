@@ -2,7 +2,7 @@
 	{
 		"path": "external/pfp/0.png",
 		"artist": "Twitter/rekkadraws_",
-		"source": ""
+		"source": "https://twitter.com/rekkadraws_"
 	},
 	{
 		"path": "external/pfp/1.png",
@@ -41,13 +41,13 @@
 	},
 	{
 		"path": "external/pfp/8.png",
-		"artist": "Twitter/Inkplasm (?), Bluesky/welwraith",
-		"source": ""
+		"artist": "Bluesky/welwraith",
+		"source": "https://welwraith.bsky.app/"
 	},
 	{
 		"path": "external/pfp/9.png",
-		"artist": "Twitter/Inkplasm (?), Bluesky/welwraith",
-		"source": ""
+		"artist": "Bluesky/welwraith",
+		"source": "https://welwraith.bsky.app/"
 	},
 	{
 		"path": "external/pfp/10.png",

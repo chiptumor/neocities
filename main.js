@@ -15,3 +15,15 @@
 
 	banner.addEventListener("mousedown", openBanner);
 }
+
+window.onload = async function() { /*** PFP ***/
+	const aElement = document.getElementById("pfp");
+	const imgElement = aElement.firstElementChild;
+	const response = await fetch("external/pfp/index.json");
+	const array = await response.json();
+	const pfp = array[Math.floor(Math.random() * 14)];
+
+	imgElement.setAttribute("style", `background-image: url(${pfp.path});`);
+	aElement.setAttribute("title", pfp.artist);
+	aElement.setAttribute("href", pfp.source);
+};

@@ -68,3 +68,7 @@ async function redirect() {
 }
 
 button.addEventListener("dblclick", shortcut, {once:true}); // listen 4 2 click...
+
+document.getElementById("credit").addEventListener("dblclick", function() {
+	location.href = "https://twitter.com/cotardstovi";
+});
