@@ -1,3 +1,9 @@
+/**
+ * This is a Less stylesheet.
+ * Please check out /style.less if you need additional context;
+ * the converted <style> element doesn't exactly preserve some of it.
+ **/
+
 /*** Pallete ***/
 @accent-main: #e9263d;
 /** Generic lighten/darken **/
@@ -10,7 +16,7 @@
 @accent-dark-3: darken(@accent-main, 60%, relative);
 @accent-dark-4: darken(@accent-main, 70%, relative);
 @accent-dark-5: darken(@accent-main, 80%, relative);
-@accent-dark-6: darken(@accent-main, 90%, relative); //**/
+@accent-dark-6: darken(@accent-main, 90%, relative); /**/
 
 body {
 	padding: 100px 50px;
@@ -110,21 +116,44 @@ body {
 		display: grid;
 		grid-auto-rows: min-content max-content min-content;
 		padding: 3px;
-		div.line {
-			&.preview {
+
+		&.preview-true {
+			div.line {
 				text-transform: uppercase;
 				padding: 3px 6px;
 			}
-			&.noPreview {
+		}
+
+		&.preview-false {
+			div.line {
 				width: 50%;
 				height: 3px;
 				background-color: @accent-light-3;
 				border-radius: calc($height / 2);
 			}
+
+			div.expand {
+				display: none;
+			}
 		}
+
+		div.expand {
+			color: @accent-light-3;
+			position: absolute;
+			bottom: 0; right: 0;
+			width: 24px; height: 24px;
+			display: block;
+
+			svg {
+				position: absolute;
+				bottom: 0; right: 0;
+			}
+		}
+
 		div.content {
 			padding: 16px 32px 8px;
 		}
+
 		div.close > span {
 			user-select: none;
 			cursor: pointer;
@@ -132,6 +161,11 @@ body {
 			float: right;
 			padding: 0 5px;
 			background-color: @accent-main;
+
+			&:hover {
+				background-color: white;
+				color: @accent-dark-4;
+			}
 		}
 
 		&.open {
@@ -142,6 +176,11 @@ body {
 			div.line {
 				display: none;
 			}
+			div.expand {
+				display: none;
+			}
+
+			transition: height 250ms ease-in-out;
 		}
 		&.closed {
 			padding: 6px;
