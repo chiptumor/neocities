@@ -1,1 +1,228 @@
-<a href=""></a>
+<div id="menubar">
+	<div class="music">
+		<div class="info">
+			<a class="title"><span>Title</span></a>
+			<a class="artist"><span>Artist</span></a>
+		</div>
+		<div class="controls">
+			<div class="media">
+				<div class="play-pause">
+					<svg class="play">
+						<path d=""/>
+					</svg>
+					<svg class="pause">
+						<path d=""/>
+					</svg>
+				</div>
+				<div class="next-prev">
+					<div class="prev">
+						<svg>
+							<path d=""/>
+						</svg>
+					</div>
+					<div class="next">
+						<svg>
+							<path d=""/>
+						</svg>
+					</div>
+				</div>
+			</div>
+			<div class="link">
+				<a class="youtube" href="">
+					<svg>
+						<path d=""/>
+					</svg>
+				</a>
+				<a class="json" href="">
+					<svg>
+						<path d=""/>
+					</svg>
+				</a>
+			</div>
+			<input class="volume" type="range" orient="vertical"
+				value="0.5" min="0" max="1" step="0.05"/>
+		</div>
+		<div class="duration">
+			<div class="left">
+				<span>elapsed</span>
+			</div>
+			<div class="right">
+				<span>left/total</span>
+			</div>
+			<input type="range" value="0" min="0" max="1"/>
+		</div>
+	</div>
+	<div class="menu">
+		<a class="item" href="/blog" data-menuitem="blog">
+			<span>Blog</span>
+		</a>
+		<div class="dropdown" data-menuitem="/social"><span>Socials</span>
+			<a class="item" href="social">
+				<span>Socials page</span>
+			</a>
+			<div class="dropdown"><span>Email</span>
+				<a class="item" href="mailto:tipchumor@gmail.com">
+					<span>Personal email
+						<span>tipchumor@gmail.com</span>
+					</span>
+				</a>
+				<a class="item" href="/social#email">
+					<span>Read more...</span>
+				</a>
+			</div>
+			<div class="dropdown"><span>Discord</span>
+				<div class="item" data-copy="chiptumor">
+					<span>Copy username
+						<span>@chiptumor</span>
+					</span>
+				</div>
+				<a class="item" href="https://discord.com/users/1184619891215573042/">
+					<span>Open user link
+						<span>Less reliable!</span>
+					</span>
+				</a>
+				<a class="item" href="/social#discord">
+					<span>Read more...</span>
+				</a>
+			</div>
+			<div class="dropdown"><span>Instagram</span>
+				<a class="item" href="https://instagram.com/chiptumor">
+					<span>Main profile
+						<span>@chiptumor</span>
+					</span>
+				</a>
+				<div class="dropdown"><span>More accounts...</span>
+					<a class="item" href="https://instagram.com/jackie__off">
+						<span>Old shitposting account
+							<span>@jackie__off</span>
+						</span>
+					</a>
+				</div>
+				<a class="item" href="/social#instagram">
+					<span>Read more...</span>
+				</a>
+			</div>
+			<div class="dropdown"><span>Twitter</span>
+				<a class="item" href="https://twitter.com/chiptumor">
+					<span>Main profile
+						<span>@chiptumor</span>
+					</div>
+				</a>
+				<a class="item" href="https://twitter.com/intent/follow?user=chiptumor">
+					<span>Follow
+						<span>@chiptumor</span>
+					</span>
+				</a>
+				<div class="dropdown"><span>More accounts...</span>
+					<a class="item" href="https://twitter.com/wildlifeFoxgirl">
+						<span>Zoologist parody account
+							<span>@wildlifeFoxgirl</span>
+						</span>
+					</a>
+					<a class="item" href="https://twitter.com/fish_n_tumors">
+						<span>Old account
+							<span>@fish_n_tumors</span>
+						</span>
+					</a>
+				</div>
+				<a class="item" href="/social#twitter">
+					<span>Read more...</span>
+				</a>
+			</div>
+			<div class="dropdown"><span>Music</span>
+				<div class="dropdown"> <!--YouTube-->
+					<span>YouTube<span>Disabled; boycott YT!</span></span>
+					<a class="item" href="/blog#why?index=8-15-25">
+						<span>Why boycott YouTube?</span>
+					</a>
+					<a class="item" href="/blog#how?index=8-15-25">
+						<span>What can I do?</span>
+					</a>
+					<!-- DISABLED --->
+					<a class="item" href="https://youtube.com/@chiptumor">
+						<span>Main channel
+							<span>@chiptumor</span>
+						</span>
+					</a>
+					<div class="dropdown"><span>More channels...</span>
+						<a class="item" href="https://youtube.com/@chipscope">
+							<span>Oscilloscope views
+								<span>@chipscope</span>
+							</span>
+						</a>
+						<a class="item" href="https://youtube.com/@chipposting">
+							<span>WIPs, dumps, & shitposting
+								<span>@chipposting</span>
+							</span>
+						</a>
+					</div>
+					<a class="item" href="/social#youtube">
+						<span>Read more...</span>
+					</a>
+				</div>
+				<div class="dropdown"><span>Soundcloud</span>
+					<a class="item" href="https://soundcloud.com/chiptumor">
+						<span>Visit profile
+							<span>@chiptumor</span>
+						</span>
+					</a>
+					<a class="item" href="/social#soundcloud">
+						<span>Read more...</span>
+					</a>
+				</div>
+			</div>
+			<div class="dropdown"><span>Games</span>
+				<div class="dropdown"><span>Roblox</span>
+					<a class="item" href="roblox.com/users/1375134678/profile">
+						<span>View profile</span>
+					</a>
+					<a class="item" href="/social#roblox">
+						<span>Read more...</span>
+					</a>
+				</div>
+				<div class="dropdown"><span>Xbox</span>
+					<a class="item" href="https://www.xbox.com/en-US/play/user/chiptumor">
+						<span>View profile</span>
+					</a>
+					<a class="item" href="/social#xbox">
+						<span>Read more...</span>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="dropdown" data-menuitem="project"><span>Projects</span>
+			<a class="item" href="https://github.com/chiptumor">
+				<span>View GitHub profile</span>
+			</a>
+			<div class="dropdown"><span>Discord Message Archive</span>
+				<a class="item" href="https://chiptumor.github.io/discord-message-archive">
+					<span>View project</span>
+				</a>
+				<a class="item" href="https://github.com/chiptumor/discord-message-archive">
+					<span>View source</span>
+				</a>
+				<a class="item" href="/projects/discord-message-archive">
+					<span>Read more...</span>
+				</a>
+				<a class="item" href="/projects#discord-message-archive">
+					<span>Jump to on projects page</span>
+				</a>
+			</div>
+			<div class="dropdown"><span>Chipcord</span>
+				<a class="item" href="https://chiptumor.github.io/chipcord">
+					<span>View project</span>
+				</a>
+				<a class="item" href="https://github.com/chiptumor/chipcord">
+					<span>View source</span>
+				</a>
+				<a class="item" href="/projects/chipcord">
+					<span>Read more...</span>
+				</a>
+				<a class="item" href="/projects#chipcord">
+					<span>Jump to on projects page</span>
+				</a>
+			</div>
+			<a class="item" href="/projects">
+				<span>All projects...</span>
+			</a>
+		</div>
