@@ -1,4 +1,5 @@
-{ /*** BANNER ***/
+/*** BANNER TOGGLE OPEN/CLOSE ***/
+window.addEventListener("load", function() {
 	const banner = document.getElementById("banner");
 	const button = banner.querySelector("div.close > span");
 	const openBanner = () => {
@@ -14,9 +15,10 @@
 	});
 
 	banner.addEventListener("mousedown", openBanner);
-}
+});
 
-{ /*** PFP ***/
+/*** RANDOM PFP ***/
+window.addEventListener("load", async function() {
 	const aElement = document.getElementById("pfp");
 	const imgElement = aElement.firstElementChild;
 	
@@ -30,4 +32,4 @@
 	imgElement.setAttribute("style", `background-image: url(global/pfp/${number}.png);`);
 	aElement.setAttribute("title", pfp.artist);
 	aElement.setAttribute("href", pfp.source);
-};
+});
