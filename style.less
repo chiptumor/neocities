@@ -13,8 +13,8 @@
 }
 
 /*** Pallete ***/
+/** Generic lighten/darken **/ /*
 @accent-main: #e9263d;
-/** Generic lighten/darken **/
 @accent-light-1: lighten(@accent-main, 20%, relative);
 @accent-light-2: lighten(@accent-main, 40%, relative);
 @accent-light-3: lighten(@accent-main, 60%, relative);
@@ -25,6 +25,18 @@
 @accent-dark-4: darken(@accent-main, 70%, relative);
 @accent-dark-5: darken(@accent-main, 80%, relative);
 @accent-dark-6: darken(@accent-main, 90%, relative); /**/
+/** Better Hue Shift **/
+@accent-main: #e92650;
+@accent-light-4: lighten(spin(@accent-main, 8), 80%, relative);
+@accent-light-3: lighten(spin(@accent-main, 6), 60%, relative);
+@accent-light-2: lighten(spin(@accent-main, 4), 40%, relative);
+@accent-light-1: lighten(spin(@accent-main, 2), 20%, relative);
+@accent-dark-1: darken(spin(@accent-main, -5), 20%, relative);
+@accent-dark-2: darken(spin(@accent-main, -10), 40%, relative);
+@accent-dark-3: darken(spin(@accent-main, -15), 60%, relative);
+@accent-dark-4: darken(spin(@accent-main, -20), 70%, relative);
+@accent-dark-5: darken(spin(@accent-main, -25), 80%, relative);
+@accent-dark-6: darken(spin(@accent-main, -30), 90%, relative); /**/
 
 body {
 	padding: 100px 50px;
@@ -73,6 +85,220 @@ body {
 	h6 { font-size: 08px; }
 
 	p { font-size: 16px; }
+
+	[data-copy] {
+		cursor: pointer;
+	}
+}
+
+#title {
+	display: none;
+
+	z-index: 3;
+	padding: 4px 6px;
+	position: fixed;
+	max-width: 200px;
+	line-break: anywhere;
+
+	background-image: linear-gradient(to bottom right, @accent-dark-6, 70%, @accent-dark-2);
+	background-size: cover;
+	background-attachment: fixed;
+
+	border: solid 1px @accent-main;
+	@radius: 8px;
+	border-radius: 0 @radius @radius @radius;
+
+	span.title {
+		font-size: 16px;
+		display: block;
+	}
+	span.desc {
+		font-size: 12px;
+		display: block;
+		color: @accent-light-3;
+	}
+}
+
+#menubar {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100vw;
+	height: 28px;
+	z-index: 2;
+	background-image: linear-gradient(to bottom, @accent-dark-5, @accent-dark-4);
+
+	display: flex;
+
+	div.music {
+		input[type="range"] {
+			background-color: transparent;
+
+			&::-webkit-slider-runnable-track,
+			&::-moz-range-track {
+				border: none;
+				border-radius: 0;
+				background-color: @accent-dark-3;
+			}
+
+			&::-webkit-slider-thumb,
+			&::-moz-range-thumb {
+				visibility: hidden;
+				width: 0;
+				height: 0;
+				border: none;
+				border-radius: 0;
+			}
+
+			&::-moz-range-progress {
+				background-color: @accent-light-1;
+			}
+
+			&[orient="horizontal"] {
+				height: 5px;
+
+				&::-webkit-slider-runnable-track,
+				&::-moz-range-track,
+				&::-moz-range-progress {
+					height: 5px;
+				}
+			}
+
+			&[orient="vertical"] {
+				width: 5px;
+				-webkit-appearance: slider-vertical;
+				writing-mode: bt-lr;
+
+				&::-webkit-slider-runnable-track,
+				&::-moz-range-track,
+				&::-moz-range-progress {
+					width: 5px;
+				}
+			}
+
+			&:hover {
+				&::-webkit-slider-runnable-track,
+				&::-moz-range-track {
+					background-color: @accent-dark-2;
+				}
+				&::-moz-range-progress {
+					background-color: @accent-light-2;
+				}
+			}
+
+			&:active {
+				&::-webkit-slider-runnable-track,
+				&::-moz-range-track {
+					background-color: @accent-dark-4;
+				}
+				&::-moz-range-progress {
+					background-color: @accent-light-3;
+				}
+			}
+		}
+	}
+
+	div.menu {
+		@vertical-padding: 6px;
+		@horizontal-padding: 2px;
+		@dropdown-padding: 20px;
+
+		display: flex;
+		flex-direction: row;
+		align-content: flex-start;
+		flex-basis: content;
+		height: 100%;
+		* { text-decoration: none; }
+		a.item, div.item, div.dropdown {
+			display: flex;
+			height: 100%;
+			align-items: center;
+			background-image: linear-gradient(to bottom, @accent-main, @accent-dark-1 10%, @accent-main);
+			background-size: cover;
+			border: 2px solid @accent-dark-1;
+			box-sizing: border-box;
+			color: white;
+			align-content: center;
+			&:hover {
+				background-image: linear-gradient(to bottom, @accent-light-3, @accent-light-4);
+				color: @accent-dark-6;
+				border: 2px solid @accent-light-2;
+			}
+		}
+		a.item, div.item {
+			padding: @horizontal-padding @vertical-padding;
+			cursor: pointer;
+		}
+		div.dropdown {
+			padding: @horizontal-padding @dropdown-padding @horizontal-padding @vertical-padding;
+			cursor: default;
+		}
+		> div.dropdown {
+			position: relative;
+
+			> span {
+				&::after {
+					content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' \
+						fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M5.3 9.3a1 1 0 0 1 1.4 0l5.3 5.29 5.3-5.3a1 1 0 11 \
+						1.4 1.42l-6 6a1 1 0 0 1-1.4 0l-6-6a1 1 0 0 1 0-1.42Z'/%3E%3C/svg%3E");
+					position: absolute;
+					transform: translate(2px, 4px);
+				}
+			}
+			> div {
+				display: none;
+				position: absolute;
+				top: calc(100% + 2px);
+				left: -2px;
+
+				flex-direction: column;
+				min-width: max-content;
+
+				div.dropdown {
+					position: relative;
+
+					> span {
+						&::after {
+							content: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' \
+								fill='white' viewBox='0 0 24 24'%3E%3Cpath d='M5.3 9.3a1 1 0 0 1 1.4 0l5.3 5.29 5.3-5.3a1 1 0 11 \
+								1.4 1.42l-6 6a1 1 0 0 1-1.4 0l-6-6a1 1 0 0 1 0-1.42Z'/%3E%3C/svg%3E");
+							position: absolute;
+							transform: rotate(270deg);
+							right: 0;
+						}
+					}
+
+					> div {
+						display: none;
+						position: absolute;
+						top: -2px;
+						left: calc(100% + 2px);
+
+						flex-direction: column;
+						min-width: max-content;
+					}
+
+					&:hover {
+						> span::after {
+							filter: brightness(4%);
+						}
+						> div {
+							display: flex;
+						}
+					}
+				}
+			}
+
+			&:hover {
+				> span::after {
+					filter: brightness(4%);
+				}
+				> div {
+					display: flex;
+				}
+			}
+		}
+	}
 }
 
 #grid {
@@ -83,7 +309,8 @@ body {
 		"banner banner banner"
 		"welcome welcome status"
 		"identity zoologist zoologist"
-		"todo todo todo";
+		"todo todo todo"
+		"pallete pallete pallete";
 	grid-template-columns: 4fr 1fr 4fr;
 	grid-gap: 10px;
 
@@ -93,9 +320,10 @@ body {
 	#identity { grid-area: identity }
 	#zoologist { grid-area: zoologist }
 	#todo { grid-area: todo }
+	#pallete { grid-area: pallete }
 
 	div.box {
-		z-index: 2;
+		z-index: 1;
 		padding: 8px 16px;
 		position: relative;
 		background-image: linear-gradient(to bottom right, @accent-dark-6, 70%, @accent-dark-2);
@@ -134,14 +362,14 @@ body {
 		grid-auto-rows: min-content max-content min-content;
 		padding: 3px;
 
-		&.preview-true {
+		&[data-preview="true"] {
 			div.line {
 				text-transform: uppercase;
 				padding: 3px 6px;
 			}
 		}
 
-		&.preview-false {
+		&[data-preview="false"] {
 			div.line {
 				width: 50%;
 				height: 3px;
@@ -291,6 +519,27 @@ body {
 	}
 }
 
+#pallete {
+	display: flex;
+	width: 100%;
+	height: 50px;
+	flex-flow: row;
+	align-content: stretch;
+
+	div { flex: 1; }
+	div:nth-child(1) { background-color: @accent-dark-6; }
+	div:nth-child(2) { background-color: @accent-dark-5; }
+	div:nth-child(3) { background-color: @accent-dark-4; }
+	div:nth-child(4) { background-color: @accent-dark-3; }
+	div:nth-child(5) { background-color: @accent-dark-2; }
+	div:nth-child(6) { background-color: @accent-dark-1; }
+	div:nth-child(7) { background-color: @accent-main; }
+	div:nth-child(8) { background-color: @accent-light-1; }
+	div:nth-child(9) { background-color: @accent-light-2; }
+	div:nth-child(10) { background-color: @accent-light-3; }
+	div:nth-child(11) { background-color: @accent-light-4; }
+}
+
 @keyframes haio {
 	0% { transform: translateY(0) }
 	50% { transform: translateY(10px) }
@@ -300,7 +549,7 @@ body {
 @media (max-width: 700px) {
 	#grid {
 		grid-template-areas:
-			"banner" "welcome" "status" "identity" "zoologist" "todo";
+			"banner" "welcome" "status" "identity" "zoologist" "todo" "pallete";
 		grid-template-columns: 1fr;
 
 		#status {

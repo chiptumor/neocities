@@ -26,9 +26,8 @@ window.addEventListener("load", async function() {
 	const text = await response.text();
 	const array = await JSON5.parse(text);
 	
-	const number = Math.floor(Math.random() * 14);
+	const number = Math.floor(Math.random() * 13);
 	const pfp = array[number];
-
 	imgElement.setAttribute("style", `background-image: url(global/pfp/${number}.png);`);
 	aElement.setAttribute("title", pfp.artist);
 	aElement.setAttribute("href", pfp.source);
