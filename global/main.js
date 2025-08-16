@@ -56,8 +56,10 @@ window.addEventListener("load", function() {
 			el.querySelector("span.desc").innerHTML = desc;
 		} else {
 			el.style.display = "none";
-			el.querySelector("span.title").innerHTML = "";
-			el.querySelector("span.desc").innerHTML = "";
+			{
+				el.querySelector("span.title").innerHTML,
+				el.querySelector("span.desc").innerHTML
+			} = "";
 		}
 	});
 });

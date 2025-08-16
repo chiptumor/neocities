@@ -39,19 +39,19 @@
 				</svg>
 			</a>
 		</div>
-		<input class="volume" data-desc="Volume" type="range" orient="vertical"
-			value="0.5" min="0" max="1" step="0.05"/>
 	</div>
 	<div class="duration">
 		<div class="left">
 			<span>elapsed</span>
 		</div>
 		<div class="right">
-			<span><span class="left">left</span>/<span class="total">total</span></span>
+			<span><span class="remaining">remaining</span>/<span class="total">total</span></span>
 		</div>
 		<input type="range" orient="horizontal"
 			value="0" min="0" max="1" step="any"/>
 	</div>
+	<input class="volume" data-desc="Volume" type="range" orient="vertical"
+		value="0.5" min="0" max="1" step="0.05"/>
 </div>
 <div class="menu">
 	<!--
@@ -116,10 +116,10 @@
 		</div></div>
 		<div class="dropdown"><span>Music</span><div>
 			<div class="dropdown" data-title="Disabled" data-desc="Boycott YouTube!"><span>YouTube</span><div>
-				<a class="item" href="/blog#why?index=8-15-25" data-title="" data-desc="">
+				<a class="item" href="/blog?index=8-15-25#why" data-title="" data-desc="">
 					<span>Why boycott YouTube?</span>
 				</a>
-				<a class="item" href="/blog#how?index=8-15-25" data-title="" data-desc="">
+				<a class="item" href="/blog?index=8-15-25#what" data-title="" data-desc="">
 					<span>What can I do?</span>
 				</a>
 				<!-- DISABLED --->
@@ -197,6 +197,20 @@
 				<span>Read more...</span>
 			</a>
 			<a class="item" href="/projects#chipcord">
+				<span>Jump to on projects page</span>
+			</a>
+		</div></div>
+		<div class="dropdown"><span>eztxtfx</span><div>
+			<a class="item" href="https://chiptumor.github.io/eztxtfx">
+				<span>View project</span>
+			</a>
+			<a class="item" href="https://github.com/chiptumor/eztxtfx">
+				<span>View source</span>
+			</a>
+			<a class="item" href="/projects/eztxtfx">
+				<span>Read more...</span>
+			</a>
+			<a class="item" href="/projects#eztxtfx">
 				<span>Jump to on projects page</span>
 			</a>
 		</div></div>
