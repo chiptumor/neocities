@@ -6,7 +6,7 @@
 		<meta charset="UTF-8"/>
 		<title>chiptumor/neocities</title>
 		<link rel="icon" type="image/x-icon" href="favicon.ico"/>
-		<base href="https://chiptumor.github.io/neocities"/>
+		<base href="index.html"/>
 		
 		<script src="/global/main.js"></script>
 		<script src="main.js"></script>
@@ -22,14 +22,52 @@
 
 		<!-- JSON5 -->
 		<script src="https://unpkg.com/json5@2/dist/index.min.js"></script>
+
+		<!-- LUCIDE ICONS -->
+		<script src="https://unpkg.com/lucide@latest"></script>
 	</head>
 	<body>
 		<div id="title"><span class="title"></span><span class="desc"></span></div>
 		<div id="menubar"></div>
 		<div id="grid">
+
+			<!-- MUSIC PLAYER -->
+			<div id="music" class="box"><div>
+				<audio></audio>
+				<div class="info">
+					<a class="title"><span>title</span></a>
+					<a class="artist"><span>artist</span></a>
+				</div>
+				<div class="controls">
+					<div class="media">
+						<div class="play-pause paused" data-desc="Play/Pause">
+							<div data-lucide="play"></div>
+							<div data-lucide="pause"></div>
+						</div>
+						<div class="next-prev">
+							<div class="prev" data-desc="Previous">
+								<div data-lucide="skip-back"></div>
+							</div>
+							<div class="next" data-desc="Next">
+								<div data-lucide="skip-forward"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="duration">
+					<div class="left">
+						<span>elapsed</span>
+					</div>
+					<div class="right">
+						<span><span class="remaining">remaining</span>/<span class="total">total</span></span>
+					</div>
+					<input type="range"	value="0" min="0" max="1" step="any"/>
+				</div>
+			</div></div>
+
 			<!-- BANNER -->
-			<div id="banner" class="box closed" data-preview="false">
-				<div class="line"></div>
+			<div id="banner" class="box closed" data-preview="true">
+				<div class="line">Work in progress</div>
 				<div class="expand">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
 						<path d="M5.3 9.3a1 1 0 0 1 1.4 0l5.3 5.29 5.3-5.3a1 1 0 1 1 1.4 1.42l-6 6a1 1 0 0 1-1.4
@@ -37,8 +75,11 @@
 					</svg>
 				</div>
 				<div class="content">
-					<h2>No announcements!</h2>
-					<p>Check back another time. I'm sure I've got something to share soon!</p>
+					<h2>Work in progress!</h2>
+					<p>The current pushed state of this site is a work in progress, and you may see some unfinished stuff.</p>
+					<p>Please don't hurt me for it.</p>
+					<p>Author's note:</p>
+					<blockquote>no the music player does not work stop clicking on it</blockquote>
 				</div>
 				<div class="close">
 					<span>Hide</span>
@@ -46,7 +87,7 @@
 			</div>
 
 			<!-- WELCOME -->
-			<div id="welcome" class="box" data-label="Welcome">
+			<div id="welcome" data-label="Welcome"><div class="box">
 				<a id="pfp" target="_blank" style="border: none; margin: 0;"><div class="pfp"></div></a>
 				<span class="haio">
 					<span style="animation-delay: -1.0s">H</span>
@@ -61,41 +102,39 @@
 					If you're lookin' for me somewhere, check that @; it's probably me.
 					If it isn't, and if I <em>do</em> exist on that website,
 					<a href="social">you can find it here.</a></p>
-			</div>
+			</div></div>
 
 			<!-- STATUS -->
-			<div id="status">
-				<div class="box">
-					<div class="feeling"> <!-- WHAT ARE YOU FEELING? -->
-						<span>I'm feeling <b>coool</b>.</span>
-					</div>
-					<div class="content"> <!-- WHAT'S HAPPENING? -->
-						<p>got the random zoologist pfps working!!</p>
-						<p>you can hover to see the artist credit
-							and also click to navigate to that art piece!</p>
-						<p>how cool is that!!!</p>
-					</div>
-					<div class="last-updated"> <!-- WHAT DAY IS IT? -->
-						<span>Last updated: 8/12/2025</span>
-					</div>
+			<div id="status"><div class="box">
+				<div class="feeling"> <!-- WHAT ARE YOU FEELING? -->
+					<span>I'm feeling <b>pissed</b>.</span>
 				</div>
-			</div>
+				<div class="content"> <!-- WHAT'S HAPPENING? -->
+					<img src="https://i.imgflip.com/a3a9n8.jpg" style="max-width: 100%;"/>
+				</div>
+				<div class="last-updated"> <!-- WHAT DAY IS IT? -->
+					<span>Last updated: 8/12/2025</span>
+				</div>
+			</div></div>
 
 			<!-- IDENTITY -->
 			<div id="identity" class="box" data-label="Identity">
 				<p>I go by a few names (mostly because I've been fickle about a few different ones:
 					Marlie, Jackie, and Jennie),
 					but you can call me Chip as in chiptumor.</p>
-				<h4><i>Psst! I'm thinking about going by Belle. Try that!</i></h4>
+				<small><i>Psst! I'm thinking about going by Belle. Try that!</i></small>
 				<p>I am a girl and use she/her. I take no offense to misgendering; just don't be an asshat.</p>
-				<!--p>I am <a href="https://lgbtqia.wiki/wiki/Finsexual">finsexual</a>
-					and am taken by <a href="https://www.threads.com/@miceincorporated">@miceincorporated</a>.</p-->
+				<!--
+				<p>I am <a href="https://lgbtqia.wiki/wiki/Finsexual">finsexual</a>
+					and am taken by <a href="https://www.threads.com/@miceincorporated">@miceincorporated</a>.</p>
+					-->
 			</div>
 
 			<!-- ZOOLOGIST -->
 			<div id="zoologist" class="box" data-label="Zoologist">
 				<p><a href="https://terraria.wiki.gg/wiki/Zoologist">The Zoologist</a> is my wife.</p>
-				<p>I post and retweet images of her on Instagram and Twitter! <a>Check my socials page for more.</a></p>
+				<p>I post and retweet images of her on Instagram and Twitter!
+					<a>Check my socials page for more.</a></p>
 				<p><a>Please grant yourself a viewing of the Wall of Wife!</a>
 					I put art here of my wife made with me in thought&mdash;commissions, requests,
 					or just in honor of me!</p>
@@ -112,7 +151,7 @@
 				<a href="landing">go back to landing page (github.io)</a><br/>
 				<a href="misc/archive">see old site</a>
 				<p>concept:</p>
-				<img src="misc/concept.png" style="background-color: #42070e; width: 100%;"/>
+				<img src="/misc/concept.png" style="background-color: #42070e; width: 100%;"/>
 			</div>
 
 			<!-- PALLETE -->

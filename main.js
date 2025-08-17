@@ -32,3 +32,27 @@ window.addEventListener("load", async function() {
 	aElement.setAttribute("title", pfp.artist);
 	aElement.setAttribute("href", pfp.source);
 });
+
+/*** MUSIC PLAYER ***/
+window.addEventListener("load", async function() {
+	const player = document.getElementById("music").querySelector("& > div");
+	const audio = player.querySelector("audio");
+
+	const response = await fetch("/global/playlist/index.json");
+	const text = await response.text();
+	const playlist = JSON5.parse(text);
+
+	const info = {};
+	info.title = player.querySelector("div.info > a.title > span");
+	info.artist = player.querySelector("div.info > a.artist > span");
+
+	const controls = {};
+	controls.play = player.querySelector("div.controls > div.media > div.play-pause");
+	controls.prev = player.querySelector("div.controls > div.media > div.next-prev > div.prev");
+	controls.next = player.querySelector("div.controls > div.media > div.next-prev > div.next");
+
+	const duration = {};
+	duration.elapsed = player.querySelector("div.duration > div.left > span");
+	duration.remaining = player.querySelector("div.duration > div.right > span > span.remaining");
+	duration.total = player.querySelector("div.duration > div.right > span > span.total");
+});
