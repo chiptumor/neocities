@@ -38,7 +38,7 @@ window.addEventListener("load", async function() {
 	const player = document.getElementById("music").querySelector("& > div");
 	const audio = player.querySelector("audio");
 
-	const response = await fetch("/global/playlist/index.json");
+	const response = await fetch("global/playlist/index.json");
 	const text = await response.text();
 	const playlist = JSON5.parse(text);
 

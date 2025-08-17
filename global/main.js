@@ -12,7 +12,7 @@ window.addEventListener("load", async function() {
 		return;
 	}
 	
-	const response = await fetch("/global/menubar.xml");
+	const response = await fetch("/neocities/global/menubar.xml");
 	const text = await response.text();
 	menubar.innerHTML = await text;
 
