@@ -400,11 +400,10 @@ body {
 				margin: 0;
 				box-sizing: border-box;
 				border: 3px solid @accent-main;
-
 				height: 14px;
 				width: 100%;
-
 				cursor: grab;
+				-webkit-appearance: none;
 
 				&::-webkit-slider-runnable-track,
 				&::-moz-range-track {
@@ -416,6 +415,7 @@ body {
 
 				&::-webkit-slider-thumb,
 				&::-moz-range-thumb {
+					-webkit-appearance: none;
 					visibility: hidden;
 					width: 0;
 					height: 0;
@@ -423,18 +423,28 @@ body {
 					border-radius: 0;
 				}
 
-				&::-moz-range-progress {
-					background-color: @accent-main;
+				// Progress track styling
+				&::-webkit-slider-runnable-track {
+					background: linear-gradient(to right, @accent-main 0%, @accent-main var(--progress-percent), transparent var(--progress-percent), transparent 100%);
 				}
 
-				&::-webkit-slider-runnable-track,
-				&::-moz-range-track,
 				&::-moz-range-progress {
+					background-color: @accent-main;
+					height: 100%;
+				}
+
+				// Firefox track needs explicit height
+				&::-moz-range-track {
 					height: 100%;
 				}
 
 				&:hover {
 					border-color: @accent-light-2;
+
+					&::-webkit-slider-runnable-track {
+						background: linear-gradient(to right, @accent-light-2 0%, @accent-light-2 var(--progress-percent), transparent var(--progress-percent), transparent 100%);
+					}
+
 					&::-moz-range-progress {
 						background-color: @accent-light-2;
 					}
@@ -443,6 +453,10 @@ body {
 				&:active {
 					cursor: grabbing;
 					border-color: @accent-light-1;
+
+					&::-webkit-slider-runnable-track {
+						background: linear-gradient(to right, @accent-light-1 0%, @accent-light-1 var(--progress-percent), transparent var(--progress-percent), transparent 100%);
+					}
 
 					&::-moz-range-progress {
 						background-color: @accent-light-1;

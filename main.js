@@ -37,6 +37,10 @@ window.addEventListener("load", async function() {
 window.addEventListener("load", async function() {
 	const player = document.getElementById("music").querySelector("& > div");
 	const audio = player.querySelector("audio");
+	
+	player.querySelector('input[type="range"]').addEventListener('input', function() {
+		this.style.setProperty("--progress-percent", (this.value - this.min) / (this.max - this.min) * 100 + "%");
+	});
 
 	const response = await fetch("global/playlist/index.json");
 	const text = await response.text();
