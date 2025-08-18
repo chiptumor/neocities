@@ -4,10 +4,10 @@
 		<div style="background-image: "></div>
 	</a>
 	-->
-	<a class="item" href="/blog" data-href="/blog">
+	<a class="item" href="/blog" data-href="/blog" data-sensitive="true">
 		<span>Blog</span>
 	</a>
-	<div class="dropdown" data-href="/social"><span>Socials</span><div>
+	<div class="dropdown" data-href="/social" data-sensitive="true"><span>Socials</span><div>
 		<a class="item" href="/social">
 			<span>Socials page</span>
 		</a>

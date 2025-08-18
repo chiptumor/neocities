@@ -1,3 +1,9 @@
+/*** BOYMODING ***/
+window.addEventListener("load", function() {
+	if (new URLSearchParams(window.location.search).has("s"))
+		document.body.classList = "sensitive";
+});
+
 /*** BANNER TOGGLE OPEN/CLOSE ***/
 window.addEventListener("load", function() {
 	const banner = document.getElementById("banner");

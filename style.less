@@ -28,7 +28,7 @@
 @accent-dark-3: darken(@accent-main, 60%, relative);
 @accent-dark-4: darken(@accent-main, 70%, relative);
 @accent-dark-5: darken(@accent-main, 80%, relative);
-@accent-dark-6: darken(@accent-main, 90%, relative); /**/
+@accent-dark-6: darken(@accent-main, 90%, relative);
 /** Better Hue Shift **/
 @accent-main: #e92650;
 @accent-light-4: lighten(spin(@accent-main, 8), 80%, relative);
@@ -40,7 +40,8 @@
 @accent-dark-3: darken(spin(@accent-main, -15), 60%, relative);
 @accent-dark-4: darken(spin(@accent-main, -20), 70%, relative);
 @accent-dark-5: darken(spin(@accent-main, -25), 80%, relative);
-@accent-dark-6: darken(spin(@accent-main, -30), 90%, relative); /**/
+@accent-dark-6: darken(spin(@accent-main, -30), 90%, relative);
+/**/
 
 body {
 	padding: 100px 50px;
@@ -90,6 +91,17 @@ body {
 
 	[data-copy] {
 		cursor: pointer;
+	}
+	
+	[data-sensitive="true"] { display: none; }
+	[data-sensitive="false"] { display: unset; }
+	&.sensitive {
+		[data-sensitive="true"] { display: unset; }
+		[data-sensitive="false"] { display: none; }
+		
+		#grid #welcome div.pfp {
+			background-image: url(/global/pfp/chiptumor.png);
+		}
 	}
 }
 

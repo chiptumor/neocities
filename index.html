@@ -25,7 +25,7 @@
 		<!-- LUCIDE ICONS -->
 		<script src="https://unpkg.com/lucide@latest"></script>
 	</head>
-	<body>
+	<body class="sensitive">
 		<div id="title"><span class="title"></span><span class="desc"></span></div>
 		<div id="menubar"></div>
 		<div id="grid">
@@ -65,7 +65,6 @@
 						<div class="right">
 							<span><span class="remaining">remaining</span>/<span class="total">total</span></span>
 						</div>
-						<!--<input type="range"	value="0" min="0" max="1" step="any"/>-->
 					</div>
 				</div>
 				<div class="progress">
@@ -101,8 +100,11 @@
 
 			<!-- WELCOME -->
 			<div id="welcome" data-label="Welcome"><div class="box">
-				<a id="pfp" target="_blank" style="border: none; margin: 0;"><div class="pfp"></div></a>
-				<span class="haio">
+				<a id="pfp" target="_blank" style="border: none; margin: 0;">
+					<div class="pfp" data-sensitive="true"></div>
+					<div class="pfp" data-sensitive="false"></div>
+				</a>
+				<span class="haio" data-sensitive="true">
 					<span style="animation-delay: -1.0s">H</span>
 					<span style="animation-delay: -0.8s">a</span>
 					<span style="animation-delay: -0.6s">i</span>
@@ -110,11 +112,24 @@
 					<span style="animation-delay: -0.2s">!</span>
 					<span style="animation-delay: -0.0s">!</span>
 				</span>
+				<span class="haio" data-sensitive="false">
+					<span style="animation-delay: -1.0s">H</span>
+					<span style="animation-delay: -0.8s">e</span>
+					<span style="animation-delay: -0.6s">y</span>
+					<span style="animation-delay: -0.4s">o</span>
+					<span style="animation-delay: -0.2s">!</span>
+					<span style="animation-delay: -0.0s">!</span>
+				</span>
 				<h2>Welcome to my Neocities!!</h2>
-				<p>You know me as chiptumor on most sites.
+				<p data-sensitive="true">You know me as chiptumor on most sites.
 					If you're lookin' for me somewhere, check that @; it's probably me.
 					If it isn't, and if I <em>do</em> exist on that website,
 					<a href="social">you can find it here.</a></p>
+				<p data-sensitive="false">You know me as chiptumor.
+					I upload oscilloscope views of chiptune music that I and others make.</p>
+				<a href="https://youtube.com/@chiptumor" data-sensitive="false">
+					<p>Check me out here!</p>
+				</a>
 			</div></div>
 
 			<!-- STATUS -->
@@ -134,29 +149,48 @@
 
 			<!-- IDENTITY -->
 			<div id="identity" class="box" data-label="Identity">
-				<p>I go by a few names (mostly because I've been fickle about a few different ones:
-					Marlie, Jackie, and Jennie),
-					but you can call me Chip as in chiptumor.</p>
-				<small><i>Psst! I'm thinking about going by Belle. Try that!</i></small>
-				<p>I am a girl and use she/her. I take no offense to misgendering; just don't be an asshat.</p>
-				<!--
-				<p>I am <a href="https://lgbtqia.wiki/wiki/Finsexual">finsexual</a>
-					and am taken by <a href="https://www.threads.com/@miceincorporated">@miceincorporated</a>.</p>
-					-->
+				<div data-sensitive="true">
+					<p>I go by a few names (mostly because I've been fickle about a few different ones:
+						Marlie, Jackie, and Jennie),
+						but you can call me Chip as in chiptumor.</p>
+					<small><i>Psst! I'm thinking about going by Belle. Try that!</i></small>
+					<p>I am a girl and use she/her. I take no offense to misgendering; just don't be an asshat.</p>
+					<!--
+					<p>I am <a href="https://lgbtqia.wiki/wiki/Finsexual">finsexual</a>
+						and am taken by <a href="https://www.threads.com/@miceincorporated">@miceincorporated</a>.</p>
+						-->
+				</div>
+				<div data-sensitive="false">
+					<p>I like to code stuff for fun!</p>
+					<p>I'm working on some cool modules that make certain things easier
+						when creating your own site. Check them out under projects at the top!</p>
+				</div>
 			</div>
 
 			<!-- ZOOLOGIST -->
 			<div id="zoologist" class="box" data-label="Zoologist">
-				<p><a href="https://terraria.wiki.gg/wiki/Zoologist">The Zoologist</a> is my wife.</p>
-				<p>I post and retweet images of her on Instagram and Twitter!
-					<a>Check my socials page for more.</a></p>
-				<p><a>Please grant yourself a viewing of the Wall of Wife!</a>
-					I put art here of my wife made with me in thought&mdash;commissions, requests,
-					or just in honor of me!</p>
+				<div data-sensitive="true">
+					<p><a href="https://terraria.wiki.gg/wiki/Zoologist">The Zoologist</a> is my wife.</p>
+					<p>I post and retweet images of her on Instagram and Twitter!
+						<a>Check my socials page for more.</a></p>
+					<p><a>Please grant yourself a viewing of the Wall of Wife!</a>
+						I put art here of my wife made with me in thought&mdash;commissions, requests,
+						or just in honor of me!</p>
+				</div>
+				<div data-sensitive="false">
+					<p>I love animals!</p>
+					<p>I have 4 cats and 5 dogs that I would die for.</p>
+					<p>You might know my cat Guppy, who I post about the most often.
+						He's the one with a tuxedo pattern? White mittens?
+						I named him after the cat featured in The Binding of Isaac
+						(of course before I knew that <em>he</em> was named after
+						the creator's old cat) and I got him and his sister
+						around two years ago now!</p>
+				</div>
 			</div>
 
 			<!-- TODO -->
-			<div id="todo" class="box" data-label="To-Do">
+			<div id="todo" class="box" data-label="To-Do" data-sensitive="true">
 				<ul>
 					<li>add more to identity box</li>
 					<li>add more to zoologist box</li>
