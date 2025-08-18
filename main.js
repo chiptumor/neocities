@@ -154,7 +154,6 @@ window.addEventListener("load", async function() {
 				if (playlist[array[num]].skip) {
 					player.skipTo.prev(); return;
 				}
-						else num = playlist.length - 1;
 				audio.src = song(num);
 				audio.currentTime = 0;
 				player.update();
