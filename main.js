@@ -139,9 +139,9 @@ window.addEventListener("load", async function() {
 			"next": () => {
 				if (num !== playlist.length - 1) num++;
 					else num = 0;
-				if (playlist[array[num]].skip)
-					if (num !== playlist.length - 1) num++;
-						else num = 0;
+				if (playlist[array[num]].skip) {
+					player.skipTo.next(); return;
+				}
 				audio.src = song(num);
 				audio.currentTime = 0;
 				player.update();
@@ -151,8 +151,9 @@ window.addEventListener("load", async function() {
 			"prev": () => {
 				if (num !== 0) num = num - 1;
 					else num = playlist.length - 1;
-				if (playlist[array[num]].skip)
-					if (num !== 0) num = num - 1;
+				if (playlist[array[num]].skip) {
+					player.skipTo.prev(); return;
+				}
 						else num = playlist.length - 1;
 				audio.src = song(num);
 				audio.currentTime = 0;
