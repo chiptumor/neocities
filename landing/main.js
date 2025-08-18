@@ -64,7 +64,7 @@ async function redirect() {
     overlay.classList = "visible"; await delay(250); overlay.classList = ""; await delay(50);
     terminal.innerText += "Redirecting..."; await delay(250);
 	overlay.classList = "visible";
-    window.location.href = "https://chiptumor.github.io/neocities"; // redirect
+    window.location.href = "https://chiptumor.github.io/neocities?s"; // redirect
 }
 
 button.addEventListener("dblclick", shortcut, {once:true}); // listen 4 2 click...

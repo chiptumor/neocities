@@ -93,17 +93,21 @@ body {
 		cursor: pointer;
 	}
 	
-	[data-sensitive="true"] { display: none; }
-	[data-sensitive="false"] { display: unset; }
+// BOYMODING [[
 	&.sensitive {
 		[data-sensitive="true"] { display: unset; }
-		[data-sensitive="false"] { display: none; }
-		
+		[data-sensitive="false"] { display: none !important; }
+	}
+	&:not(.sensitive) {
+		[data-sensitive="true"] { display: none !important; }
+		[data-sensitive="false"] { display: unset; }	
 		#grid #welcome div.pfp {
-			background-image: url(/global/pfp/chiptumor.png);
+			background-image: url(global/pfp/chiptumor.png);
+			display: block;
 		}
 	}
 }
+// ]]
 
 #title {
 	display: none;
