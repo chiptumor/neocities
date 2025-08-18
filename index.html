@@ -31,42 +31,51 @@
 		<div id="grid">
 
 			<!-- MUSIC PLAYER -->
-			<div id="music" class="box"><div>
-				<audio></audio>
-				<div class="info">
-					<a class="title"><span>title</span></a>
-					<a class="artist"><span>artist</span></a>
-				</div>
-				<div class="controls">
-					<div class="media">
-						<div class="play-pause paused" data-desc="Play/Pause">
-							<div data-lucide="play"></div>
-							<div data-lucide="pause"></div>
-						</div>
-						<div class="next-prev">
-							<div class="prev" data-desc="Previous">
-								<div data-lucide="skip-back"></div>
+			<div id="music" class="box">
+				<div class="content">
+					<audio></audio>
+					<div class="info">
+						<a class="title"><span>title</span></a>
+						<a class="artist"><span>artist</span></a>
+						<span class="context">
+							<a class="chip"><span>chip</span></a>,
+							<a class="software"><span>software</span></a>
+						</span>
+					</div>
+					<div class="controls">
+						<div class="media">
+							<div class="play-pause paused">
+								<div data-lucide="play"></div>
+								<div data-lucide="pause"></div>
 							</div>
-							<div class="next" data-desc="Next">
-								<div data-lucide="skip-forward"></div>
+							<div class="next-prev">
+								<div class="prev">
+									<div data-lucide="skip-back"></div>
+								</div>
+								<div class="next">
+									<div data-lucide="skip-forward"></div>
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="duration">
-					<div class="left">
-						<span>elapsed</span>
+					<div class="duration">
+						<div class="left">
+							<span>elapsed</span>
+						</div>
+						<div class="right">
+							<span><span class="remaining">remaining</span>/<span class="total">total</span></span>
+						</div>
+						<!--<input type="range"	value="0" min="0" max="1" step="any"/>-->
 					</div>
-					<div class="right">
-						<span><span class="remaining">remaining</span>/<span class="total">total</span></span>
-					</div>
-					<input type="range"	value="0" min="0" max="1" step="any"/>
 				</div>
-			</div></div>
+				<div class="progress">
+					<div></div>
+				</div>
+			</div>
 
 			<!-- BANNER -->
 			<div id="banner" class="box closed" data-preview="true">
-				<div class="line">Work in progress</div>
+				<div class="line">&sung;&nbsp;&nbsp;Music player works!</div>
 				<div class="expand">
 					<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" viewBox="0 0 24 24">
 						<path d="M5.3 9.3a1 1 0 0 1 1.4 0l5.3 5.29 5.3-5.3a1 1 0 1 1 1.4 1.42l-6 6a1 1 0 0 1-1.4
@@ -74,11 +83,18 @@
 					</svg>
 				</div>
 				<div class="content">
-					<h2>Work in progress!</h2>
-					<p>The current pushed state of this site is a work in progress, and you may see some unfinished stuff.</p>
-					<p>Please don't hurt me for it.</p>
-					<p>Author's note:</p>
-					<blockquote>no the music player does not work stop clicking on it</blockquote>
+					<h2>THE MUSIC PLAYER WORKS!!!</h2>
+					<p>because of this, im considering making a music player js module
+						that makes these kinds of things easier</p>
+					<p>however, im already considering working on an rpg text-like module
+						that makes things like wavy text (see 'Haio!!') easier for sites that want them.</p>
+					<p>...so i need input!</p>
+					<p>which one would be preferable? please dm me on discord with which one YOU would want!</p>
+					<p>dont be intimidated or worried to piss me off with a single-word dm.
+						i promise your input is valuable to me!!</p>
+					<p>it's probably more likely that ill work on eztxtfx
+						considering itd be a <i>lot</i> less work.
+						still, though, shoot a "player" or "text" at me!</p>
 				</div>
 				<div class="close">
 					<span>Hide</span>
@@ -106,13 +122,15 @@
 			<!-- STATUS -->
 			<div id="status"><div class="box">
 				<div class="feeling"> <!-- WHAT ARE YOU FEELING? -->
-					<span>I'm feeling <b>stuttered</b>.</span>
+					<span>I'm feeling <b>pissed</b>.</span>
 				</div>
 				<div class="content"> <!-- WHAT'S HAPPENING? -->
-					<p>for whatever reason </p>
+					<img src="https://cdn.discordapp.com/attachments/957045238428467230/1406703581532393532/image.png?ex=68a36e4d&is=68a21ccd&hm=113cfa3698c995bd6e23480e26484fa0db09063aea0b2164808ae5725b91b0e7&"/>
+					<img src="https://cdn.discordapp.com/attachments/957045238428467230/1406703581872128021/image.png?ex=68a36e4d&is=68a21ccd&hm=c15ee2146bb2bd65255cf8bd0b38c67e04f8b12fef094dcff03ca8aa5262c8d2&"/>
+					<p>fuck range inputs</p>
 				</div>
 				<div class="last-updated"> <!-- WHAT DAY IS IT? -->
-					<span>Last updated: 8/12/2025</span>
+					<span>Last updated: 8/17/2025</span>
 				</div>
 			</div></div>
 

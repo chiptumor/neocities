@@ -1,22 +1,383 @@
 [
 	{ // 0
 		"title": {
-			"text": "Rivals of Aether — Main Menu",
+			"text": 'Rivals of Aether — Main Menu',
 			"href": "https://youtu.be/THaXuGqTh_8"
 		},
 		"artist": {
 			"text": "flashygoodness",
 			"href": "https://youtube.com/channel/UC2KvxUOCPLPqschQZD24LFA"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
 		}
 	},
 	{ // 1
 		"title": {
-			"text": "Rivals of Aether — Figher Select 2",
+			"text": 'Rivals of Aether — Figher Select 2',
 			"href": "https://youtu.be/Xkop6zmTnIM"
 		},
 		"artist": {
 			"text": "flashygoodness",
 			"href": "https://youtube.com/channel/UC2KvxUOCPLPqschQZD24LFA"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 2
+		"title": {
+			"text": 'glue70 - "Casin"',
+			"href": "https://youtu.be/5Dp6LJ2A5oE"
+		},
+		"artist": {
+			"text": "FΛDE",
+			"href": "https://youtube.com/@FLDE"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 3
+		"title": {
+			"text": 'keisari micro',
+			"href": "https://youtu.be/F76cl_Ro6y0"
+		},
+		"artist": {
+			"text": "laamaa",
+			"href": "https://www.youtube.com/@laamaa"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 4
+		"title": {
+			"text": 'another',
+			"href": "https://youtu.be/PAJn1NwfTM0"
+		},
+		"artist": {
+			"text": "Bupin",
+			"href": "https://www.youtube.com/channel/UCn_UkHQbYASl7u2bEZSxg5A"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 5
+		"title": {
+			"text": 'trash trance',
+			"href": "https://youtu.be/Mn-w7VSBjbo"
+		},
+		"artist": {
+			"text": "Abstract 64",
+			"href": "https://www.youtube.com/@64abstract"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 6
+		"skip": true,
+		"title": {
+			"text": 'Roots of Ruin',
+			"href": "https://youtu.be/8LSxLYGpGA8"
+		},
+		"artist": {
+			"text": "Rei8Bit",
+			"href": "https://www.youtube.com/@Rei8bit"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 7
+		"title": {
+			"text": 'Carve Your Own Path',
+			"href": "https://youtu.be/NO8CZR253aU"
+		},
+		"artist": {
+			"text": "Abstract 64",
+			"href": "https://www.youtube.com/@64abstract"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 8
+		"title": {
+			"text": 'Dimensional [Warp Star]',
+			"href": "https://youtu.be/"
+		},
+		"artist": {
+			"text": "Abstract 64",
+			"href": "https://www.youtube.com/@64abstract"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 9
+		"title": {
+			"text": 'Abstract 64 - "transcendental"',
+			"href": "https://youtu.be/BlWAwA47Pj0"
+		},
+		"artist": {
+			"text": "Furmilion",
+			"href": "https://www.youtube.com/@Furmilion"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 10
+		"title": {
+			"text": 'On One',
+			"href": "https://youtu.be/rald2MLKTHI"
+		},
+		"artist": {
+			"text": "Laxity",
+			"href": ""
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 11
+		"title": {
+			"text": 'Jeroen Tel - "Suske en Wiske: De Tijdtemmers - Haunted Castle"',
+			"href": "https://youtu.be/62dD0e0a4dE"
+		},
+		"artist": {
+			"text": "Abstract 64",
+			"href": "https://www.youtube.com/@64abstract"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 12
+		"title": {
+			"text": 'Glizzy Spizzy',
+			"href": "https://youtu.be/oWXgx19UjpQ"
+		},
+		"artist": {
+			"text": "FΛDE",
+			"href": "https://youtube.com/@FLDE"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 13
+		"title": {
+			"text": 'Fall Apart With Me',
+			"href": "https://youtu.be/KgrrcaMAG5g"
+		},
+		"artist": {
+			"text": "FΛDE",
+			"href": "https://youtube.com/@FLDE"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 14
+		"title": {
+			"text": 'Did I Stutter?',
+			"href": "https://youtu.be/-gdlGpT2WSA"
+		},
+		"artist": {
+			"text": "FΛDE",
+			"href": "https://youtube.com/@FLDE"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 15
+		"title": {
+			"text": 'Dandy and Moriya - "Ferrari Grand Prix Challenge - Ranking"',
+			"href": "https://youtu.be/pZqnV508aG8"
+		},
+		"artist": {
+			"text": "FΛDE",
+			"href": "https://youtube.com/@FLDE"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 16
+		"title": {
+			"text": 'Supernova',
+			"href": "https://youtu.be/lzLtRfY6cCg"
+		},
+		"artist": {
+			"text": "Zylenxx",
+			"href": "https://www.youtube.com/@Zylenxx"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 17
+		"title": {
+			"text": 'Hopeless Romantic',
+			"href": "https://youtu.be/AhccsEK8S_Y"
+		},
+		"artist": {
+			"text": "Fearofdark",
+			"href": "https://www.youtube.com/@FoDSteve"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
+		}
+	},
+	{ // 18
+		"title": {
+			"text": 'Don\'t Go Outside',
+			"href": "https://youtu.be/TdTWRHio_zU"
+		},
+		"artist": {
+			"text": "Fearofdark",
+			"href": "https://www.youtube.com/@FoDSteve"
+		},
+		"context": {
+			"chip": {
+				"text": "",
+				"href": ""
+			},
+			"software": {
+				"text": "",
+				"href": ""
+			}
 		}
 	}
 ]

@@ -60,7 +60,7 @@
 			</a>
 		</div></div>
 		<div class="dropdown"><span>Music</span><div>
-			<div class="dropdown" data-title="Disabled" data-desc="Boycott YouTube!"><span>YouTube</span><div>
+			<div class="dropdown" data-title="Hidden" data-desc="Boycott YouTube!"><span>YouTube</span><div>
 				<a class="item" href="/blog?index=8-15-25#why" data-title="" data-desc="">
 					<span>Why boycott YouTube?</span>
 				</a>

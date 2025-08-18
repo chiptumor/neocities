@@ -11,6 +11,10 @@
 	font-family: Topaz;
 	src: url(font/TopazPlus_a500_v1.0.ttf) format("truetype");
 }
+@font-face {
+	font-family: Atari-vector;
+	src: url(font/atari_vector.ttf) format("truetype");
+}
 
 /*** Pallete ***/
 /** Generic lighten/darken **/ /*
@@ -288,8 +292,11 @@ body {
 
 	/*** MUSIC PLAYER ***/
 	#music {
-		padding: 3px;
-		> div {
+		padding: 0;
+		display: grid;
+		grid-auto-flow: row;
+		> div.content {
+			padding: 3px;
 			min-height: fit-content;
 			display: grid;
 			grid-gap: 8px;
@@ -305,22 +312,46 @@ body {
 			div.info {
 				margin: 8px 24px;
 				a.title {
-					font-size: 48px;
-					color: white;
+					font-size: 32px;
+					--color: white;
+					color: var(--color);
 				}
 				a.artist {
 					margin-left: 24px;
 					font-size: 24px;
-					color: @accent-light-3;
+					--color: @accent-light-3;
+					color: var(--color);
+				}
+				span.context {
+					display: none;
+					margin-left: 32px;
+					font-size: 16px;
+					--color: @accent-light-3;
+					color: var(--color);
+					> a {
+						display: inline;
+						color: var(--color);
+						&:hover {
+							background-color: white;
+							color: black;
+						}
+						&:active {
+							background-color: transparent;
+							color: var(--color);
+						}
+					}
 				}
 				a {
 					display: block;
 					text-decoration: none;
 					max-width: fit-content;
-					&:hover, &:active {
-						border: none;
+					&:hover {
 						background-color: white;
 						color: black;
+					}
+					&:active {
+						background-color: transparent;
+						color: var(--color);
 					}
 				}
 			}
@@ -330,7 +361,7 @@ body {
 				position: relative;
 				min-width: fit-content;
 				flex-direction: column;
-				grid-gap: 4px;
+				grid-gap: 3px;
 
 				div.play-pause, div.prev, div.next{
 					background-image: linear-gradient(to bottom, @accent-main, @accent-dark-1 10%, @accent-main);
@@ -372,7 +403,7 @@ body {
 					display: flex;
 					flex-direction: row-reverse;
 					align-content: flex-end;
-					gap: 4px;
+					gap: 3px;
 
 					div.next-prev {
 						display: flex;
@@ -388,83 +419,33 @@ body {
 					"scrubber scrubber";
 				div.left { grid-area: left; }
 				div.right { grid-area: right; }
-				input { grid-area: scrubber; }
+				div.progress { grid-area: scrubber; }
 
-				div.left, div.right { display: flex; color: @accent-light-1; }
+				div.left, div.right {
+					font-family: Atari-vector;
+					font-size: small;
+					display: flex;
+					color: @accent-light-1;
+				}
 				div.left { justify-content: flex-start; }
 				div.right { justify-content: flex-end; }
 			}
+		}
+				
+		div.progress {
+			--color: @accent-main;
+			border-top: 3px solid var(--color);
+			box-sizing: border-box;
 
-			input[type="range"] {
-				background-color: transparent;
-				margin: 0;
-				box-sizing: border-box;
-				border: 3px solid @accent-main;
-				height: 14px;
-				width: 100%;
-				cursor: grab;
-				-webkit-appearance: none;
-
-				&::-webkit-slider-runnable-track,
-				&::-moz-range-track {
-					border: none;
-					border-radius: 0;
-					background-color: transparent;
-					height: 100%;
-				}
-
-				&::-webkit-slider-thumb,
-				&::-moz-range-thumb {
-					-webkit-appearance: none;
-					visibility: hidden;
-					width: 0;
-					height: 0;
-					border: none;
-					border-radius: 0;
-				}
-
-				// Progress track styling
-				&::-webkit-slider-runnable-track {
-					background: linear-gradient(to right, @accent-main 0%, @accent-main var(--progress-percent), transparent var(--progress-percent), transparent 100%);
-				}
-
-				&::-moz-range-progress {
-					background-color: @accent-main;
-					height: 100%;
-				}
-
-				// Firefox track needs explicit height
-				&::-moz-range-track {
-					height: 100%;
-				}
-
-				&:hover {
-					border-color: @accent-light-2;
-
-					&::-webkit-slider-runnable-track {
-						background: linear-gradient(to right, @accent-light-2 0%, @accent-light-2 var(--progress-percent), transparent var(--progress-percent), transparent 100%);
-					}
-
-					&::-moz-range-progress {
-						background-color: @accent-light-2;
-					}
-				}
-
-				&:active {
-					cursor: grabbing;
-					border-color: @accent-light-1;
-
-					&::-webkit-slider-runnable-track {
-						background: linear-gradient(to right, @accent-light-1 0%, @accent-light-1 var(--progress-percent), transparent var(--progress-percent), transparent 100%);
-					}
-
-					&::-moz-range-progress {
-						background-color: @accent-light-1;
-					}
-				}
+			> div {
+				background-color: var(--color);
+				height: 6px;
+				transition: width 100ms ease;
+				width: 0%;
 			}
 		}
 	}
+	
 	/*** BANNER ***/
 	#banner {
 		position: relative;
@@ -605,6 +586,10 @@ body {
 
 			& > div.content {
 				padding: 8px 16px;
+				
+				& img {
+					max-width: 100%;
+				}
 			}
 		}
 		&::before { // BUBBLE TAIL

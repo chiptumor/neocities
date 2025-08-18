@@ -35,28 +35,151 @@ window.addEventListener("load", async function() {
 
 /*** MUSIC PLAYER ***/
 window.addEventListener("load", async function() {
-	const player = document.getElementById("music").querySelector("& > div");
-	const audio = player.querySelector("audio");
+	const box = document.getElementById("music").querySelector("& > div.content");
+	const audio = box.querySelector("audio");
 	
-	player.querySelector('input[type="range"]').addEventListener('input', function() {
-		this.style.setProperty("--progress-percent", (this.value - this.min) / (this.max - this.min) * 100 + "%");
-	});
-
 	const response = await fetch("global/playlist/index.json");
 	const text = await response.text();
 	const playlist = JSON5.parse(text);
-
-	const info = {};
-	info.title = player.querySelector("div.info > a.title > span");
-	info.artist = player.querySelector("div.info > a.artist > span");
-
-	const controls = {};
-	controls.play = player.querySelector("div.controls > div.media > div.play-pause");
-	controls.prev = player.querySelector("div.controls > div.media > div.next-prev > div.prev");
-	controls.next = player.querySelector("div.controls > div.media > div.next-prev > div.next");
-
-	const duration = {};
-	duration.elapsed = player.querySelector("div.duration > div.left > span");
-	duration.remaining = player.querySelector("div.duration > div.right > span > span.remaining");
-	duration.total = player.querySelector("div.duration > div.right > span > span.total");
+	const array = await (() => {
+		const arr = [...Array(playlist.length).keys()];
+		for (let x = arr.length - 1; x > 1; x--) {
+			const y = Math.floor(Math.random() * x) + 1;
+			[arr[x], arr[y]] = [arr[y], arr[x]];
+		}
+		return arr;
+	})();
+	
+	function song(num) {
+		return "/neocities/global/playlist/"+array[num]+".mp3";
+	}
+	
+	const element = {
+		"info": {
+			"title": box.querySelector("div.info a.title"),
+			"artist": box.querySelector("div.info a.artist"),
+			"context": {
+				"chip": box.querySelector("div.info a.chip"),
+				"software": box.querySelector("div.info a.software")
+			}
+		},
+		"controls": {
+			"play": box.querySelector("div.controls div.media div.play-pause"),
+			"prev": box.querySelector("div.controls div.media div.next-prev div.prev"),
+			"next": box.querySelector("div.controls div.media div.next-prev div.next")
+		},
+		"duration": {
+			"elapsed": box.querySelector("div.duration div.left span"),
+			"remaining": box.querySelector("div.duration div.right > span > span.remaining"),
+			"total": box.querySelector("div.duration div.right > span > span.total"),
+			"progress": document.getElementById("music").querySelector("div.progress > div")
+		}
+	};
+	
+	const comment = {
+		"title": [
+			"Changing!",
+			"Moving on!",
+			"Skipping!",
+			"Loadin'!",
+			"Dickin' around!",
+			"Waitin' for fun!"
+		],
+		"artist": [
+			"You hear that?",
+			"Give me a moment.",
+			"Give me a second.",
+			"Hold your horses.",
+			"Don't... Move... A muscle.",
+			"Awh, it's over already?"
+		]
+	};
+	
+	const player = {
+		"updateTime": () => {
+			if (isNaN(audio.duration)) {
+				element.duration.elapsed.innerText = "loading...";
+				element.duration.remaining.innerText = "please";
+				element.duration.total.innerText = "wait";
+				element.duration.progress.style.width = "0%";
+			} else {
+				element.duration.elapsed.innerText = time(audio.currentTime);
+				element.duration.remaining.innerText = time(audio.duration - audio.currentTime);
+				element.duration.total.innerText = time(audio.duration);
+				element.duration.progress.style.width = ((audio.currentTime / audio.duration) * 100) + "%";
+			}
+		},
+		"updateInfo": () => {
+			if (isNaN(audio.duration)) {
+				element.info.title.querySelector("span").innerText = comment.title[Math.floor(Math.random() * comment.title.length)];
+				element.info.title.setAttribute("href", "");
+				element.info.artist.querySelector("span").innerText = comment.artist[Math.floor(Math.random() * comment.artist.length)];
+				element.info.artist.setAttribute("href", "");
+			} else {
+			// TITLE
+				element.info.title.querySelector("span").innerText = playlist[array[num]].title.text;
+				element.info.title.setAttribute("href", playlist[array[num]].title.href);
+			// ARTIST
+				element.info.artist.querySelector("span").innerText = playlist[array[num]].artist.text;
+				element.info.artist.setAttribute("href", playlist[array[num]].artist.href);
+			// CONTEXT
+				// nothing yet #lol
+			}
+		},
+		"update": () => {
+			player.updateInfo(); player.updateTime();
+		},
+		"skipTo": {
+			"next": () => {
+				if (num !== playlist.length - 1) num += 1;
+					else num = 0;
+				audio.src = song(num);
+				audio.currentTime = 0;
+				player.update();
+				if (element.controls.play.classList.contains("playing"))
+					audio.play();
+			},
+			"prev": () => {
+				if (num !== 0) num = num - 1;
+					else num = playlist.length - 1;
+				audio.src = song(num);
+				audio.currentTime = 0;
+				player.update();
+				if (element.controls.play.classList.contains("playing"))
+					audio.play();
+			}
+		},
+	};
+	
+	function time(num) {
+		num = Math.floor(Number(num));
+		var sec = num % 60;
+		if (sec < 10) {
+			sec = "0" + sec;
+		}
+		const min = Math.floor(num / 60);
+		return min+":"+sec;
+	}
+	
+	audio.volume = 0.5;
+	var num = 0;
+	audio.src = song(num);
+	
+	audio.addEventListener("canplay", function() {
+		player.update();
+		audio.addEventListener("timeupdate", player.updateTime);
+		audio.addEventListener("ended", player.skipTo.next);
+		element.controls.prev.addEventListener("click", player.skipTo.prev);
+		element.controls.next.addEventListener("click", player.skipTo.next);
+	});
+	
+	element.controls.play.addEventListener("click", function() {
+		if (this.classList.contains("paused")) {
+			this.classList.replace("paused", "playing");
+			audio.play();
+		} else if (this.classList.contains("playing")) {
+			this.classList.replace("playing", "paused");
+			audio.pause();
+		}
+	});
 });
