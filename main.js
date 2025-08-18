@@ -178,21 +178,21 @@ window.addEventListener("load", async function() {
 	var num = 0;
 	audio.src = song(num);
 	
-	audio.addEventListener("canplay", function() {
-		player.update();
-		audio.addEventListener("timeupdate", player.updateTime);
-		audio.addEventListener("ended", player.skipTo.next);
-		element.controls.prev.addEventListener("click", player.skipTo.prev);
-		element.controls.next.addEventListener("click", player.skipTo.next);
+	audio.addEventListener("canplay", player.update);
+	audio.addEventListener("timeupdate", player.updateTime);
+	audio.addEventListener("ended", player.skipTo.next);
+	audio.addEventListener("play", function() {
+		element.controls.play.classList.replace("paused", "playing");
+	});
+	audio.addEventListener("pause", function() {
+		element.controls.play.classList.replace("playing", "paused");
 	});
 	
+	element.controls.prev.addEventListener("click", player.skipTo.prev);
+	element.controls.next.addEventListener("click", player.skipTo.next);
+	
 	element.controls.play.addEventListener("click", function() {
-		if (this.classList.contains("paused")) {
-			this.classList.replace("paused", "playing");
-			audio.play();
-		} else if (this.classList.contains("playing")) {
-			this.classList.replace("playing", "paused");
-			audio.pause();
-		}
+		if (this.classList.contains("paused")) audio.play();
+		else if (this.classList.contains("playing")) audio.pause();
 	});
 });
