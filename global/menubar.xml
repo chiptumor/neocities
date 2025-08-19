@@ -4,18 +4,18 @@
 		<div style="background-image: "></div>
 	</a>
 	-->
-	<a class="item" href="/blog" data-href="/blog" data-sensitive="true">
+	<a class="item" href="/neocities/blog" data-href="/neocities/blog" data-sensitive="true">
 		<span>Blog</span>
 	</a>
-	<div class="dropdown" data-href="/social" data-sensitive="true"><span>Socials</span><div>
-		<a class="item" href="/social">
+	<div class="dropdown" data-href="/neocities/neocities/social" data-sensitive="true"><span>Socials</span><div>
+		<a class="item" href="/neocities/neocities/social">
 			<span>Socials page</span>
 		</a>
 		<div class="dropdown"><span>Email</span><div>
 			<a class="item" href="mailto:tipchumor@gmail.com" data-title="tipchumor@gmail.com">
 				<span>Personal email</span>
 			</a>
-			<a class="item" href="/social#email">
+			<a class="item" href="/neocities/social#email">
 				<span>Read more...</span>
 			</a>
 		</div></div>
@@ -26,7 +26,7 @@
 			<a class="item" href="https://discord.com/users/1184619891215573042/" data-desc="Less reliable!">
 				<span>Open user link</span>
 			</a>
-			<a class="item" href="/social#discord">
+			<a class="item" href="/neocities/social#discord">
 				<span>Read more...</span>
 			</a>
 		</div></div>
@@ -39,7 +39,7 @@
 					<span>Shitposting account</span>
 				</a>
 			</div></div>
-			<a class="item" href="/social#instagram">
+			<a class="item" href="/neocities/social#instagram">
 				<span>Read more...</span>
 			</a>
 		</div></div>
@@ -55,16 +55,16 @@
 					<span>Old account</span>
 				</a>
 			</div></div>
-			<a class="item" href="/social#twitter">
+			<a class="item" href="/neocities/social#twitter">
 				<span>Read more...</span>
 			</a>
 		</div></div>
 		<div class="dropdown"><span>Music</span><div>
 			<div class="dropdown" data-title="Hidden" data-desc="Boycott YouTube!"><span>YouTube</span><div>
-				<a class="item" href="/blog?index=8-15-25#why" data-title="" data-desc="">
+				<a class="item" href="/neocities/blog?index=8-15-25#entry:why" data-title="" data-desc="">
 					<span>Why boycott YouTube?</span>
 				</a>
-				<a class="item" href="/blog?index=8-15-25#what" data-title="" data-desc="">
+				<a class="item" href="/neocities/blog?index=8-15-25#entry:what" data-title="" data-desc="">
 					<span>What can I do?</span>
 				</a>
 				<!-- DISABLED --->
@@ -80,7 +80,7 @@
 						<span>WIPs, dumps, &amp; shitposting</span>
 					</a>
 				</div></div>
-				<a class="item" href="/social#youtube">
+				<a class="item" href="/neocities/social#youtube">
 					<span>Read more...</span>
 				</a>
 				-->
@@ -89,17 +89,17 @@
 				<a class="item" href="https://soundcloud.com/chiptumor" data-title="@chiptumor" data-desc="Not available yet!">
 					<span>Visit profile</span>
 				</a>
-				<a class="item" href="/social#soundcloud">
+				<a class="item" href="/neocities/social#soundcloud">
 					<span>Read more...</span>
 				</a>
 			</div></div>
 		</div></div>
 		<div class="dropdown"><span>Games</span><div>
 			<div class="dropdown"><span>Roblox</span><div>
-				<a class="item" href="roblox.com/users/1375134678/profile" data-title="chiptumor (@cod3breaker61)">
+				<a class="item" href="https://roblox.com/users/1375134678/profile" data-title="chiptumor (@cod3breaker61)">
 					<span>View profile</span>
 				</a>
-				<a class="item" href="/social#roblox">
+				<a class="item" href="/neocities/social#roblox">
 					<span>Read more...</span>
 				</a>
 			</div></div>
@@ -107,7 +107,7 @@
 				<a class="item" href="https://www.xbox.com/en-US/play/user/chiptumor" data-title="@chiptumor">
 					<span>View profile</span>
 				</a>
-				<a class="item" href="/social#xbox">
+				<a class="item" href="/neocities/social#xbox">
 					<span>Read more...</span>
 				</a>
 			</div></div>
@@ -124,10 +124,10 @@
 			<a class="item" href="https://github.com/chiptumor/discord-message-archive">
 				<span>View source</span>
 			</a>
-			<a class="item" href="/projects/discord-message-archive">
+			<a class="item" href="/neocities/projects/discord-message-archive">
 				<span>Read more...</span>
 			</a>
-			<a class="item" href="/projects#discord-message-archive">
+			<a class="item" href="/neocities/projects#discord-message-archive">
 				<span>Jump to on projects page</span>
 			</a>
 		</div></div>
@@ -138,10 +138,10 @@
 			<a class="item" href="https://github.com/chiptumor/chipcord">
 				<span>View source</span>
 			</a>
-			<a class="item" href="/projects/chipcord">
+			<a class="item" href="/neocities/projects/chipcord">
 				<span>Read more...</span>
 			</a>
-			<a class="item" href="/projects#chipcord">
+			<a class="item" href="/neocities/projects#chipcord">
 				<span>Jump to on projects page</span>
 			</a>
 		</div></div>
@@ -152,14 +152,14 @@
 			<a class="item" href="https://github.com/chiptumor/eztxtfx">
 				<span>View source</span>
 			</a>
-			<a class="item" href="/projects/eztxtfx">
+			<a class="item" href="/neocities/projects/eztxtfx">
 				<span>Read more...</span>
 			</a>
-			<a class="item" href="/projects#eztxtfx">
+			<a class="item" href="/neocities/projects#eztxtfx">
 				<span>Jump to on projects page</span>
 			</a>
 		</div></div>
-		<a class="item" href="/projects">
+		<a class="item" href="/neocities/projects">
 			<span>All projects...</span>
 		</a>
 	</div></div>
