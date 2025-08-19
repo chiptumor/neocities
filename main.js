@@ -191,7 +191,13 @@ window.addEventListener("load", async function() {
 	element.controls.next.addEventListener("click", player.skipTo.next);
 	
 	element.controls.play.addEventListener("click", function() {
-		if (this.classList.contains("paused")) audio.play();
-		else if (this.classList.contains("playing")) audio.pause();
+		if (this.classList.contains("paused")) {
+			audio.play();
+			element.controls.play.classList.replace("paused", "playing");
+		}
+		else if (this.classList.contains("playing")) {
+			audio.pause();
+			element.controls.play.classList.replace("playing", "paused");
+		}
 	});
 });
