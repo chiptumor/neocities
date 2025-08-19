@@ -15,6 +15,10 @@
 	font-family: Atari-vector;
 	src: url(font/atari_vector.ttf) format("truetype");
 }
+@font-face {
+	font-family: Tunacan;
+	src: url(font/Tunacan.ttf) format("truetype");
+}
 
 /*** Pallete ***/
 /** Generic lighten/darken **/ /*
@@ -436,10 +440,14 @@ body {
 				div.progress { grid-area: scrubber; }
 
 				div.left, div.right {
-					font-family: Atari-vector;
-					font-size: small;
+					font-family: Tunacan, Atari-vector;
+					font-size: 18px;
 					display: flex;
 					color: @accent-light-1;
+					
+					> span {
+						height: min-content;
+					}
 				}
 				div.left { justify-content: flex-start; }
 				div.right { justify-content: flex-end; }
