@@ -1,0 +1,43 @@
+#envelope {
+	max-width: 1000px;
+	margin: auto;
+	display: grid;
+	#carousel {
+		display: grid;
+		grid-auto-columns: 1fr 1fr 1fr;
+		a {
+			display: flex;
+			width: 100%;
+		}
+	}
+	#entry {
+		background-color: black;
+		width: 100%;
+		box-sizing: border-box;
+		padding: 16px 32px;
+		box-shadow: inset 0 0 0 5px black, inset 0 0 0 10px white;
+		font-family: Topaz, monospace;
+		
+		h1, h2, h3, h4, h5, h6 {
+			font-weight: normal;
+		}
+		h1 { font-size: 64px; }
+		h2 { font-size: 48px; }
+		h3 { font-size: 32px; }
+		h4 { font-size: 16px; }
+		h5 { font-size: 12px; }
+		h6 { font-size: 08px; }
+		p, h1, h2, h3, h4, h5, h6 {
+			margin-block-start: 16px;
+			margin-block-end: 16px;
+		}
+		b, strong {
+			font-weight: normal;
+			text-shadow: calc(1em / 16) 0 0 white;
+		}
+		&::selection {
+			background-color: white;
+			color: black;
+		}
+	}
+}
