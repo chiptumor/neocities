@@ -40,6 +40,7 @@ window.addEventListener("load", async function() {
 });
 
 /*** MUSIC PLAYER ***/
+/// NOTE: AUTOPLAY IS QUIRKY
 window.addEventListener("load", async function() {
 	const box = document.getElementById("music").querySelector("& > div.content");
 	const audio = box.querySelector("audio");
@@ -89,7 +90,7 @@ window.addEventListener("load", async function() {
 			"Skipping!",
 			"Loadin'!",
 			"Dickin' around!",
-			"Waitin' for fun!"
+			"Waitin' for the fun of it!"
 		],
 		"artist": [
 			"You hear that?",
@@ -161,6 +162,17 @@ window.addEventListener("load", async function() {
 					audio.play();
 			}
 		},
+		"autoplay": () => {
+			if (num !== playlist.length - 1) num++;
+				else num = 0;
+			if (playlist[array[num]].skip) {
+				player.skipTo.next(); return;
+			}
+			audio.src = song(num);
+			audio.currentTime = 0;
+			player.update();
+			audio.play();
+		}
 	};
 	
 	function time(num) {
@@ -179,25 +191,30 @@ window.addEventListener("load", async function() {
 	
 	audio.addEventListener("canplay", player.update);
 	audio.addEventListener("timeupdate", player.updateTime);
-	audio.addEventListener("ended", player.skipTo.next);
-	audio.addEventListener("play", function() {
+	audio.addEventListener("ended", player.autoplay);
+	audio.addEventListener("play", () => {
 		element.controls.play.classList.replace("paused", "playing");
 	});
-	audio.addEventListener("pause", function() {
+	audio.addEventListener("pause", () => {
 		element.controls.play.classList.replace("playing", "paused");
 	});
 	
 	element.controls.prev.addEventListener("click", player.skipTo.prev);
 	element.controls.next.addEventListener("click", player.skipTo.next);
 	
-	element.controls.play.addEventListener("click", function() {
-		if (this.classList.contains("paused")) {
+	element.controls.play.addEventListener("click", () => {
+		if (element.controls.play.classList.contains("paused")) {
 			audio.play();
 			element.controls.play.classList.replace("paused", "playing");
 		}
-		else if (this.classList.contains("playing")) {
+		else if (element.controls.play.classList.contains("playing")) {
 			audio.pause();
 			element.controls.play.classList.replace("playing", "paused");
 		}
 	});
+	
+	navigator.mediaSession.setActionHandler("play", () => {audio.play();});
+	navigator.mediaSession.setActionHandler("pause", () => {audio.pause();});
+	navigator.mediaSession.setActionHandler("previoustrack", player.skipTo.prev);
+	navigator.mediaSession.setActionHandler("nexttrack", player.skipTo.next);
 });
