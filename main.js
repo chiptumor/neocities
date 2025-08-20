@@ -8,14 +8,14 @@ window.addEventListener("load", function() {
 window.addEventListener("load", function(e) {
 	const banner = document.getElementById("banner");
 	const button = banner.querySelector("div.close > span");
-	button.addEventListener("mousedown", function () {
+	button.addEventListener("mousedown", function (e) {
 		e.stopPropagation();
 		if (e.button === 0) {
 			banner.className = banner.className.replace("open", "closed");
 		}
 	});
 
-	banner.addEventListener("mousedown", function () {
+	banner.addEventListener("mousedown", function (e) {
 		if (e.button === 0) {
 			banner.className = banner.className.replace("closed", "open");
 		}
