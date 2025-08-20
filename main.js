@@ -5,7 +5,7 @@ window.addEventListener("load", function() {
 });
 
 /*** BANNER TOGGLE OPEN/CLOSE ***/
-window.addEventListener("load", function() {
+window.addEventListener("load", function(e) {
 	const banner = document.getElementById("banner");
 	const button = banner.querySelector("div.close > span");
 	button.addEventListener("mousedown", function () {
@@ -16,7 +16,7 @@ window.addEventListener("load", function() {
 	});
 
 	banner.addEventListener("mousedown", function () {
-		if (window.event.button === 0) {
+		if (e.button === 0) {
 			banner.className = banner.className.replace("closed", "open");
 		}
 	});
