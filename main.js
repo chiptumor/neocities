@@ -9,7 +9,7 @@ window.addEventListener("load", function() {
 	const banner = document.getElementById("banner");
 	const button = banner.querySelector("div.close > span");
 	const openBanner = () => {
-		if (window.event.button === 0) {
+		if (e.button === 0) {
 			banner.className = banner.className.replace("closed", "open");
 		}
 	};
