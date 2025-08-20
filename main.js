@@ -13,7 +13,7 @@ window.addEventListener("load", function() {
 			banner.className = banner.className.replace("closed", "open");
 		}
 	};
-	button.addEventListener("mousedown", function (e) {
+	button.addEventListener("mousedown", function () {
 		e.stopPropagation();
 		if (e.button === 0) {
 			banner.className = banner.className.replace("open", "closed");
