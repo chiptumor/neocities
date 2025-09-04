@@ -1,11 +1,9 @@
-const debug = false;
-
 /*** BOYMODING ***/
 if (debug && !new URLSearchParams(window.location.search).has("s") && window.location.hostname === "localhost")
 	window.location.search = "?s&" + window.location.search.substring(1);
 window.addEventListener("load", function() {
 	if (new URLSearchParams(window.location.search).has("s"))
-		document.body.classList = "sensitive";
+		document.body.classList.add("sensitive");
 });
 
 /*** BANNER TOGGLE OPEN/CLOSE ***/

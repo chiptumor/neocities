@@ -1,4 +1,39 @@
+debug = true;
+
+window.addEventListener("load", ()=>{
+	if (debug) document.body.classList.add("debug");
+});
+
 const delay = ms => new Promise(res => setTimeout(res, ms));
+
+/*** CONSOLE ***/
+if (debug) window.addEventListener("error", e => {
+	this.document.getElementById("console").innerHTML +=
+		`<div class="error">"${e.message}" (${e.lineno}:${e.colno})\n`
+		+ `ERROR: ${JSON.stringify(e.error, null, 4)}`;
+});
+const con = {
+	"log": function () {
+		console.log.apply(window, arguments);
+		document.getElementById("console").innerHTML += `<div class="log">"${Array.prototype.slice.call(arguments).join('", "')}"</div>`;
+	},
+	"debug": function () {
+		console.debug.apply(window, arguments);
+		document.getElementById("console").innerHTML += `<div class="debug">"${Array.prototype.slice.call(arguments).join('", "')}"</div>`;
+	},
+	"info": function () {
+		console.info.apply(window, arguments);
+		document.getElementById("console").innerHTML += `<div class="info">"${Array.prototype.slice.call(arguments).join('", "')}"</div>`;
+	},
+	"warn": function () {
+		console.warn.apply(window, arguments);
+		document.getElementById("console").innerHTML += `<div class="warn">"${Array.prototype.slice.call(arguments).join('", "')}"</div>`;
+	},
+	"error": function () {
+		console.error.apply(window, arguments);
+		document.getElementById("console").innerHTML += `<div class="error">"${Array.prototype.slice.call(arguments).join('", "')}"</div>`;
+	}
+};
 
 /*** LUCIDE SVG ICONS ***/
 window.addEventListener("load", lucide.createIcons);
@@ -21,7 +56,7 @@ window.addEventListener("load", async function() {
 		const attrPath = attr.pathname;
 
 		if (windowPath === attrPath) {
-			node.classList += " selected";
+			node.classList.add("selected");
 			break;
 		}
 	}
