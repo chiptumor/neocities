@@ -693,19 +693,21 @@ body {
 			flex: 1.2;
 		}
 	}
-	div:nth-child(1)  { background-color: black;    color: white; }
-	div:nth-child(2)  { background-color: @dark-6;  color: white; }
-	div:nth-child(3)  { background-color: @dark-5;  color: white; }
-	div:nth-child(4)  { background-color: @dark-4;  color: white; }
-	div:nth-child(5)  { background-color: @dark-3;  color: white; }
-	div:nth-child(6)  { background-color: @dark-2;  color: white; }
-	div:nth-child(7)  { background-color: @dark-1;  color: white; }
-	div:nth-child(8)  { background-color: @main;                  }
-	div:nth-child(9)  { background-color: @light-1; color: black; }
-	div:nth-child(10) { background-color: @light-2; color: black; }
-	div:nth-child(11) { background-color: @light-3; color: black; }
-	div:nth-child(12) { background-color: @light-4; color: black; }
-	div:nth-child(13) { background-color: white;    color: black; }
+	div:nth-child(1),
+	div:nth-child(2),
+	div:nth-child(3),
+	div:nth-child(4),
+	div:nth-child(5),
+	div:nth-child(6),
+	div:nth-child(7)
+		{ color: white; }
+	
+	div:nth-child(9),
+	div:nth-child(10),
+	div:nth-child(11),
+	div:nth-child(12),
+	div:nth-child(13)
+		{ color: black; }
 }
 
 @keyframes haio {

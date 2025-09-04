@@ -43,21 +43,24 @@ window.addEventListener("load", async () => {
 });
 
 /*** PALLETE ***/
-window.addEventListener("load", () => {
-	function toHex(el) {
-		return "#"+(
-			window.getComputedStyle(el)
-				.getPropertyValue("background-color")
-				.split("(")[1].split(")")[0].split(",")
-				.map(x => Number(x).toString(16).padStart(2, "0"))
-				.join("")
-		);
-	}
-	const elements = document.querySelectorAll("#pallete div");
-	for (const el of elements) {
-		el.setAttribute("data-copy", toHex(el));
-		el.setAttribute("data-title", toHex(el));
-	}
+function getValue(el) {
+	const value = "#" + getComputedStyle(el)
+	.getPropertyValue("background-color")
+	.split("(")[1].split(")")[0].split(",")
+	.map(x => Number(x).toString(16).padStart(2, "0"))
+	.join("");
+	
+	return value;
+}
+
+window.requestAnimationFrame(() => {
+	setTimeout(() => {
+		const elements = document.querySelectorAll("#pallete div");
+		for (const el of elements) {
+			el.setAttribute("data-copy", getValue(el));
+			el.setAttribute("data-title", getValue(el));
+		}
+	}, 0);
 });
 
 /*** MUSIC PLAYER ***/

@@ -51,7 +51,7 @@ window.addEventListener("load", function() {
 });
 
 /*** CLICK-TO-COPY ***/
-document.addEventListener("click", async function(e) {
+window.addEventListener("click", async function(e) {
 	el = e.target.closest("[data-copy]");
 	const title = document.getElementById("title").querySelector("span.title");
 	if (el) {
