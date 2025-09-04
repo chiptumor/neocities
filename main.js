@@ -69,7 +69,7 @@ window.addEventListener("load", async () => {
 	const box = document.getElementById("music").querySelector("& > div.content");
 	const audio = box.querySelector("audio");
 	
-	const playlist = await fetch("global/playlist/index.json")
+	const playlist = await fetch("playlist/list.json")
 		.then(e=>e.text())
 		.then(e=>JSON5.parse(e));
 	const text = await response.text();
@@ -84,7 +84,7 @@ window.addEventListener("load", async () => {
 	})();
 	
 	function song(num) {
-		return "/neocities/global/playlist/"+array[num]+".mp3";
+		return "playlist/"+array[playlist[array[num]]].filename+".mp3";
 	}
 	
 	const element = {
@@ -223,6 +223,11 @@ window.addEventListener("load", async () => {
 	});
 	audio.addEventListener("pause", () => {
 		element.controls.play.classList.replace("playing", "paused");
+	});
+
+	audio.addEventListener("error", e=>{
+		window.alert("AUDIO ERROR:\n"+e+"\nPlease report this to me.");
+		audio.pause
 	});
 	
 	element.controls.prev.addEventListener("click", player.skipTo.prev);
