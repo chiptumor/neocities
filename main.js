@@ -1,11 +1,15 @@
+const debug = false;
+
 /*** BOYMODING ***/
+if (debug && !new URLSearchParams(window.location.search).has("s") && window.location.hostname === "localhost")
+	window.location.search = "?s&" + window.location.search.substring(1);
 window.addEventListener("load", function() {
 	if (new URLSearchParams(window.location.search).has("s"))
 		document.body.classList = "sensitive";
 });
 
 /*** BANNER TOGGLE OPEN/CLOSE ***/
-window.addEventListener("load", function(e) {
+window.addEventListener("load", (e) => {
 	const banner = document.getElementById("banner");
 	const button = banner.querySelector("div.close > span");
 	button.addEventListener("mousedown", function (e) {
@@ -23,7 +27,7 @@ window.addEventListener("load", function(e) {
 });
 
 /*** RANDOM PFP ***/
-window.addEventListener("load", async function() {
+window.addEventListener("load", async () => {
 	const aElement = document.getElementById("pfp");
 	const imgElement = aElement.firstElementChild;
 	
@@ -38,9 +42,27 @@ window.addEventListener("load", async function() {
 	aElement.setAttribute("href", pfp.source);
 });
 
+/*** PALLETE ***/
+window.addEventListener("load", () => {
+	function toHex(el) {
+		return "#"+(
+			window.getComputedStyle(el)
+				.getPropertyValue("background-color")
+				.split("(")[1].split(")")[0].split(",")
+				.map(x => Number(x).toString(16).padStart(2, "0"))
+				.join("")
+		);
+	}
+	const elements = document.querySelectorAll("#pallete div");
+	for (const el of elements) {
+		el.setAttribute("data-copy", toHex(el));
+		el.setAttribute("data-title", toHex(el));
+	}
+});
+
 /*** MUSIC PLAYER ***/
 /// NOTE: AUTOPLAY IS QUIRKY
-window.addEventListener("load", async function() {
+window.addEventListener("load", async () => {
 	const box = document.getElementById("music").querySelector("& > div.content");
 	const audio = box.querySelector("audio");
 	

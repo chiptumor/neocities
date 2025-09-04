@@ -21,37 +21,71 @@
 }
 
 /*** Pallete ***/
-/** Generic lighten/darken **/ /*
-@accent-main: #e9263d;
-@accent-light-1: lighten(@accent-main, 20%, relative);
-@accent-light-2: lighten(@accent-main, 40%, relative);
-@accent-light-3: lighten(@accent-main, 60%, relative);
-@accent-light-4: lighten(@accent-main, 80%, relative);
-@accent-dark-1: darken(@accent-main, 20%, relative);
-@accent-dark-2: darken(@accent-main, 40%, relative);
-@accent-dark-3: darken(@accent-main, 60%, relative);
-@accent-dark-4: darken(@accent-main, 70%, relative);
-@accent-dark-5: darken(@accent-main, 80%, relative);
-@accent-dark-6: darken(@accent-main, 90%, relative);
-/** Better Hue Shift **/
-@accent-main: #e92650;
-@accent-light-4: lighten(spin(@accent-main, 8), 80%, relative);
-@accent-light-3: lighten(spin(@accent-main, 6), 60%, relative);
-@accent-light-2: lighten(spin(@accent-main, 4), 40%, relative);
-@accent-light-1: lighten(spin(@accent-main, 2), 20%, relative);
-@accent-dark-1: darken(spin(@accent-main, -5), 20%, relative);
-@accent-dark-2: darken(spin(@accent-main, -10), 40%, relative);
-@accent-dark-3: darken(spin(@accent-main, -15), 60%, relative);
-@accent-dark-4: darken(spin(@accent-main, -20), 70%, relative);
-@accent-dark-5: darken(spin(@accent-main, -25), 80%, relative);
-@accent-dark-6: darken(spin(@accent-main, -30), 90%, relative);
-/**/
+
+@main:    var(--accent-main);
+@light-4: var(--accent-light-4);
+@light-3: var(--accent-light-3);
+@light-2: var(--accent-light-2);
+@light-1: var(--accent-light-1);
+@dark-1:  var(--accent-dark-1);
+@dark-2:  var(--accent-dark-2);
+@dark-3:  var(--accent-dark-3);
+@dark-4:  var(--accent-dark-4);
+@dark-5:  var(--accent-dark-5);
+@dark-6:  var(--accent-dark-6);
+
+.tovar() {
+	--accent-light-4: @4;
+	--accent-light-3: @3;
+	--accent-light-2: @2;
+	--accent-light-1: @1;
+	--accent-main:    @0;
+	--accent-dark-1:  @-1;
+	--accent-dark-2:  @-2;
+	--accent-dark-3:  @-3;
+	--accent-dark-4:  @-4;
+	--accent-dark-5:  @-5;
+	--accent-dark-6:  @-6;
+}
+
+
+body[data-pallete="Generic lighten/darken"] {
+	@x:  #e9263d;
+	@4:  lighten(@x, 80%, relative);
+	@3:  lighten(@x, 60%, relative);
+	@2:  lighten(@x, 40%, relative);
+	@1:  lighten(@x, 20%, relative);
+	@0:  @x;
+	@-1: darken( @x, 20%, relative);
+	@-2: darken( @x, 40%, relative);
+	@-3: darken( @x, 60%, relative);
+	@-4: darken( @x, 70%, relative);
+	@-5: darken( @x, 80%, relative);
+	@-6: darken( @x, 90%, relative);
+	.tovar();
+}
+
+body[data-pallete="Better Hue Shift"] {
+	@x:  #e92650;
+	@4:  lighten(spin(@x,  08), 80%, relative);
+	@3:  lighten(spin(@x,  06), 60%, relative);
+	@2:  lighten(spin(@x,  04), 40%, relative);
+	@1:  lighten(spin(@x,  02), 20%, relative);
+	@0:  @x;
+	@-1: darken( spin(@x, -05), 20%, relative);
+	@-2: darken( spin(@x, -10), 40%, relative);
+	@-3: darken( spin(@x, -15), 60%, relative);
+	@-4: darken( spin(@x, -20), 70%, relative);
+	@-5: darken( spin(@x, -25), 80%, relative);
+	@-6: darken( spin(@x, -30), 90%, relative);
+	.tovar();
+}
 
 body {
 	padding: 100px 50px;
 	margin: 0;
 
-	background-image: linear-gradient(to bottom right, @accent-dark-4, 70%, @accent-main);
+	background-image: linear-gradient(to bottom right, @dark-4, 70%, @main);
 	background-size: cover;
 	background-attachment: fixed;
 
@@ -64,24 +98,24 @@ body {
 		color: white;
 		&:hover {
 			background-color: white;
-			color: @accent-dark-4;
+			color: @dark-4;
 		}
 		&:active {
-			background-color: @accent-dark-4;
+			background-color: @dark-4;
 			color: white;
 		}
 	}
 
 	blockquote {
 		margin-left: 1em;
-		border-left: 3px solid @accent-light-1;
+		border-left: 3px solid @light-1;
 		padding-left: calc(1em - 3px);
-		color: @accent-light-3;
+		color: @light-3;
 	}
 
 	&::selection {
 		background-color: white;
-		color: @accent-dark-4;
+		color: @dark-4;
 	}
 
 	h1 { font-size: 64px; }
@@ -120,11 +154,11 @@ body {
 	max-width: 200px;
 	line-break: auto;
 
-	background-image: linear-gradient(to bottom right, @accent-dark-6, 70%, @accent-dark-2);
+	background-image: linear-gradient(to bottom right, @dark-6, 70%, @dark-2);
 	background-size: cover;
 	background-attachment: fixed;
 
-	border: solid 1px @accent-main;
+	border: solid 1px @main;
 	@radius: 8px;
 
 	span.title {
@@ -134,7 +168,7 @@ body {
 	span.desc {
 		font-size: 12px;
 		display: block;
-		color: @accent-light-3;
+		color: @light-3;
 	}
 }
 
@@ -145,7 +179,7 @@ body {
 	width: 100vw;
 	height: 28px;
 	z-index: 2;
-	background-image: linear-gradient(to bottom, @accent-dark-5, @accent-dark-4);
+	background-image: linear-gradient(to bottom, @dark-5, @dark-4);
 
 	display: flex;
 
@@ -167,16 +201,16 @@ body {
 			display: flex;
 			height: 100%;
 			align-items: center;
-			background-image: linear-gradient(to bottom, @accent-main, @accent-dark-1 10%, @accent-main);
+			background-image: linear-gradient(to bottom, @main, @dark-1 10%, @main);
 			background-size: cover;
-			border: 2px solid @accent-dark-1;
+			border: 2px solid @dark-1;
 			box-sizing: border-box;
 			color: white;
 			align-content: center;
 			&:hover {
-				background-image: linear-gradient(to bottom, @accent-light-3, @accent-light-4);
+				background-image: linear-gradient(to bottom, @light-3, @light-4);
 				color: black;
-				border: 2px solid @accent-light-2;
+				border: 2px solid @light-2;
 			}
 		}
 		a.item, div.item {
@@ -282,11 +316,11 @@ body {
 		z-index: 1;
 		padding: 8px 16px;
 		position: relative;
-		background-image: linear-gradient(to bottom right, @accent-dark-6, 70%, @accent-dark-2);
+		background-image: linear-gradient(to bottom right, @dark-6, 70%, @dark-2);
 		background-size: cover;
 		background-attachment: fixed;
 
-		border: solid 3px @accent-main;
+		border: solid 3px @main;
 
 		&::before {
 			content: attr(data-label);
@@ -299,7 +333,7 @@ body {
 			padding: 0 3px;
 			font-size: small;
 
-			background-color: @accent-main;
+			background-color: @main;
 			color: white;
 			font-weight: bolder;
 
@@ -340,14 +374,14 @@ body {
 				a.artist {
 					margin-left: 24px;
 					font-size: 24px;
-					--color: @accent-light-3;
+					--color: @light-3;
 					color: var(--color);
 				}
 				span.context {
 					display: none;
 					margin-left: 32px;
 					font-size: 16px;
-					--color: @accent-light-3;
+					--color: @light-3;
 					color: var(--color);
 					> a {
 						display: inline;
@@ -385,8 +419,8 @@ body {
 				grid-gap: 3px;
 
 				div.play-pause, div.prev, div.next{
-					background-image: linear-gradient(to bottom, @accent-main, @accent-dark-1 10%, @accent-main);
-					border: 2px solid @accent-dark-1;
+					background-image: linear-gradient(to bottom, @main, @dark-1 10%, @main);
+					border: 2px solid @dark-1;
 					box-sizing: border-box;
 					display: flex;
 					align-items: center;
@@ -396,14 +430,14 @@ body {
 					cursor: pointer;
 
 					&:hover {
-						border-color: @accent-light-1;
+						border-color: @light-1;
 						color: white;
 					}
 
 					&:active {
-						background-image: linear-gradient(to bottom, @accent-light-3, @accent-light-4);
+						background-image: linear-gradient(to bottom, @light-3, @light-4);
 						color: black;
-						border-color: @accent-light-2;
+						border-color: @light-2;
 					}
 
 					> div.codicon {
@@ -446,7 +480,7 @@ body {
 					font-family: Tunacan, Atari-vector;
 					font-size: 18px;
 					display: flex;
-					color: @accent-light-1;
+					color: @light-1;
 					
 					> span {
 						height: min-content;
@@ -458,7 +492,7 @@ body {
 		}
 				
 		div.progress {
-			--color: @accent-main;
+			--color: @main;
 			border-top: 3px solid var(--color);
 			box-sizing: border-box;
 
@@ -489,7 +523,7 @@ body {
 			div.line {
 				width: 50%;
 				height: 3px;
-				background-color: @accent-light-3;
+				background-color: @light-3;
 				border-radius: calc($height / 2);
 			}
 
@@ -499,7 +533,7 @@ body {
 		}
 
 		div.expand {
-			color: @accent-light-3;
+			color: @light-3;
 			position: absolute;
 			bottom: 0; right: 0;
 			width: 24px; height: 24px;
@@ -521,11 +555,11 @@ body {
 			text-transform: uppercase;
 			float: right;
 			padding: 0 5px;
-			background-color: @accent-main;
+			background-color: @main;
 
 			&:hover {
 				background-color: white;
-				color: @accent-dark-4;
+				color: @dark-4;
 			}
 		}
 
@@ -565,13 +599,13 @@ body {
 			position: absolute;
 			top: 3px; right: 3px;
 
-			border: 3px solid @accent-main;
+			border: 3px solid @main;
 
 			&:hover {
 				border-color: white;
 			}
 			&:active {
-				border-color: @accent-dark-2;
+				border-color: @dark-2;
 			}
 		}
 		span.haio {
@@ -598,13 +632,13 @@ body {
 			& > div.feeling span {
 					text-transform: uppercase;
 					max-width: fit-content;
-					background-color: @accent-main;
+					background-color: @main;
 					padding: 0 5px;
 			}
 			& > div.last-updated span {
 				text-transform: uppercase;
 				max-width: fit-content;
-				background-color: @accent-main;
+				background-color: @main;
 				padding: 0 5px;
 				float: right;
 			}
@@ -630,7 +664,7 @@ body {
 			margin: 0 0 -@size -@size;
 			border-style: solid;
 			border-width: 0 0 @size @size;
-			border-color: transparent transparent @accent-main transparent;
+			border-color: transparent transparent @main transparent;
 		}
 	}
 
@@ -646,18 +680,32 @@ body {
 	flex-flow: row;
 	align-content: stretch;
 
-	div { flex: 1; }
-	div:nth-child(1) { background-color: @accent-dark-6; }
-	div:nth-child(2) { background-color: @accent-dark-5; }
-	div:nth-child(3) { background-color: @accent-dark-4; }
-	div:nth-child(4) { background-color: @accent-dark-3; }
-	div:nth-child(5) { background-color: @accent-dark-2; }
-	div:nth-child(6) { background-color: @accent-dark-1; }
-	div:nth-child(7) { background-color: @accent-main; }
-	div:nth-child(8) { background-color: @accent-light-1; }
-	div:nth-child(9) { background-color: @accent-light-2; }
-	div:nth-child(10) { background-color: @accent-light-3; }
-	div:nth-child(11) { background-color: @accent-light-4; }
+	div {
+		flex: 1;
+		//display: flex;
+		//justify-content: center;
+		//align-items: center;
+		font-family: Topaz;
+		font-size: 16px;
+		cursor: pointer;
+		&:hover {
+			font-size: 32px;
+			flex: 1.2;
+		}
+	}
+	div:nth-child(1)  { background-color: black;    color: white; }
+	div:nth-child(2)  { background-color: @dark-6;  color: white; }
+	div:nth-child(3)  { background-color: @dark-5;  color: white; }
+	div:nth-child(4)  { background-color: @dark-4;  color: white; }
+	div:nth-child(5)  { background-color: @dark-3;  color: white; }
+	div:nth-child(6)  { background-color: @dark-2;  color: white; }
+	div:nth-child(7)  { background-color: @dark-1;  color: white; }
+	div:nth-child(8)  { background-color: @main;                  }
+	div:nth-child(9)  { background-color: @light-1; color: black; }
+	div:nth-child(10) { background-color: @light-2; color: black; }
+	div:nth-child(11) { background-color: @light-3; color: black; }
+	div:nth-child(12) { background-color: @light-4; color: black; }
+	div:nth-child(13) { background-color: white;    color: black; }
 }
 
 @keyframes haio {
@@ -679,7 +727,7 @@ body {
 				left: calc(@size * 2);
 				margin: 0 0 -@size -@size;
 				border-width: 0 0 @size @size;
-				border-color: transparent transparent @accent-main transparent;
+				border-color: transparent transparent @main transparent;
 			}
 		}
 	}
