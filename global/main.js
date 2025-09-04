@@ -1,9 +1,7 @@
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 /*** LUCIDE SVG ICONS ***/
-window.addEventListener("load", function() {
-	lucide.createIcons();
-});
+window.addEventListener("load", lucide.createIcons);
 
 /*** MENUBAR ***/
 window.addEventListener("load", async function() {
@@ -12,9 +10,8 @@ window.addEventListener("load", async function() {
 		return;
 	}
 	
-	const response = await fetch("/neocities/global/menubar.xml");
-	const text = await response.text();
-	menubar.innerHTML = await text;
+	const response = await fetch("/neocities/global/menubar.xml").then(e=>e.text());
+	menubar.innerHTML = response;
 
 	const windowPathTo = window.location.pathname;
 	
@@ -25,7 +22,7 @@ window.addEventListener("load", async function() {
 
 		if (windowPath === attrPath) {
 			node.classList += " selected";
-			return;
+			break;
 		}
 	}
 });
