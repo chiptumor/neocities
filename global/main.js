@@ -53,14 +53,15 @@ window.addEventListener("load", function() {
 /*** CLICK-TO-COPY ***/
 document.addEventListener("click", async function(e) {
 	el = e.target.closest("[data-copy]");
+	const title = document.getElementById("title").querySelector("span.title");
 	if (el) {
 		const original = el.innerHTML;
 		try {
 			navigator.clipboard.writeText(el.getAttribute("data-copy"));
-			el.innerHTML = "Copied!";
+			title.innerHTML = "Copied!";
 		} catch (e) {
 			console.warn("Unable to copy text:\n"+e);
-			el.innerHTML = "Failed";
+			title.innerHTML = "Failed";
 		}
 		await delay(1500);
 		el.innerHTML = original;
