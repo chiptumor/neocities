@@ -297,7 +297,7 @@ body {
 	display: grid;
 	grid-template-areas:
 		"console console console"
-		"disclaimer disclaimer disclaimer"
+		"debug-disclaimer debug-disclaimer debug-disclaimer"
 		"music music music"
 		"banner banner banner"
 		"welcome welcome status"
@@ -308,7 +308,7 @@ body {
 	grid-gap: 10px;
 
 	#console { grid-area: console }
-	#disclaimer { grid-area: disclaimer }
+	#debug-disclaimer { grid-area: debug-disclaimer }
 	#music { grid-area: music }
 	#banner { grid-area: banner }
 	#welcome { grid-area: welcome }
@@ -349,6 +349,11 @@ body {
 		&:hover::before {
 			transform: none;
 		}
+	}
+
+	/*** DEBUG DISCLAIMER ***/
+	#debug-disclaimer {
+		padding: 16px 32px;
 	}
 
 	/*** MUSIC PLAYER ***/
@@ -688,9 +693,6 @@ body {
 
 	div {
 		flex: 1;
-		//display: flex;
-		//justify-content: center;
-		//align-items: center;
 		font-family: Topaz;
 		font-size: 16px;
 		cursor: pointer;

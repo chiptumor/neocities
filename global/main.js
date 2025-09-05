@@ -1,16 +1,17 @@
-debug = true;
+var debug = false;
 
 window.addEventListener("load", ()=>{
-	if (debug) document.body.classList.add("debug");
+	if (debug) document.body.setAttribute("data-debug", "true");
 });
 
 const delay = ms => new Promise(res => setTimeout(res, ms));
 
 /*** CONSOLE ***/
 if (debug) window.addEventListener("error", e => {
-	this.document.getElementById("console").innerHTML +=
+	const el = document.getElementById("console");
+	if (el) el.innerHTML +=
 		`<div class="error">"${e.message}" (${e.lineno}:${e.colno})\n`
-		+ `ERROR: ${JSON.stringify(e.error, null, 4)}`;
+		+ `ERROR: ${JSON.stringify(e, null, 4)}`;
 });
 const con = {
 	"log": function () {

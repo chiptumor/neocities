@@ -7,9 +7,6 @@
 		<title>chiptumor/neocities</title>
 		<link rel="icon" type="image/x-icon" href="favicon.ico"/>
 		
-		<script src="/neocities/global/main.js"></script>
-		<script src="main.js"></script>
-
 		<!-- IBM Plex Sans (Google Fonts) -->
 		<link rel="preconnect" href="https://fonts.googleapis.com"/>
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
@@ -22,10 +19,14 @@
 		<!-- JSON5 -->
 		<script src="https://unpkg.com/json5@2/dist/index.min.js"></script>
 
-		<!-- LUCIDE ICONS -->
+		<!-- Lucide Icons -->
 		<script src="https://unpkg.com/lucide@latest"></script>
+		
+		<!-- Scripts -->
+		<script src="/neocities/global/main.js"></script>
+		<script src="main.js"></script>
 	</head>
-	<body class="" data-pallete="Better Hue Shift">
+	<body class="" data-pallete="Better Hue Shift" data-debug="false">
 		<div id="title"><span class="title"></span><span class="desc"></span></div>
 		<div id="menubar"></div>
 		<div id="grid">
@@ -34,9 +35,13 @@
 			<div id="console"></div>
 
 			<!-- DISCLAIMER -->
-			<div id="disclaimer" class="box">
-				<h2>Site's a bit broken right now.</h2>
-				<p>I'll get it back to working properly soon, I promise.</p>
+			<div id="debug-disclaimer" class="box">
+				<h2>Woah mama, I pushed the site in debug mode.</h2>
+				<p>I'm currently trying to fix things,
+					and whatever the reason may be,
+					I left debug mode on when I last published the site.</p>
+				<p>With that being said, the site may or may not seem a bit broken.
+					If it is, I'll get it back to working properly soon, I promise.</p>
 			</div>
 			
 			<!-- MUSIC PLAYER -->
@@ -201,9 +206,14 @@
 
 			<!-- TODO -->
 			<div id="todo" class="box" data-label="To-Do" data-sensitive="true">
+				<p>todo</p>
 				<ul>
 					<li>add more to identity box</li>
 					<li>add more to zoologist box</li>
+				</ul>
+				
+				<p>afterthoughts</p>
+				<ul>
 					<li>add neocities section for blinkies and neightbors and cool pages whatnot</li>
 				</ul>
 

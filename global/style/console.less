@@ -1,8 +1,11 @@
-#console {
+#console, #debug-disclaimer {
     display: none;
 }
 
-body.debug #console {
+body[data-debug="true"] #debug-disclaimer {
+    display: block;
+}
+body[data-debug="true"] #console {
     display: block;
     font-family: "Fira Mono", "Menlo", "Courier New", Courier, monospace;
 	background-color: #121638;

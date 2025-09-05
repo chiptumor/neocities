@@ -1,5 +1,5 @@
 [
-	{ // 0
+	{
 		"filename": "flashygoodness_-_Main_Menu",
 		"title": {
 			"text": 'Rivals of Aether — Main Menu',
@@ -20,7 +20,7 @@
 			}
 		}
 	},
-	{ // 1
+	{
 		"filename": "flashygoodness_-_Fighter_Select_2",
 		"title": {
 			"text": 'Rivals of Aether — Figher Select 2',
@@ -41,7 +41,7 @@
 			}
 		}
 	},
-	{ // 2
+	{
 		"filename": "glue70_-_Casin_(FLDE_cover)",
 		"title": {
 			"text": 'glue70 — "Casin"',
@@ -62,7 +62,7 @@
 			}
 		}
 	},
-	{ // 3
+	{
 		"filename": "laamaa_-_keisari micro",
 		"title": {
 			"text": 'keisari micro',
@@ -83,7 +83,7 @@
 			}
 		}
 	},
-	{ // 4
+	{
 		"filename": "Bupin_-_another",
 		"title": {
 			"text": 'another',
@@ -104,7 +104,7 @@
 			}
 		}
 	},
-	{ // 5
+	{
 		"filename": "Abstract_64_-_trash_trance",
 		"title": {
 			"text": 'trash trance',
@@ -125,7 +125,7 @@
 			}
 		}
 	},
-	{ // 6
+	{
 		"skip": true,
 		"filename": "Rei8Bit_-_Roots_of_Ruin",
 		"title": {
@@ -147,7 +147,7 @@
 			}
 		}
 	},
-	{ // 7
+	{
 		"filename": "Abstract_64_-_Carve_Your_Own_Path",
 		"title": {
 			"text": 'Carve Your Own Path',
@@ -168,7 +168,7 @@
 			}
 		}
 	},
-	{ // 8
+	{
 		"filename": "Abstract_64_-_Dimensional_[Warp_Star]",
 		"title": {
 			"text": 'Dimensional [Warp Star]',
@@ -189,7 +189,7 @@
 			}
 		}
 	},
-	{ // 9
+	{
 		"filename": "Abstract_64_-_transcendental_(Furmilion_cover)",
 		"title": {
 			"text": 'Abstract 64 — "transcendental"',
@@ -210,7 +210,7 @@
 			}
 		}
 	},
-	{ // 10
+	{
 		"filename": "Laxity_-_On_One",
 		"title": {
 			"text": 'On One',
@@ -231,7 +231,7 @@
 			}
 		}
 	},
-	{ // 11
+	{
 		"filename": "Jeroen_Tel_-_Haunted_Castle_(Abstract_64_cover)",
 		"title": {
 			"text": 'Jeroen Tel — "Suske en Wiske: De Tijdtemmers — Haunted Castle"',
@@ -252,7 +252,7 @@
 			}
 		}
 	},
-	{ // 12
+	{
 		"filename": "FLDE_-_Glizzy_Spizzy",
 		"title": {
 			"text": 'Glizzy Spizzy',
@@ -273,7 +273,7 @@
 			}
 		}
 	},
-	{ // 13
+	{
 		"filename": "FLDE_-_Fall_Apart_With_Me",
 		"title": {
 			"text": 'Fall Apart With Me',
@@ -294,7 +294,7 @@
 			}
 		}
 	},
-	{ // 14
+	{
 		"filename": "FLDE_-_Did_I_Stutter",
 		"title": {
 			"text": 'Did I Stutter?',
@@ -315,7 +315,7 @@
 			}
 		}
 	},
-	{ // 15
+	{
 		"filename": "Dandy_and_Moriya_-_Ranking_(FLDE_cover)",
 		"title": {
 			"text": 'Dandy and Moriya — "Ferrari Grand Prix Challenge - Ranking"',
@@ -336,28 +336,7 @@
 			}
 		}
 	},
-	{ // 16
-		"filename": "Zylenxx_-_Supernova",
-		"title": {
-			"text": 'Supernova',
-			"href": "https://youtu.be/lzLtRfY6cCg"
-		},
-		"artist": {
-			"text": "Zylenxx",
-			"href": "https://www.youtube.com/@Zylenxx"
-		},
-		"context": {
-			"chip": {
-				"text": "",
-				"href": ""
-			},
-			"software": {
-				"text": "",
-				"href": ""
-			}
-		}
-	},
-	{ // 17
+	{
 		"filename": "Fearofdark_-_Hopeless_Romantic",
 		"title": {
 			"text": 'Hopeless Romantic',
@@ -378,7 +357,7 @@
 			}
 		}
 	},
-	{ // 18
+	{
 		"filename": "Fearofdark_-_Dont_Go_Outside",
 		"title": {
 			"text": 'Don\'t Go Outside',

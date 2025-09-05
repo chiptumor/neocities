@@ -80,7 +80,7 @@ window.addEventListener("load", async () => {
 	})();
 	
 	function song(num) {
-		return "playlist/"+array[playlist[array[num]]].filename+".mp3";
+		return "playlist/"+playlist[array[num]].filename+".mp3";
 	}
 	
 	const element = {
