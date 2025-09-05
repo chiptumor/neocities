@@ -296,6 +296,8 @@ body {
 	margin: auto;
 	display: grid;
 	grid-template-areas:
+		"console console console"
+		"disclaimer disclaimer disclaimer"
 		"music music music"
 		"banner banner banner"
 		"welcome welcome status"
@@ -305,6 +307,8 @@ body {
 	grid-template-columns: 4fr 1fr 4fr;
 	grid-gap: 10px;
 
+	#console { grid-area: console }
+	#disclaimer { grid-area: disclaimer }
 	#music { grid-area: music }
 	#banner { grid-area: banner }
 	#welcome { grid-area: welcome }
