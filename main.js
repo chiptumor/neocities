@@ -70,8 +70,6 @@ window.addEventListener("load", async () => {
 	const playlist = await fetch("playlist/list.json")
 		.then(e=>e.text())
 		.then(e=>JSON5.parse(e));
-	const text = await response.text();
-	const playlist = JSON5.parse(text);
 	const array = (() => {
 		const arr = [...Array(playlist.length).keys()];
 		for (let x = arr.length - 1; x > 1; x--) {
