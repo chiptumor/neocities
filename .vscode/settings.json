@@ -1,19 +1,8 @@
 {
-	"vscord": {
-		"app": {
-			"name": "Visual Studio Code"
-		},
-		"status": {
-			"details": {
-				"text": {
-					"debugging": "debugging my neocities",
-					"editing": "workin on my neocities",
-					"idle": "idling on my neocities",
-					"notInFile": "goofing off on my neocities",
-					"noWorkSpaceText": "whats a workspace",
-					"viewing": "gawking at my neocities",
-				}
-			}
-		}
-	},
+	"vscord.status.details.text.debugging": "debugging my neocities",
+	"vscord.status.details.text.editing": "workin on my neocities",
+	"vscord.status.details.text.idle": "idling on my neocities",
+	"vscord.status.details.text.notInFile": "goofing off on my neocities",
+	"vscord.status.details.text.noWorkSpaceText": "whats a workspace",
+	"vscord.status.details.text.viewing": "gawking at my neocities",
 }
