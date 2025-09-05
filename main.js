@@ -1,6 +1,4 @@
 /*** BOYMODING ***/
-if (debug && !new URLSearchParams(window.location.search).has("s") && window.location.hostname === "localhost")
-	window.location.search = "?s&" + window.location.search.substring(1);
 window.addEventListener("load", function() {
 	if (new URLSearchParams(window.location.search).has("s"))
 		document.body.classList.add("sensitive");
@@ -12,15 +10,13 @@ window.addEventListener("load", (e) => {
 	const button = banner.querySelector("div.close > span");
 	button.addEventListener("mousedown", function (e) {
 		e.stopPropagation();
-		if (e.button === 0) {
+		if (e.button === 0)
 			banner.className = banner.className.replace("open", "closed");
-		}
 	});
 
 	banner.addEventListener("mousedown", function (e) {
-		if (e.button === 0) {
+		if (e.button === 0)
 			banner.className = banner.className.replace("closed", "open");
-		}
 	});
 });
 
@@ -43,11 +39,10 @@ window.addEventListener("load", async () => {
 /*** PALLETE ***/
 function getValue(el) {
 	const value = "#" + getComputedStyle(el)
-	.getPropertyValue("background-color")
-	.split("(")[1].split(")")[0].split(",")
-	.map(x => Number(x).toString(16).padStart(2, "0"))
-	.join("");
-	
+		.getPropertyValue("background-color")
+		.split("(")[1].split(")")[0].split(",")
+		.map(x => Number(x).toString(16).padStart(2, "0"))
+		.join("");
 	return value;
 }
 
