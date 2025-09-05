@@ -1,3 +1,19 @@
 {
-	"vscord.enabled": true
+	"vscord": {
+		"app": {
+			"name": "Visual Studio Code"
+		},
+		"status": {
+			"details": {
+				"text": {
+					"debugging": "debugging my neocities",
+					"editing": "workin on my neocities @ /{relative_file_path}",
+					"idle": "idling on my neocities",
+					"notInFile": "goofing off in my neocities workspace",
+					"noWorkSpaceText": "whats a workspace",
+					"viewing": "gawking at my neocities @ /{relative_file_path} {problems}"
+				}
+			}
+		}
+	},
 }
