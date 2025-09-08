@@ -7,8 +7,8 @@
 	<a class="item" href="/neocities/blog" data-href="/neocities/blog" data-sensitive="true">
 		<span>Blog</span>
 	</a>
-	<div class="dropdown" data-href="/neocities/neocities/social" data-sensitive="true"><span>Socials</span><div>
-		<a class="item" href="/neocities/neocities/social">
+	<div class="dropdown" data-href="/neocities/social" data-sensitive="true"><span>Socials</span><div>
+		<a class="item" href="/neocities/social">
 			<span>Socials page</span>
 		</a>
 		<div class="dropdown"><span>Email</span><div>
@@ -60,7 +60,7 @@
 			</a>
 		</div></div>
 		<div class="dropdown"><span>Music</span><div>
-			<div class="dropdown" data-title="Hidden" data-desc="Boycott YouTube!"><span>YouTube</span><div>
+			<div class="dropdown" data-title="" data-desc=""><span>YouTube</span><div>
 				<a class="item" href="/neocities/blog?index=8-15-25#entry:why" data-title="" data-desc="">
 					<span>Why boycott YouTube?</span>
 				</a>
@@ -114,53 +114,55 @@
 		</div></div>
 	</div></div>
 	<div class="dropdown" data-href="project"><span>Projects</span><div>
-		<a class="item" href="https://github.com/chiptumor" data-title="@chiptumor">
-			<span>View GitHub profile</span>
-		</a>
-		<div class="dropdown"><span>Discord Message Archive</span><div>
-			<a class="item" href="https://chiptumor.github.io/discord-message-archive">
-				<span>View project</span>
+		<div class="dropdown"><span>GitHub</span><div>
+			<a class="item" href="https://github.com/chiptumor" data-title="@chiptumor">
+				<span>View GitHub profile</span>
 			</a>
-			<a class="item" href="https://github.com/chiptumor/discord-message-archive">
-				<span>View source</span>
-			</a>
-			<a class="item" href="/neocities/projects/discord-message-archive">
-				<span>Read more...</span>
-			</a>
-			<a class="item" href="/neocities/projects#discord-message-archive">
-				<span>Jump to on projects page</span>
+			<div class="dropdown"><span>Discord Message Archive</span><div>
+				<a class="item" href="https://chiptumor.github.io/discord-message-archive">
+					<span>Open project</span>
+				</a>
+				<a class="item" href="https://github.com/chiptumor/discord-message-archive">
+					<span>View source</span>
+				</a>
+				<a class="item" href="/neocities/projects/discord-message-archive">
+					<span>Read more...</span>
+				</a>
+				<a class="item" href="/neocities/projects#discord-message-archive">
+					<span>Jump to on projects page</span>
+				</a>
+			</div></div>
+			<div class="dropdown"><span>Chipcord</span><div>
+				<a class="item" href="https://chiptumor.github.io/chipcord">
+					<span>Open project</span>
+				</a>
+				<a class="item" href="https://github.com/chiptumor/chipcord">
+					<span>View source</span>
+				</a>
+				<a class="item" href="/neocities/projects/chipcord">
+					<span>Read more...</span>
+				</a>
+				<a class="item" href="/neocities/projects#chipcord">
+					<span>Jump to on projects page</span>
+				</a>
+			</div></div>
+			<div class="dropdown"><span>eztxtfx</span><div>
+				<a class="item" href="https://chiptumor.github.io/eztxtfx">
+					<span>Open project</span>
+				</a>
+				<a class="item" href="https://github.com/chiptumor/eztxtfx">
+					<span>View source</span>
+				</a>
+				<a class="item" href="/neocities/projects/eztxtfx">
+					<span>Read more...</span>
+				</a>
+				<a class="item" href="/neocities/projects#eztxtfx">
+					<span>Jump to on projects page</span>
+				</a>
+			</div></div>
+			<a class="item" href="/neocities/projects">
+				<span>All projects...</span>
 			</a>
 		</div></div>
-		<div class="dropdown"><span>Chipcord</span><div>
-			<a class="item" href="https://chiptumor.github.io/chipcord">
-				<span>View project</span>
-			</a>
-			<a class="item" href="https://github.com/chiptumor/chipcord">
-				<span>View source</span>
-			</a>
-			<a class="item" href="/neocities/projects/chipcord">
-				<span>Read more...</span>
-			</a>
-			<a class="item" href="/neocities/projects#chipcord">
-				<span>Jump to on projects page</span>
-			</a>
-		</div></div>
-		<div class="dropdown"><span>eztxtfx</span><div>
-			<a class="item" href="https://chiptumor.github.io/eztxtfx">
-				<span>View project</span>
-			</a>
-			<a class="item" href="https://github.com/chiptumor/eztxtfx">
-				<span>View source</span>
-			</a>
-			<a class="item" href="/neocities/projects/eztxtfx">
-				<span>Read more...</span>
-			</a>
-			<a class="item" href="/neocities/projects#eztxtfx">
-				<span>Jump to on projects page</span>
-			</a>
-		</div></div>
-		<a class="item" href="/neocities/projects">
-			<span>All projects...</span>
-		</a>
 	</div></div>
 </div>
